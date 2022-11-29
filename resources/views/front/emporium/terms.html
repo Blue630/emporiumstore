@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-control" content="public">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <!-- JSDelivr -->
+    <link href='https://cdn.jsdelivr.net/npm/css.gg/icons/all.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Emporium</title>
+
+</head>
+
+<body>
+    <!-- Header start -->
+    <header id="main-header">
+        <div class="container-fluid">
+            <div class="headersec_1">
+                <div class="d-flex align-items-center gap-lg-5 child_flex">
+                    <div class="logo">
+                        <img src="img/logo.png" class="img-fluid" alt="">
+                    </div>
+                    <div class="search_form">
+                        <form action="#">
+                            <select class="select-search-category ft-10" name="term">
+                                <optgroup class="ft-14 m-0 p-0"  label="All categories"> 
+                                <option value="accessories">Accessories</option>
+                                <option value="backup-charger"> &nbsp;&nbsp;Backup Charger</option>
+                                <option value="headphone"> &nbsp;&nbsp;Headphone</option>
+                                <option value="power-socket"> &nbsp;&nbsp;Power Socket</option>
+                                <option value="printer"> &nbsp;&nbsp;Printer</option>
+                                <option value="usb"> &nbsp;&nbsp;USB</option>
+                                <option value="webcam"> &nbsp;&nbsp;Webcam</option>
+                                <option value="wi-fi-router"> &nbsp;&nbsp;Wi-Fi Router</option> 
+                            </optgroup>
+                            </select>
+                            <span class="mx-4 ft-24 text-light-grey ft-100">|</span>
+                            <div class="search-content w-100 d-flex">
+                                <input type="text" value="" name="s" class="w-100 ft-13" placeholder="I'm searching for..." autocomplete="off">
+                                <button type="submit" title="Search" value="Search"><i data-feather="search"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="right-header">
+                        <div class="d-flex justify-content-between pe-4">
+                            <a href="#">Sign in</a>
+                            <a href="#">My Orders</a>
+                            <a href="" class="d-flex align-items-center gap-1 cart_icon">
+                                <span>Cart</span>
+                                <div class="position-relative">
+                                    <span class="add_product_count">12</span>
+                                    <i data-feather="shopping-cart"></i>
+                                </div>
+                            </a>
+                            <a href="#" class="wishlist_header">
+                                <div class=" position-relative">
+                                    <span>5</span>
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="seperator_blue" />
+
+        <div class="container-fluid">
+            <div class="headersec_2">
+                <div class="d-flex align-items-center">
+                    <div class="nav_icon d-none d-lg-block">
+                        <div class="d-flex align-items-center cusror-pointers text-white">
+                            <i data-feather="menu"></i>
+                            <span>ALL</span>
+                        </div>
+                    </div>
+                    <div class="emp-menu mx-lg-auto">
+                        <nav class="navbar navbar-expand-lg">
+                            <div class="container-fluid">
+                                <button class="navbar-toggler text-white d-flex align-items-center p-0 d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                                    <i data-feather="menu"></i>  <span class="ft-16 ms-2">ALL</span>
+                              </button>
+                                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                                    <div class="navbar-nav">
+                                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                        <a class="nav-link" href="#">Electronics</a>
+                                        <a class="nav-link" href="#">Fashion</a>
+                                        <a class="nav-link" href="#">Today’s Deals</a>
+                                        <a class="nav-link" href="#">Suggested for you</a>
+                                        <a class="nav-link" href="#">Trending</a>
+                                        <a class="nav-link" href="#">Saved</a>
+                                        <a class="nav-link" href="#">Wishlisted</a>
+                                        <a class="nav-link" href="#">current Auctions</a>
+                                        <a class="nav-link" href="#">Sell on Emporium</a>
+                                        <a class="nav-link" href="#">Best Seller</a>
+                                        <a class="nav-link" href="#">Subscribe & Save</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+    </header>
+
+    <!-- Header End -->
+
+
+    <!-- content area start -->
+    <div class="h-50px"></div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-11 col-lg-10 shadow text-black p-5 mx-auto">
+                <h1 class="ft-20 lh-30 text-center mb-5 ft-bold">Marketplace - Terms of Use</h1>
+
+                <div class="privacy_text">
+                    <br /> <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. Definitions and Interpretation</strong><br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.1 In these Terms of Use unless the context otherwise requires, the following expressions have the following
+                    meanings:
+                    <br />
+                    <br /> <strong>Account</strong>
+                    <br /> means an account required to access and/or use certain areas of Our Site, including Our Marketplace;<br />
+                    <br /> <strong>Buyer</strong>
+                    <br /> means a User who makes a purchase on Our Marketplace;<br />
+                    <br /> <strong>Content</strong>
+                    <br /> means any and all text, images, audio, video, scripts, code, software, databases, and any other form of information capable of being stored on a computer that appears on, or forms part of, Our Site;<br /> &ldquo;Listing&rdquo;
+                    <br /> means a listing on Our Marketplace advertising an item or items for sale;<br />
+                    <br /> <strong>Listing Fee</strong><br /> means a fee payable for submitting and/or renewing a Listing;<br />
+                    <br /> <strong>Marketplace</strong>
+                    <br /> means Our platform for Buyers and Sellers on Our Site;<br />
+                    <br /> <strong>Our Site</strong><br /> means this website and Marketplace;<br />
+                    <br /><strong>Payment Service</strong><br /> means the payment service provided by Our Payment Processor;<br />
+                    <br /> <strong>Payment Service Account</strong><br /> means an account for the holding of funds provided as part of the Payment Service and administered by the Third-Party Payment Service Provider;<br />
+                    <br /> <strong>Seller</strong>
+                    <br /> means a User who sells on Our Marketplace;<br />
+                    <br /> <strong>Transaction Fee</strong><br /> means a set fee or a percentage fee applied to each sale made on Our Marketplace;<br />
+                    <br /> <strong>User</strong>
+                    <br /> means a user of Our Site;<br /> <strong>User Content</strong><br /> means any Content added to Our Site by a User;<br />
+                    <br /> <strong>We/Us/Our</strong>
+                    <br /> LEDB Ltd., a company registered in England &amp; Wales under number 12878603 and whose registered office is at 42 Pear Tree Avenue, Flat 1, Long Ashton, Bristol, England, BS41 9FF (&ldquo;the Client&rdquo; &ldquo;the Company&rdquo;);<br
+                    />
+                    <br />
+                    <br /> <strong>2. Information About Us</strong><br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.1 Our Site is owned and operated by LEDB Ltd., a company registered in England &amp; Wales under number 12878603 and whose registered office is at
+                    42 Pear Tree Avenue, Flat 1, Long Ashton, Bristol, BS41 9FF, United Kingdom (&ldquo;Us&rdquo;, &ldquo;the Company&rdquo;);<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2 Our VAT number is &lt;&lt;insert VAT number&gt;&gt;.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.3
+                    We are the Provider of an Emporium Marketplace, to bring together Buyers and Sellers. We take a commission or listing fee from the value of goods or services listed/ advertised, in return for providing Our Services.<br />
+                    <br /> <strong> 3. Access to and Use of Our Site</strong><br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.1 Access to Our Site is free of charge.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2 It is your responsibility to make any and all arrangements
+                    necessary in order to access Our Site.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.3 Access to Our Site is provided &ldquo;as is&rdquo; and on an &ldquo;as available&rdquo; basis. We may alter, suspend, or discontinue Our Site (or any part
+                    of it) at any time and without notice. Subject to the remainder of these Terms of Use, We will not be liable to you in any way if Our Site (or any part of it) is unavailable at any time and for any period.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.4
+                    Use of Our Site is strictly subject to Our Terms of Use. Please ensure that you have read them carefully and that you understand them.
+                    <br />
+                    <br /><strong> 4. Age Restrictions</strong><br /> You may only sell on Our Marketplace if you are at least 18 years of age. If you are under 18 years, then you may open an account with the consent/ permission of your Parent or Legal
+                    Guardian. You should only use the account under their supervision.<br />
+                    <br /> <strong>5. Our Marketplace</strong><br /> Our Marketplace is provided solely as an online venue for Buyers and Sellers. We are not a party to any transactions, contracts for sale or other relationships between Buyers and Sellers.
+                    You hereby acknowledge and agree that:<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.1 Buyers are not making purchases from Us and are not entering into a contract with Us. A Buyer&rsquo;s purchase is from the Advertiser/ Seller, and the contract
+                    is between them;<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2 We will not be a party, judge or enforcer to any dispute between any Party to the transaction. Any claims must be made directly against the party concerned;<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.3
+                    We do not pre-screen Sellers, Buyers or any items that you advertise in Listings on Our Marketplace. We are not, therefore, in any way responsible for the quality, legitimacy or suitability of any items sold or for the content of any
+                    Listings; and<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.4 While you are required to comply with these Terms, which include provisions covering important matters such as payment methods, processing times, and delivery methods, We recognise
+                    that all Sellers for example are different and may not accept the same payment methods, process transactions within the same time frame, or offer the same delivery methods (or prices).<br />
+                    <br /> <strong>6. What Can and Cannot be Sold on Our Marketplace</strong><br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.1 The following items are not permitted on Our Marketplace:<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.a.1 &lt;&lt;insert a
+                    list of what Sellers are not permitted to sell on the Marketplace, defining things clearly, adding explanations where necessary&gt;&gt;.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2 We reserve the right to remove any Listing that breaches
+                    the provisions of this Clause 6. If We do so, please note that Listing Fees are non-refundable. In addition, We may also suspend or terminate your Account. All sums due will remain due and payable notwithstanding any suspension or
+                    termination for any reason.<br />
+                    <br /> <strong>7. Descriptions Policy</strong><br /> When selling on Our Marketplace, it is important that all descriptions of items are truthful and accurate, and that all visual representations are true representations of what you
+                    are selling (as far as is reasonably possible). You agree that all Listings submitted by you will comply with the following:<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.1 if an item is not new, it must not be described as such;<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2
+                    if an item is used, the description must give as much detail as is reasonably possible about the age of the item, its condition, and any damage or defects;<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.3 if an item is not original (i.e. it
+                    has been purchased from, or otherwise supplied by, another party), it must not be described as such;<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.4 you may only describe something as being made or done by you if that is truly the case. If
+                    any other party is involved, your Listing must state and describe their involvement;<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.5 subject to sub-Clause 7.6, photographs must be of what you are selling and not stock photographs, photographs
+                    from other Sellers or websites, drawings, renderings, or other representations;<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.6 if you are selling multiples of the same item (including, but not limited to, items made to order, customised versions
+                    of an item, or variations resulting in a similar but not identical product), you do not need to include photographs of every individual item, provided that your description sets out any variations that are likely to be made, stating
+                    that the photographs provided are examples only;<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.7 Any listing must include delivery costs where it is possible to calculate them in advance, or reasonable estimates where it is not possible to
+                    calculate them in advance;<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.8 if you are offering bespoke items made or customised to order, provide full details of the options available to Buyers;<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.9 if you
+                    are offering items made or customised to order and the price for those items will vary according to a Buyer&rsquo;s requirements, include full details of pricing including, if possible, set prices for different versions of an item
+                    or, if this is not possible, a statement that pricing will vary according to the Buyer&rsquo;s requirements;<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.10 if you are offering items made or customised to order, you must provide reasonable
+                    estimates for the time required to make or customise such orders and use all reasonable efforts to ensure that you keep to such times;<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.11 you must not use any Content that belongs to other parties
+                    in your Listings without their express permission (please refer to Clause 8 for more information on intellectual property rights);<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.12 your Listing must not advertise alternate locations from which
+                    your items can be purchased, thereby avoiding Our Transaction Fees.
+                    <br />
+                    <br /> <strong>8. Intellectual Property Rights</strong><br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.1 The provisions of Clause 6 of Our Terms of Use apply to all User Content submitted to Our Site, including any and all User Content submitted
+                    to Our Marketplace whether in Listings or as digital content for purchase by Buyers.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2 Sellers must, at all times, respect the intellectual property rights of other Sellers on Our Marketplace.
+                    Under no circumstances may you use intellectual property belonging to another party without that party&rsquo;s express permission.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.3 If you feel that another User (whether they are another Seller
+                    or a Buyer or otherwise) has infringed your intellectual property rights in any way, please contact Us by email.
+                    <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.4 If another party contacts Us accusing you of infringing their intellectual property rights:<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.a.1 We will contact you to inform you of the complaint;<br />                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.a.2 We may remove the User Content that is the subject of the complaint;<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.a.3 if you have questions regarding the complaint, or wish to challenge it, you must contact
+                    the complaining party. We will not be a party to any dispute concerning intellectual property and cannot assist in resolving such disputes; and<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.a.4 you are free to resubmit the User Content in
+                    question if the complaint is resolved and you have the permission of the complaining party to do so (where it is required). We can neither permit nor deny such resubmission as We will not be a party to the dispute.<br />
+                    <br /> <strong>9. Seller Rules and Acceptable Usage Policy</strong><br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.1 When using Our Marketplace, you must do so lawfully, fairly, and in a manner that complies with the provisions of this Clause
+                    9. Specifically:<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.a.1 you must ensure that you comply fully with all local, national, or international laws, and/or regulations (including but not limited to those which may apply to the item(s)
+                    you wish to sell);<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.a.2 you must not use Our Marketplace in any way, or for any purpose, that is unlawful or fraudulent;<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.a.3 you must not use Our Marketplace
+                    to knowingly send, upload, or in any other way transmit data that contains any form of virus or other malware, or any other code designed to adversely affect computer hardware, software, or data of any kind;<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.a.4
+                    you must not use Our Marketplace in any way, or for any purpose, that is intended to harm any person or persons in any way;<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.a.5 you must always provide accurate, honest information about yourself
+                    and any and all items that you are selling on Our Marketplace;<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.a.6 you must not charge excessively for delivery to Buyers;<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.a.7 you must state the price of
+                    an item accurately and clearly, and must not change it in order to avoid paying the applicable Transaction Fee; and<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.a.8 you must not engage in any form of price fixing with other Users (including
+                    Sellers and Buyers).<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2 When using Our Marketplace, you must not submit anything (including, but not limited to, material in a Listing) or otherwise do anything that:<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.a.1
+                    is sexually explicit;<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.a.2 is obscene, deliberately offensive, hateful, blasphemous to religion, or otherwise inflammatory;<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.a.3 promotes violence;<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.a.4
+                    promotes or assists in any form of unlawful activity;<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.a.5 discriminates against, or is in any way defamatory of, any person, group, or class of persons; race; gender; religion; nationality; disability;
+                    sexual orientation; or age;<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.a.6 is intended or otherwise likely to threaten, harass, annoy, alarm, inconvenience, upset, or embarrass another person;<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.a.7 is
+                    calculated or is otherwise likely to deceive;<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.a.8 is intended or otherwise likely to infringe (or threaten to infringe) another person&rsquo;s right to privacy or otherwise uses their personal
+                    data in a way that you do not have a right to;<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.a.9 misleadingly impersonates any person or otherwise misrepresents your identity or affiliation in a way that is calculated to deceive (obvious parodies
+                    are not included within this definition provided that they do not fall within any of the other provisions of this sub-Clause 9.2);<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.a.10 implies any form of affiliation with Us where none exists;<br
+                    /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.a.11 infringes, or assists in the infringement of, the intellectual property rights (including, but not limited to, copyright, trade marks, patents, and database rights) of any other party; or<br
+                    /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.a.12 is in breach of any legal duty owed to a third party including, but not limited to, contractual duties and duties of confidence.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.3 We reserve the right to
+                    suspend or terminate your access to Our Marketplace if you materially breach the provisions of this Clause 9 or any of the other provisions of these Terms of Use. Further actions We may take include, but are not limited to:<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.a.1
+                    removing your Listing(s) from Our Marketplace;<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.a.2 issuing you with a written warning;<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.a.3 legal proceedings against you for reimbursement of any and all relevant
+                    costs resulting from your breach on an indemnity basis;<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.a.4 further legal action against you as appropriate;<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.a.5 disclosing such information to law enforcement
+                    authorities as required or as We deem reasonably necessary; and/or<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.a.6 any other actions which We deem reasonably necessary, appropriate, and lawful.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.4 We
+                    hereby exclude any and all liability arising out of any actions that We may take in response to breaches of these Terms of Use.<br />
+                    <br /> <strong>10. Listing Fees and Transaction Fees</strong><br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.1 Listing Fees are charged when submitting a new Listing and/or when renewing an existing Listing. Please refer to the latest updated
+                    rate/s shown on Our Site.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2 Listing Fees are payable whether or not your Listing results in a sale and if your Listing is for the sale of multiples of the same item, after the submission of the
+                    Listing incurs the first Listing Fee payment, all sales after the first sale will each incur the Listing Fee.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.3 A Transaction Fee of &lt;&lt;insert percentage&gt;&gt;% of the price of each item
+                    sold will apply to each sale. Transaction Fees are calculated based only on the price of an item, not on additional sums such as delivery charges.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.4 Any and all actions designed to avoid the payment
+                    of any fees described in these Terms (including, but not limited to those described in sub-Clauses 7.12 and 9.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.7) are strictly prohibited.<br />
+                    <br /><strong> 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. Payment Service</strong><br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.1 All Payments on Our Marketplace are made through our Third-Party Payment Service Provider as notified.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2
+                    Your use of the Payment Service requires an account with the Third-Party Payment Service Provider and will be subject to its own terms and conditions and privacy policy. You will be required to read and accept those terms and conditions
+                    and privacy policy before taking payments from Buyers on Our Marketplace.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.3 By using the Payment Service, you acknowledge and agree to Us sharing your personal information and/or information about
+                    your transactions on Our Marketplace with the Third-Party Payment Service Provider.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.4 If We receive notice from the Third-Party Payment Service Provider that your use of Our Marketplace or the
+                    Payment Service is in breach of their terms or of any agreement between you and them, We may take actions including, but not limited to, those necessary to rectify your breach, removing your ability to use the Payment Service to make
+                    or accept payments on Our Marketplace, and/or the suspension or termination of your Account on Our Site.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.5 The Third-Party Payment Service Provider reserves the right to refuse the use of the Payment
+                    Service to anyone, for any reason, and at any time.<br />
+                    <br /> <strong>12. Payments from Buyers</strong><br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.1 All payments are processed using the Payment Service described above in Clause 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2
+                    You may choose to allow Buyers to pay you using some or all of the payment methods listed above in sub-Clause 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.4.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.3 When a Buyer pays for an item, their payment
+                    will be credited to your Payment Service Account or will be transferred directly into your designated bank account within 3 working days if not sooner.
+                    <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.4 If a Buyer does not pay, you may cancel the transaction. Please refer to Clause 18 for more information on your cancellation rights.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.5 We will not make
+                    any Buyers&rsquo; payment details (including, but not limited to, card numbers, bank account numbers, and sort codes) available to you at any time, or for any reason. All payment details are held securely and shared only with Our Third-Party
+                    Payment Service Provider.<br />
+                    <br /> <strong>13. Payments to Us</strong><br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.1 All sums due must be paid in full by the date and mechanism shown.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2 All sums due must be paid in full without
+                    any set-off, counterclaim, deduction, or withholding (except where any deduction or withholding of tax is required by law).<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.3 If you do not make any payment due to Us on time, We will suspend any
+                    Listings you have on Our Marketplace and may, in addition, suspend or terminate your Buying Account on Our Site. All sums due will remain due and payable notwithstanding any suspension or termination for any reason.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.4
+                    If you believe that We have charged you an incorrect amount, please contact Us by email as soon as reasonably possible to let Us know.<br />
+                    <br /> <strong>14. Taxes</strong><br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.1 It is your responsibility to collect and pay applicable taxes on any sales made through Our Marketplace.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2 Where any tax,
+                    for example VAT, forms a part of the price of any item on Our Marketplace, the tax must be included in the price of the item.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.3 Value added tax (&ldquo;VAT&rdquo;) may be charged to Buyers on purchases
+                    and to Sellers on fees payable to Us.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.4 If you are VAT registered, you may be required to charge VAT on the items that you sell on Our Marketplace.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.5 If you
+                    sell digital items through Our Marketplace, We may automatically collect VAT on those items if we are entitled to do so.<br />
+                    <br /> <strong>15. Delivery</strong><br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.1 You must dispatch items as soon as is reasonably possible upon receipt of payment from a Buyer under Clause 12, taking into account the nature of the item(s)
+                    in question, preparation time and, where relevant, manufacturing time (if items are made or customised to order). Unless your Listing has stated otherwise, or unless the Buyer has agreed otherwise, you must dispatch items no later
+                    than 30 calendar days after the date on which the sale takes place.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2 You must ensure that you dispatch items to the correct address provided by the Buyer. It is your responsibility to ensure that
+                    the address that you use exactly matches that provided by the Buyer. If items dispatched do not reach the Buyer due to an incorrect address provided by the Buyer, it is the Buyer&rsquo;s responsibility and not yours.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.3
+                    You are free to determine the delivery charges for your items; however, delivery charges must be reasonable, not excessive, and must genuinely reflect the actual cost to you of delivering the item in question to the Buyer.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.4
+                    You must provide an accurate ships-from address in your listing information.
+                    <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.5 You are responsible for delivering items to Buyers upon receipt of payment. You may deliver items personally, arrange with the Buyer for the Buyer to collect items, or use a postal or delivery
+                    service of your choice as agreed between you and the Buyer.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.6 It is strongly recommended that you obtain proof of postage or dispatch when dispatching items. Such proof will be important in the
+                    event that a Buyer does not receive the item(s) from you. We are not liable for any goods missing or not delivered via the post or a courier service.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.7 You must comply with any and all applicable
+                    shipping and customs regulations when delivering items to Buyers. It is your responsibility to check, be aware of, understand, and comply with all such regulations.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.8 If selling goods or services,
+                    you must show your returns and acceptable refunds policy in any listing.<br />
+                    <br /> <strong>16. Buyers</strong>&rsquo; Rights to Cancel and Return Items<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.1 Buyers who are Consumers (that is, not businesses) based in the UK or the European Union may be entitled to a &ldquo;cooling-off&rdquo;
+                    period within which they may cancel their contract with you and return an item for any reason. If applicable, the cooling-off period ends 14 calendar days after the day on which the Buyer (or someone nominated by the Buyer) receives
+                    the item.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2 The cooling-off period does not apply in the following circumstances:<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.a.1 If the item is sealed for health or hygiene reasons, and the Buyer has
+                    unsealed the item after receiving it; or<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.a.2 If the item consists of sealed audio or video recordings (e.g. CD or DVD) or sealed computer software, and the Buyer has unsealed the item after receiving
+                    it; or<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.a.3 If the item is digital content and it has been downloaded or otherwise accessed by the Buyer; or<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.a.4 If the item is likely to deteriorate quickly,
+                    for example flowers or food; or<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.a.5 If the item has been customised, personalised or made-to-order for the Buyer; or<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.a.6 If the item has been inseparably mixed
+                    with another item or other items (according to their nature) after the Buyer has received it.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.3 If a Buyer exercises their right to cancel during the cooling-off period, they must inform you of
+                    that decision within the cooling-off period. The Buyer may do so in any way they wish. Cancellation by email or by post is effective from the date on which the Buyer sends you their message. Please note that the cooling-off period
+                    lasts for whole calendar days. If, for example, the Buyer sends you an email or letter by 23:59:59 on the final day of the cooling-off period, their cancellation will be valid and must be accepted.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.4
+                    Items must be returned to you by the Buyer no more than 14 calendar days after the day on which the Buyer informs you that they wish to cancel. The Buyer will be responsible for the costs of returning items to you if they cancel under
+                    the cooling-off period.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.5 When a Buyer cancels under the cooling-off period, you must issue a refund within 14 calendar days of the following:
+                    <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.a.1 The day on which you receive the item(s) back; or<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.a.2 The day on which the Buyer informs you (supplying evidence) that they have sent the item(s) back
+                    (if this is earlier than the day under sub-Clause 16.5.1); or
+                    <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.a.3 If you have not yet dispatched the item(s), the day on which the Buyer informs you that they wish to cancel.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.6 You may make certain limited deductions
+                    from refunds under this Clause 16 as follows:<br /> 6.a.1 You may reduce a refund for any diminished value in an item resulting from the Buyer&rsquo;s excessive handling of it (e.g. handling going beyond that which would be permitted
+                    in a shop); and/or<br /> 6.a.2 You are only required by law to reimburse standard delivery charges. If a Buyer has chosen a premium delivery method, you are only required to reimburse them for the equivalent of standard delivery.
+                    <br />
+                    <br /><strong> 17. Problems with Transactions and Buyers&rsquo; Rights</strong><br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.1 By law, Sellers must provide goods and/or digital content that are/is of satisfactory quality, fit for purpose,
+                    as described at the time of purchase, in accordance with any pre-contract information that you provide to the Buyer, and that matches any samples or models that you have shown to the Buyer (unless you have made the Buyer aware of any
+                    differences).
+                    <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2 If items do not conform with the requirements outlined in sub-Clause 17.1 and, for example, have faults or are damaged when the Buyer receives them, the Buyer must contact you as soon as reasonably
+                    possible to inform you of the problem. The following remedies will be available to the Buyer:<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.a.1 Beginning on the day that the Buyer receives the item, a 30 calendar day right to reject them and
+                    to receive a full refund if they do not conform.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.a.2 If the Buyer does not wish to reject the item(s), if the 30 calendar day rejection period does not apply, or if it has expired, the Buyer may
+                    request a repair or replacement. You must bear the costs and must carry out the repair or replacement within a reasonable time and without significant inconvenience to the Buyer.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.a.3 If, after
+                    a repair or replacement, the item(s) still do not conform (or if you cannot repair or replace it/them, as described above, or if you have failed to act within a reasonable time or without significant inconvenience to the Buyer), the
+                    Buyer may have the right to keep the item(s) at a reduced price, or to reject it/them in exchange for a refund.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.3 Please note that Buyers will not be eligible to claim under this Clause 17 in the
+                    following circumstances:<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.a.1 you inform the Buyer of any fault(s), damage, or other problems with the item(s) before the Buyer purchases them and it is because of that/those same issue(s) that
+                    the Buyer subsequently wishes to return them;<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.a.2 the Buyer has purchased the item(s) for an unsuitable purpose that is neither obvious nor made known to you and the problem has resulted from the
+                    Buyer&rsquo;s use of the item(s) for that purpose; or<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.a.3 the problem is the result of normal wear and tear, misuse, or intentional or careless damage.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.a.4
+                    We provide a cancellation form on Our Site &lt;&lt;insert link&gt;&gt; for Buyers to use when returning items. The costs of returning items to you should be covered by you, reimbursing the Buyer where necessary.
+                    <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.4 Refunds (whether full or partial, including reductions in price) under this Clause 17 must be issued within 14 calendar days of the day on which you agree that the Buyer is entitled to a refund.<br
+                    /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.5 Any and all refunds under this Clause 17 must include all delivery costs paid by the Buyer when the item(s) was/were originally purchased.<br />
+                    <br /> <strong>18. Further Transaction Cancellation Rights</strong><br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.1 Buyers and Sellers have the right to cancel a transaction and issue/ claim a full refund of any sums paid (including delivery
+                    charges) in the following circumstances:<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.a.1 You and the Buyer have mutually agreed to cancel the transaction before the item(s) is/are dispatched;<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.a.2 You
+                    and the Buyer have mutually agreed to cancel the transaction following receipt by the Buyer of the item(s) and the Buyer has returned the item(s) to you;<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.a.3 The Buyer has not paid; or<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.a.4
+                    You have chosen to refuse service to the Buyer.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2 Refunds must be made within 14 days of the date on which you and the Buyer agree the cancellation, or the date on which you inform the Buyer that
+                    you are cancelling the transaction. Please note, that any and all listing or advertising fees will still be applied and payable on the listing.<br />
+                    <br /> <strong>19. Your Account Cancellation Rights</strong><br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.1 You may close your Account and cancel your agreement with Us by clicking the close account button in your account control panel.<br
+                    /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2 Any outstanding sums due and payable to Us (including, but not limited to, Listing Fees and Transaction Fees) will remain payable by the original due date and your Account will not be fully closed
+                    until all sums due to Us have been paid.<br />
+                    <br /> <strong>20. Our Liability to You</strong><br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.1 As stated earlier, We are not a party to any transactions, contracts or other relationships, or disputes between Buyers and Sellers.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2
+                    We will be responsible for any foreseeable loss or damage that you may suffer as a result of Our breach of these Terms only as a result of Our negligence.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.3 Subject to sub-Clause 20.2, to the fullest
+                    extent permissible by law, We will not be liable to you for any loss of profit, loss of business, interruption to business, or for any loss of business opportunity.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.4 Nothing in these Terms seeks
+                    to limit or exclude Our liability for death or personal injury caused by Our negligence (including that of Our employees, agents, or sub-contractors); or for fraud or fraudulent misrepresentation.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.5
+                    Nothing in these Terms seeks to limit or exclude consumers&rsquo; legal rights. Your statutory rights are not affected.
+                    <br />
+                    <br /> <strong>2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. Events Outside of Our Control (Force Majeure)</strong><br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.1 We will not be liable for any failure or delay in performing Our obligations to you where
+                    that failure or delay results from any cause that is beyond Our reasonable control. Such causes include, but are not limited to: power failure, internet service provider failure, industrial action by third parties, civil unrest, fire,
+                    explosion, flood, storms, earthquakes, subsidence, acts of terrorism, acts of war, governmental action, lockdowns, epidemic, pandemic or other natural disaster, or any other event that is beyond Our reasonable control.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2
+                    If any event described under this Clause 21 occurs that is likely to adversely affect Our performance of any of Our obligations to you:<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.a.1 We will inform you as soon as is reasonably possible;<br
+                    /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.a.2 Our obligations under these Terms will be suspended and any time limits that We may be bound by will be extended accordingly;<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.a.3 We will inform you when
+                    the event outside of Our control is over and provide details of any new dates, times, or availability of services as necessary;<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.a.4 If the event outside of Our control continues for more than 1
+                    month We may suspend our service and issue refunds for any affected listings;<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.a.5 If the event outside of Our control occurs and continues for more than 1 month and you wish to exercise your right
+                    to cancel under sub-Clause 19.3.4, you may do so by emailing us or write to us at our office.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.a.6 Any refunds due to you as a result of your cancellation under sub-Clause 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2.5
+                    will be paid to you as soon as is reasonably possible and in any event no later than 14 calendar days after your Account is cancelled.<br />
+                    <br /> <strong>22. Communication and Contact Details</strong><br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.1 If you wish to contact Us with general questions or complaints, you may contact Us by email or by post to our office.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2
+                    For matters relating to Our Marketplace including, but not limited to, these Terms regarding Sellers, transactions, Buyers, and other issues, please contact Us by email.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.3 For matters relating
+                    to cancellations, please contact Us as above or refer to our FAQs or to the relevant Clauses above.<br />
+                    <br /> <strong>23. Data Protection</strong><br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.1 All personal information that We may use will be collected, processed, and held in accordance with the provisions of EU Regulation 2016/679 General
+                    Data Protection Regulation (&ldquo;GDPR&rdquo;) and your rights under the GDPR.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2 For complete details of Our collection, processing, storage, and retention of personal data including, but not
+                    limited to, the purpose(s) for which personal data is used, the legal basis or bases for using it, details of your rights and how to exercise them, and personal data sharing (where applicable), please refer to Our Privacy Policy and
+                    Cookie Policy which is at the foot of our Homepage.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.3 As a Seller, you will also collect, hold, and process Buyers&rsquo; personal information in the course of transactions (for example, buyers&rsquo;
+                    names, email addresses, and postal addresses). You must have your own privacy policy in place to govern your collection, processing, and holding of Buyers&rsquo; personal data. Sellers are, therefore, also considered data controllers
+                    under the UKGDPR and you will be responsible for complying with your legal obligations and protecting Buyers&rsquo; rights under the UKGDPR.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.4 You must only use the personal data of other Users
+                    (whether they are Buyers or Sellers) to the extent necessary to complete a transaction, to communicate about a specific transaction, to communicate via Our Marketplace, and/or to respond to messages from them. You may not add any User
+                    to a mailing list, use their data for marketing, or retain any payment details.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.5 You may only use another User&rsquo;s personal data for additional purposes with their express consent.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.6
+                    If any Seller and Us are found to be joint data controllers of any Buyers&rsquo; personal data, and We are sued, fined, or otherwise incur any expense because of something you have done with a Buyer&rsquo;s personal data, you agree
+                    to indemnify Us for any expenses incurred by Us in connection with your actions in respect of that personal data. Further details of the requirements of the GDPR can be obtained from the Information Commissioner&rsquo;s Office.<br
+                    />
+                    <br /> <strong>24. Other Important Terms</strong><br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.1 We may transfer (assign) Our obligations and rights under these Terms of Use to a third party (this may happen, for example, if We sell Our business).
+                    If this occurs, you will be informed by Us in writing. Your rights under these Terms will not be affected and Our obligations under these Terms will be transferred to the third party who will remain bound by them.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2
+                    You may not transfer (assign) your obligations and rights under these Terms of Use without Our express written permission.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.3 If any of the provisions of these Terms of Use are found to be unlawful,
+                    invalid or otherwise unenforceable by any court or other authority, that / those provision(s) shall be deemed severed from the remainder of these Terms of Use. The remainder of these Terms of Use shall be valid and enforceable.<br
+                    /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.4 No failure or delay by Us in exercising any of Our rights under these Terms of Use means that We have waived that right, and no waiver by Us of a breach of any provision of these Terms of Use means
+                    that We will waive any subsequent breach of the same or any other provision.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.5 We may revise these Terms from time to time in response to changes in relevant laws and other regulatory requirements.
+                    If any changes to these Terms of Use are to your material disadvantage, you may cancel as set out in sub-Clause 19.3.3.
+                    <br />
+                    <br /> <strong>25. Law and Jurisdiction</strong><br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.1 These Terms and Conditions, and the relationship between you and Us (whether contractual or otherwise) shall be governed by and construed in accordance
+                    with the Laws of England &amp; Wales.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2 If you are a Consumer, you will benefit from any mandatory provisions of the law in your country of residence. Nothing in Sub-Clause 25.1 above takes away
+                    or reduces your rights as a consumer to rely on those provisions.
+                    <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.3 If you are a Consumer, any dispute, controversy, proceedings or claim between you and Us relating to these Terms and Conditions, or the relationship between you and Us (whether contractual or
+                    otherwise) shall be subject to the exclusive jurisdiction of the courts of England.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.4 If you are a business, any disputes concerning these Terms and Conditions, the relationship between you and
+                    Us, or any matters arising therefrom or associated therewith (whether contractual or otherwise) shall be subject to the exclusive jurisdiction of the courts of England &amp; Wales.</p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <div class="h-50px "></div>
+
+    <!-- content area End -->
+
+
+
+    <footer style="background: #F8F8F8;height: 440px;" class="d-flex justify-content-center align-items-center">
+        <span class="ft-35 ft-medium">Footer</span>
+    </footer>
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" integrity="sha512-7x3zila4t2qNycrtZ31HO0NnJr8kg2VI67YLoRSyi9hGhRN66FHYWr7Axa9Y1J9tGYHVBPqIjSE1ogHrJTz51g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/custom.js" type="text/JavaScript"></script>
+</body>
+
+</html>

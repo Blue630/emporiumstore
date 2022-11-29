@@ -1,0 +1,905 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-control" content="public">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <!-- JSDelivr -->
+    <link href='https://cdn.jsdelivr.net/npm/css.gg/icons/all.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Emporium</title>
+
+</head>
+
+<body>
+    <!-- Header start -->
+    <header id="main-header">
+        <div class="container-fluid">
+            <div class="headersec_1">
+                <div class="d-flex align-items-center gap-lg-5 child_flex">
+                    <div class="logo">
+                        <img src="img/logo.png" class="img-fluid" alt="">
+                    </div>
+                    <div class="search_form">
+                        <form action="#">
+                            <select class="select-search-category ft-10" name="term">
+                                <optgroup class="ft-14 m-0 p-0"  label="All categories"> 
+                                <option value="accessories">Accessories</option>
+                                <option value="backup-charger"> &nbsp;&nbsp;Backup Charger</option>
+                                <option value="headphone"> &nbsp;&nbsp;Headphone</option>
+                                <option value="power-socket"> &nbsp;&nbsp;Power Socket</option>
+                                <option value="printer"> &nbsp;&nbsp;Printer</option>
+                                <option value="usb"> &nbsp;&nbsp;USB</option>
+                                <option value="webcam"> &nbsp;&nbsp;Webcam</option>
+                                <option value="wi-fi-router"> &nbsp;&nbsp;Wi-Fi Router</option> 
+                            </optgroup>
+                            </select>
+                            <span class="mx-4 ft-24 text-light-grey ft-100">|</span>
+                            <div class="search-content w-100 d-flex">
+                                <input type="text" value="" name="s" class="w-100 ft-13" placeholder="I'm searching for..." autocomplete="off">
+                                <button type="submit" title="Search" value="Search"><i data-feather="search"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="right-header">
+                        <div class="d-flex justify-content-between pe-4">
+                            <a href="#">Sign in</a>
+                            <a href="#">My Orders</a>
+                            <a href="" class="d-flex align-items-center gap-1 cart_icon">
+                                <span>Cart</span>
+                                <div class="position-relative">
+                                    <span class="add_product_count">12</span>
+                                    <i data-feather="shopping-cart"></i>
+                                </div>
+                            </a>
+                            <a href="#" class="wishlist_header">
+                                <div class=" position-relative">
+                                    <span>5</span>
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="seperator_blue" />
+
+        <div class="container-fluid">
+            <div class="headersec_2">
+                <div class="d-flex align-items-center">
+                    <div class="nav_icon d-none d-lg-block">
+                        <div class="d-flex align-items-center cusror-pointers text-white">
+                            <i data-feather="menu"></i>
+                            <span>ALL</span>
+                        </div>
+                    </div>
+                    <div class="emp-menu mx-lg-auto">
+                        <nav class="navbar navbar-expand-lg">
+                            <div class="container-fluid">
+                                <button class="navbar-toggler text-white d-flex align-items-center p-0 d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                                    <i data-feather="menu"></i>  <span class="ft-16 ms-2">ALL</span>
+                              </button>
+                                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                                    <div class="navbar-nav">
+                                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                        <a class="nav-link" href="#">Electronics</a>
+                                        <a class="nav-link" href="#">Fashion</a>
+                                        <a class="nav-link" href="#">Today’s Deals</a>
+                                        <a class="nav-link" href="#">Suggested for you</a>
+                                        <a class="nav-link" href="#">Trending</a>
+                                        <a class="nav-link" href="#">Saved</a>
+                                        <a class="nav-link" href="#">Wishlisted</a>
+                                        <a class="nav-link" href="#">current Auctions</a>
+                                        <a class="nav-link" href="#">Sell on Emporium</a>
+                                        <a class="nav-link" href="#">Best Seller</a>
+                                        <a class="nav-link" href="#">Subscribe & Save</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+    </header>
+
+    <!-- Header End -->
+
+
+    <!-- content area start -->
+    <div class="h-50px d-none d-lg-block"></div>
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-3" id="product_aside_bar">
+                <aside id="product_aside">
+                    <div class="close_aside_toggle cusror-pointers float-end d-lg-none my-4">
+                        <i data-feather="x-circle"></i>
+                    </div>
+                    <div class="w-100 clearfix"></div>
+                    <div class="related_cat d-none d-lg-block text-black">
+                        <h3 class="ft-20 lh-30 text-black">Related Categories</h3>
+                        <div class="parent_submenu text-black">
+                            <a href="#" class="ft-18 lh-27"><i data-feather="chevron-left"></i> Electronics</a>
+                            <ul class="list-unstyled ft-15 lh-22 text-secondary">
+                                <li><a href="#" class="ft-bold active">Mobile Phones</a></li>
+                                <li>
+                                    <a href="#">Accessories</a>
+                                </li>
+                                <li>
+                                    <a href="#">Cases & Covers</a>
+                                </li>
+                                <li>
+                                    <a href="#">Cases</a>
+                                </li>
+                                <li>
+                                    <a href="#">Screen Protectors</a>
+                                </li>
+                                <li>
+                                    <a href="#">Mobile Phone Parts</a>
+                                </li>
+                                <li>
+                                    <a href="#">Selfie Stick and Tripod</a>
+                                </li>
+                                <li>
+                                    <a href="#">Mobile Camera Lenses</a>
+                                </li>
+                                <li>
+                                    <a href="#">Power Banks</a>
+                                </li>
+                                <li>
+                                    <a href="#">Telephones</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div id="filters">
+                        <div class="accordion" id="accordion_prod">
+                            <div class="accordion-item  border-0 Brands_filter">
+                                <h2 class="accordion-header" id="heading1">
+                                    <button class="accordion-button ft-20 lh-30 ft-500" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                                        Brands
+                                        <i data-feather="minus"></i>
+                                        <i data-feather="plus"></i>
+                                </button>
+                                </h2>
+                                <div id="collapse1" class="accordion-collapse collapse show ps-4 text-secondary" aria-labelledby="heading1">
+                                    <div class="accordion-body">
+                                        <div class="d-flex flex-wrap brands_listing">
+                                            <div>
+                                                <label for=" "><input type="checkbox" id=" "> <img src="img/image 4.png" class="img-fluid" alt=""></label>
+                                            </div>
+                                            <div>
+                                                <label for=""><input type="checkbox" id=""> <img src="img/image 5.png" class="img-fluid" alt=""></label>
+                                            </div>
+                                            <div>
+                                                <label for=""><input type="checkbox" id=""> <img src="img/image 7.png" class="img-fluid" alt=""></label>
+                                            </div>
+                                            <div>
+                                                <label for=""><input type="checkbox" id=""> <img src="img/image 4.png" class="img-fluid" alt=""></label>
+                                            </div>
+                                            <div>
+                                                <label for=""><input type="checkbox" id=""> <img src="img/image 7.png" class="img-fluid" alt=""></label>
+                                            </div>
+                                            <div>
+                                                <label for=""><input type="checkbox" id=""> <img src="img/image 5.png" class="img-fluid" alt=""></label>
+                                            </div>
+
+
+                                        </div>
+                                        <div class="see_more_toggle">
+                                            <div class="d-flex flex-wrap brands_listing">
+                                                <div>
+                                                    <label for=""><input type="checkbox" id=""> <img src="img/image 4.png" class="img-fluid" alt=""></label>
+                                                </div>
+                                                <div>
+                                                    <label for=""><input type="checkbox" id=""> <img src="img/image 5.png" class="img-fluid" alt=""></label>
+                                                </div>
+                                                <div>
+                                                    <label for=""><input type="checkbox" id=""> <img src="img/image 7.png" class="img-fluid" alt=""></label>
+                                                </div>
+                                                <div>
+                                                    <label for=""><input type="checkbox" id=""> <img src="img/image 4.png" class="img-fluid" alt=""></label>
+                                                </div>
+                                                <div>
+                                                    <label for=""><input type="checkbox"> <img src="img/image 7.png" class="img-fluid" alt=""></label>
+                                                </div>
+                                                <div>
+                                                    <label for=""><input type="checkbox"> <img src="img/image 5.png" class="img-fluid" alt=""></label>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <a href="#" class="ft-18 see_all mt-4 d-block">SEE ALL</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item  border-0 OperatingSystem_filter checkbox_filter">
+                                <h2 class="accordion-header" id="heading2">
+                                    <button class="accordion-button collapsed ft-20 lh-30 ft-500" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                        Operating System
+                                  <i data-feather="minus"></i>
+                                        <i data-feather="plus"></i>
+                                </button>
+                                </h2>
+                                <div id="collapse2" class="accordion-collapse collapse ps-4 text-secondary" aria-labelledby="heading2">
+                                    <div class="accordion-body">
+                                        <div class="checkbox_filter_listing">
+                                            <div class="checkbox">
+                                                <label for=" ">
+                                                        <input type="checkbox" id=" ">
+                                                        <span>Android(1000+)</span>
+                                                    </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label for=" ">
+                                                        <input type="checkbox" id=" ">
+                                                        <span>IOS(35)</span>
+                                                    </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label for=" ">
+                                                        <input type="checkbox" id=" ">
+                                                        <span>Linux(5)</span>
+                                                    </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item  border-0 BatteryCapacity_filter checkbox_filter">
+                                <h2 class="accordion-header" id="heading3">
+                                    <button class="accordion-button collapsed ft-20 lh-30 ft-500" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                        Battery Capacity
+                                  <i data-feather="minus"></i>
+                                        <i data-feather="plus"></i>
+                                </button>
+                                </h2>
+                                <div id="collapse3" class="accordion-collapse collapse ps-4 text-secondary" aria-labelledby="heading3">
+                                    <div class="accordion-body">
+                                        <div class="checkbox_filter_listing">
+                                            <div class="checkbox">
+                                                <label for="">
+                                                        <input type="checkbox" id="">
+                                                        <span>5000mAh to 7999mAh (62)</span>
+                                                    </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label for="">
+                                                        <input type="checkbox" id="">
+                                                        <span>4000mAh to 4999mAh (54)</span>
+                                                    </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label for="">
+                                                        <input type="checkbox" id="">
+                                                        <span>8000mAh to 9999mAh (5)</span>
+                                                    </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label for="">
+                                                        <input type="checkbox" id="">
+                                                        <span>>10000mAh (2)</span>
+                                                    </label>
+                                            </div>
+                                        </div>
+                                        <div class="checkbox_filter_listing see_more_toggle">
+                                            <div class="checkbox">
+                                                <label for="">
+                                                        <input type="checkbox" id="">
+                                                        <span>5000mAh to 7999mAh (62)</span>
+                                                    </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label for="">
+                                                        <input type="checkbox" id="">
+                                                        <span>4000mAh to 4999mAh (54)</span>
+                                                    </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label for="">
+                                                        <input type="checkbox" id="">
+                                                        <span>8000mAh to 9999mAh (5)</span>
+                                                    </label>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="ft-18 see_all mt-4 d-block">SEE ALL</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </aside>
+            </div>
+
+
+            <div class="col-lg-9 ps-lg-5">
+                <div class="aside_toggle cursor-pointer my-4 d-lg-none">
+                    <i data-feather="arrow-right-circle"></i> Advance Filter
+                </div>
+
+                <div class="breadcrumb_box">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item"><a href="#">Electronics</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Mobile Phones</li>
+                        </ol>
+                    </nav>
+                </div>
+                <div class="price_filter ft-12">
+                    <div class="d-flex align-items-center">
+                        <span class="labels">Price</span>
+                        <div class="min_box">
+                            <input type="text" placeholder="min">
+                        </div>
+                        <div class="minus_sep">
+                            <i data-feather="minus"></i>
+                        </div>
+                        <div class="max_box">
+                            <input type="text" placeholder="max">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="sortby_filter ft-12">
+                    <div class="d-flex  align-items-center justify-content-between flex-wrap">
+
+
+                        <div class="d-flex align-items-center my-4">
+                            <span class="labels">Sort By</span>
+
+                            <div class="border radius-5">
+                                <div class="d-flex sortby_filter_listing">
+                                    <div class="popular_filter">Popular</div>
+                                    <div class="newset_filter">Newest</div>
+                                    <div class="rating_filter">Average Rating</div>
+                                    <div class="price_sorting active"> Price
+                                        <div class="sortup active"><i class="fas fa-sort-up"></i></div>
+                                        <div class="sortdown"><i class="fas fa-sort-down"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+
+                        <div class="d-none d-md-flex gap-3 view_filter my-4 ms-auto">
+                            <div class="border p-2 list_filter cursor-pointer">
+                                <i data-feather="list"></i>
+                            </div>
+                            <div class="border p-2 grid_filter active cursor-pointer">
+                                <i data-feather="grid"></i>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- product listing -->
+
+                <div class="product_grid product_wrapper">
+
+                    <div class="row">
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <div class="products_unit">
+                                <div class="image">
+                                    <a href="#"><img src="img/p1.png" class="img-fluid" alt=""></a>
+                                </div>
+                                <div class="products_desc">
+                                    <div class="p_wishlist">
+                                        <label for="">
+                                            <input type="checkbox" id="">
+                                            <i class="far fa-heart"></i>
+                                            <i class="fas fa-heart"></i>
+                                        </label>
+                                    </div>
+                                    <div class="p_name">
+                                        <a href="#">OnePlus 9 Pro 5G Global Rom 12GB</a>
+                                    </div>
+                                    <div class="p_rating d-flex align-items-center gap-2">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <span>(637)</span>
+                                    </div>
+
+                                    <div class="p_price">
+                                        <i class="fas fa-pound-sign"></i> 897
+                                    </div>
+                                    <div class="p_offer">
+                                        5% Cashback
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <div class="products_unit">
+                                <div class="image">
+                                    <a href="#"><img src="img/p2.png" class="img-fluid" alt=""></a>
+                                </div>
+                                <div class="products_desc">
+                                    <div class="p_wishlist">
+                                        <label for="">
+                                            <input type="checkbox" id="">
+                                            <i class="far fa-heart"></i>
+                                            <i class="fas fa-heart"></i>
+                                        </label>
+                                    </div>
+                                    <div class="p_name">
+                                        <a href="#">OnePlus 9 Pro 5G Global Rom 12GB</a>
+                                    </div>
+                                    <div class="p_rating d-flex align-items-center gap-2">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <span>(637)</span>
+                                    </div>
+
+                                    <div class="p_price">
+                                        <i class="fas fa-pound-sign"></i> 897
+                                    </div>
+                                    <div class="p_offer">
+                                        5% Cashback
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <div class="products_unit">
+                                <div class="image">
+                                    <a href="#"><img src="img/p3.png" class="img-fluid" alt=""></a>
+                                </div>
+                                <div class="products_desc">
+                                    <div class="p_wishlist">
+                                        <label for="">
+                                            <input type="checkbox" id="">
+                                            <i class="far fa-heart"></i>
+                                            <i class="fas fa-heart"></i>
+                                        </label>
+                                    </div>
+                                    <div class="p_name">
+                                        <a href="#">OnePlus 9 Pro 5G Global Rom 12GB</a>
+                                    </div>
+                                    <div class="p_rating d-flex align-items-center gap-2">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <i class="far fa-star"></i>
+                                        <span>(637)</span>
+                                    </div>
+
+                                    <div class="p_price">
+                                        <i class="fas fa-pound-sign"></i> 897
+                                    </div>
+                                    <div class="p_offer">
+                                        5% Cashback
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <div class="products_unit">
+                                <div class="image">
+                                    <a href="#"><img src="img/p4.png" class="img-fluid" alt=""></a>
+                                </div>
+                                <div class="products_desc">
+                                    <div class="p_wishlist">
+                                        <label for="">
+                                            <input type="checkbox" id="">
+                                            <i class="far fa-heart"></i>
+                                            <i class="fas fa-heart"></i>
+                                        </label>
+                                    </div>
+                                    <div class="p_name">
+                                        <a href="#">OnePlus 9 Pro 5G Global Rom 12GB</a>
+                                    </div>
+                                    <div class="p_rating d-flex align-items-center gap-2">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <span>(637)</span>
+                                    </div>
+
+                                    <div class="p_price">
+                                        <i class="fas fa-pound-sign"></i> 897
+                                    </div>
+                                    <div class="p_offer">
+                                        5% Cashback
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <div class="products_unit">
+                                <div class="image">
+                                    <a href="#"><img src="img/p1.png" class="img-fluid" alt=""></a>
+                                </div>
+                                <div class="products_desc">
+                                    <div class="p_wishlist">
+                                        <label for="">
+                                            <input type="checkbox" id="">
+                                            <i class="far fa-heart"></i>
+                                            <i class="fas fa-heart"></i>
+                                        </label>
+                                    </div>
+                                    <div class="p_name">
+                                        <a href="#">OnePlus 9 Pro 5G Global Rom 12GB</a>
+                                    </div>
+                                    <div class="p_rating d-flex align-items-center gap-2">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <span>(637)</span>
+                                    </div>
+
+                                    <div class="p_price">
+                                        <i class="fas fa-pound-sign"></i> 897
+                                    </div>
+                                    <div class="p_offer">
+                                        5% Cashback
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <div class="products_unit">
+                                <div class="image">
+                                    <a href="#"><img src="img/p2.png" class="img-fluid" alt=""></a>
+                                </div>
+                                <div class="products_desc">
+                                    <div class="p_wishlist">
+                                        <label for="">
+                                            <input type="checkbox" id="">
+                                            <i class="far fa-heart"></i>
+                                            <i class="fas fa-heart"></i>
+                                        </label>
+                                    </div>
+                                    <div class="p_name">
+                                        <a href="#">OnePlus 9 Pro 5G Global Rom 12GB</a>
+                                    </div>
+                                    <div class="p_rating d-flex align-items-center gap-2">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <span>(637)</span>
+                                    </div>
+
+                                    <div class="p_price">
+                                        <i class="fas fa-pound-sign"></i> 897
+                                    </div>
+                                    <div class="p_offer">
+                                        5% Cashback
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <div class="products_unit">
+                                <div class="image">
+                                    <a href="#"><img src="img/p3.png" class="img-fluid" alt=""></a>
+                                </div>
+                                <div class="products_desc">
+                                    <div class="p_wishlist">
+                                        <label for="">
+                                            <input type="checkbox" id="">
+                                            <i class="far fa-heart"></i>
+                                            <i class="fas fa-heart"></i>
+                                        </label>
+                                    </div>
+                                    <div class="p_name">
+                                        <a href="#">OnePlus 9 Pro 5G Global Rom 12GB</a>
+                                    </div>
+                                    <div class="p_rating d-flex align-items-center gap-2">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <i class="far fa-star"></i>
+                                        <span>(637)</span>
+                                    </div>
+
+                                    <div class="p_price">
+                                        <i class="fas fa-pound-sign"></i> 897
+                                    </div>
+                                    <div class="p_offer">
+                                        5% Cashback
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <div class="products_unit">
+                                <div class="image">
+                                    <a href="#"><img src="img/p4.png" class="img-fluid" alt=""></a>
+                                </div>
+                                <div class="products_desc">
+                                    <div class="p_wishlist">
+                                        <label for="">
+                                            <input type="checkbox" id="">
+                                            <i class="far fa-heart"></i>
+                                            <i class="fas fa-heart"></i>
+                                        </label>
+                                    </div>
+                                    <div class="p_name">
+                                        <a href="#">OnePlus 9 Pro 5G Global Rom 12GB</a>
+                                    </div>
+                                    <div class="p_rating d-flex align-items-center gap-2">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <span>(637)</span>
+                                    </div>
+
+                                    <div class="p_price">
+                                        <i class="fas fa-pound-sign"></i> 897
+                                    </div>
+                                    <div class="p_offer">
+                                        5% Cashback
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <div class="products_unit">
+                                <div class="image">
+                                    <a href="#"><img src="img/p1.png" class="img-fluid" alt=""></a>
+                                </div>
+                                <div class="products_desc">
+                                    <div class="p_wishlist">
+                                        <label for="">
+                                            <input type="checkbox" id="">
+                                            <i class="far fa-heart"></i>
+                                            <i class="fas fa-heart"></i>
+                                        </label>
+                                    </div>
+                                    <div class="p_name">
+                                        <a href="#">OnePlus 9 Pro 5G Global Rom 12GB</a>
+                                    </div>
+                                    <div class="p_rating d-flex align-items-center gap-2">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <span>(637)</span>
+                                    </div>
+
+                                    <div class="p_price">
+                                        <i class="fas fa-pound-sign"></i> 897
+                                    </div>
+                                    <div class="p_offer">
+                                        5% Cashback
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <div class="products_unit">
+                                <div class="image">
+                                    <a href="#"><img src="img/p2.png" class="img-fluid" alt=""></a>
+                                </div>
+                                <div class="products_desc">
+                                    <div class="p_wishlist">
+                                        <label for="">
+                                            <input type="checkbox" id="">
+                                            <i class="far fa-heart"></i>
+                                            <i class="fas fa-heart"></i>
+                                        </label>
+                                    </div>
+                                    <div class="p_name">
+                                        <a href="#">OnePlus 9 Pro 5G Global Rom 12GB</a>
+                                    </div>
+                                    <div class="p_rating d-flex align-items-center gap-2">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <span>(637)</span>
+                                    </div>
+
+                                    <div class="p_price">
+                                        <i class="fas fa-pound-sign"></i> 897
+                                    </div>
+                                    <div class="p_offer">
+                                        5% Cashback
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <div class="products_unit">
+                                <div class="image">
+                                    <a href="#"><img src="img/p3.png" class="img-fluid" alt=""></a>
+                                </div>
+                                <div class="products_desc">
+                                    <div class="p_wishlist">
+                                        <label for="">
+                                            <input type="checkbox" id="">
+                                            <i class="far fa-heart"></i>
+                                            <i class="fas fa-heart"></i>
+                                        </label>
+                                    </div>
+                                    <div class="p_name">
+                                        <a href="#">OnePlus 9 Pro 5G Global Rom 12GB</a>
+                                    </div>
+                                    <div class="p_rating d-flex align-items-center gap-2">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <i class="far fa-star"></i>
+                                        <span>(637)</span>
+                                    </div>
+
+                                    <div class="p_price">
+                                        <i class="fas fa-pound-sign"></i> 897
+                                    </div>
+                                    <div class="p_offer">
+                                        5% Cashback
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <div class="products_unit">
+                                <div class="image">
+                                    <a href="#"><img src="img/p4.png" class="img-fluid" alt=""></a>
+                                </div>
+                                <div class="products_desc">
+                                    <div class="p_wishlist">
+                                        <label for="">
+                                            <input type="checkbox" id="">
+                                            <i class="far fa-heart"></i>
+                                            <i class="fas fa-heart"></i>
+                                        </label>
+                                    </div>
+                                    <div class="p_name">
+                                        <a href="#">OnePlus 9 Pro 5G Global Rom 12GB</a>
+                                    </div>
+                                    <div class="p_rating d-flex align-items-center gap-2">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <span>(637)</span>
+                                    </div>
+
+                                    <div class="p_price">
+                                        <i class="fas fa-pound-sign"></i> 897
+                                    </div>
+                                    <div class="p_offer">
+                                        5% Cashback
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- product listing end -->
+
+                <!-- pagination -->
+                <br>
+                <br>
+                <hr>
+                <div class="d-flex gap-5 align-items-center justify-content-center flex-wrap">
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination m-0">
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">4</a></li>
+                            <li class="page-item"><a class="page-link" href="#">...</a></li>
+                            <li class="page-item"><a class="page-link" href="#">120</a></li>
+                        </ul>
+                    </nav>
+                    <div class="go_to">
+                        <div class="d-flex align-items-center gap-1">
+                            <span class="me-3">Go To Page</span>
+                            <input type="text">
+                            <button>go</button>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <!-- pagination end-->
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="h-50px "></div>
+
+    <!-- content area End -->
+
+
+
+    <footer style="background: #F8F8F8;height: 440px;" class="d-flex justify-content-center align-items-center">
+        <span class="ft-35 ft-medium">Footer</span>
+    </footer>
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" integrity="sha512-7x3zila4t2qNycrtZ31HO0NnJr8kg2VI67YLoRSyi9hGhRN66FHYWr7Axa9Y1J9tGYHVBPqIjSE1ogHrJTz51g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/custom.js" type="text/JavaScript"></script>
+</body>
+
+</html>

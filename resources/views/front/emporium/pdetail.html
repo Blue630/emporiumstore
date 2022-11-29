@@ -1,0 +1,1284 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-control" content="public">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <!-- JSDelivr -->
+    <link href='https://cdn.jsdelivr.net/npm/css.gg/icons/all.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/lightbox/css/lightbox.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/IE.css">
+    <title>Emporium</title>
+
+</head>
+
+<body>
+    <!-- Header start -->
+    <header id="main-header">
+        <div class="container-fluid">
+            <div class="headersec_1">
+                <div class="d-flex align-items-center gap-lg-5 child_flex">
+                    <div class="logo">
+                        <img src="img/logo.png" class="img-fluid" alt="">
+                    </div>
+                    <div class="search_form">
+                        <form action="#">
+                            <select class="select-search-category ft-10" name="term">
+                                <optgroup class="ft-14 m-0 p-0"  label="All categories"> 
+                                <option value="accessories">Accessories</option>
+                                <option value="backup-charger"> &nbsp;&nbsp;Backup Charger</option>
+                                <option value="headphone"> &nbsp;&nbsp;Headphone</option>
+                                <option value="power-socket"> &nbsp;&nbsp;Power Socket</option>
+                                <option value="printer"> &nbsp;&nbsp;Printer</option>
+                                <option value="usb"> &nbsp;&nbsp;USB</option>
+                                <option value="webcam"> &nbsp;&nbsp;Webcam</option>
+                                <option value="wi-fi-router"> &nbsp;&nbsp;Wi-Fi Router</option> 
+                            </optgroup>
+                            </select>
+                            <span class="mx-4 ft-24 text-light-grey ft-100">|</span>
+                            <div class="search-content w-100 d-flex">
+                                <input type="text" value="" name="s" class="w-100 ft-13" placeholder="I'm searching for..." autocomplete="off">
+                                <button type="submit" title="Search" value="Search"><i data-feather="search"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="right-header">
+                        <div class="d-flex justify-content-between pe-4">
+                            <a href="#">Sign in</a>
+                            <a href="#">My Orders</a>
+                            <a href="" class="d-flex align-items-center gap-1 cart_icon">
+                                <span>Cart</span>
+                                <div class="position-relative">
+                                    <span class="add_product_count">12</span>
+                                    <i data-feather="shopping-cart"></i>
+                                </div>
+                            </a>
+                            <a href="#" class="wishlist_header">
+                                <div class=" position-relative">
+                                    <span>5</span>
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="seperator_blue" />
+
+        <div class="container-fluid">
+            <div class="headersec_2">
+                <div class="d-flex align-items-center">
+                    <div class="nav_icon d-none d-lg-block">
+                        <div class="d-flex align-items-center cusror-pointers text-white">
+                            <i data-feather="menu"></i>
+                            <span>ALL</span>
+                        </div>
+                    </div>
+                    <div class="emp-menu mx-lg-auto">
+                        <nav class="navbar navbar-expand-lg">
+                            <div class="container-fluid">
+                                <button class="navbar-toggler text-white d-flex align-items-center p-0 d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                                    <i data-feather="menu"></i>  <span class="ft-16 ms-2">ALL</span>
+                              </button>
+                                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                                    <div class="navbar-nav">
+                                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                        <a class="nav-link" href="#">Electronics</a>
+                                        <a class="nav-link" href="#">Fashion</a>
+                                        <a class="nav-link" href="#">Today’s Deals</a>
+                                        <a class="nav-link" href="#">Suggested for you</a>
+                                        <a class="nav-link" href="#">Trending</a>
+                                        <a class="nav-link" href="#">Saved</a>
+                                        <a class="nav-link" href="#">Wishlisted</a>
+                                        <a class="nav-link" href="#">current Auctions</a>
+                                        <a class="nav-link" href="#">Sell on Emporium</a>
+                                        <a class="nav-link" href="#">Best Seller</a>
+                                        <a class="nav-link" href="#">Subscribe & Save</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+    </header>
+
+    <!-- Header End -->
+
+
+    <!-- content area start -->
+
+    <div class="container">
+        <div class="breadcrumb_box mt-5">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Electronics</a></li>
+                    <li class="breadcrumb-item"><a href="#">Mobile Phones</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">OnePlus 9 Pro 5G Global Rom 12GB</li>
+                </ol>
+            </nav>
+
+            <div class="h-50px"></div>
+            <div class="row">
+                <div class="col-xl-11 mx-auto">
+                    <div class="row">
+                        <div class="col-lg-5 col-xl-6">
+                            <div class="product_main_image">
+                                <div class="big_image position-relative">
+                                    <img src="img/ProductTile.png" class="w-100" alt="" data-id="img1">
+                                    <i data-feather="zoom-in"></i>
+                                </div>
+                                <div class="small_images row row-cols-lg-6 row-col-3 gx-2">
+                                    <div class="col">
+                                        <div class="smallimage_list" data-id="img1" data-src="img/p1.png">
+                                            <img src="img/p1.png" class="img-fluid" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="smallimage_list" data-id="img2" data-src="img/p2.png">
+                                            <img src="img/p2.png" class="img-fluid" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="smallimage_list" data-id="img3" data-src="img/p3.png">
+                                            <img src="img/p3.png" class="img-fluid" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="smallimage_list" data-id="img4" data-src="img/p4.png">
+                                            <img src="img/p4.png" class="img-fluid" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="smallimage_list" data-id="img1" data-src="img/p1.png">
+                                            <img src="img/p1.png" class="img-fluid" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="smallimage_list" data-id="img2" data-src="img/p2.png">
+                                            <img src="img/p2.png" class="img-fluid" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="smallimage_list" data-id="img3" data-src="img/p3.png">
+                                            <img src="img/p3.png" class="img-fluid" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="smallimage_list" data-id="img4" data-src="img/p4.png">
+                                            <img src="img/p4.png" class="img-fluid" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lightbox_gallery">
+                                    <a href="img/ProductTile.png" data-id="img1" data-lightbox="lightbox">&nbsp;</a>
+                                    <a href="img/p2.png" data-id="img2" data-lightbox="lightbox">&nbsp;</a>
+                                    <a href="img/p3.png" data-id="img3" data-lightbox="lightbox">&nbsp;</a>
+                                    <a href="img/p4.png" data-id="img4" data-lightbox="lightbox">&nbsp;</a>
+                                    <a href="img/ProductTile.png" data-id="img1" data-lightbox="lightbox">&nbsp;</a>
+                                    <a href="img/p2.png" data-id="img2" data-lightbox="lightbox">&nbsp;</a>
+                                    <a href="img/p3.png" data-id="img3" data-lightbox="lightbox">&nbsp;</a>
+                                    <a href="img/p4.png" data-id="img4" data-lightbox="lightbox">&nbsp;</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-7 col-xl-6 ps-lg-5">
+                            <div class="prod_detail_desc">
+                                <div class="d-flex justify-content-between">
+                                    <div class="pname w-100 w-lg-75">
+                                        <h1 class="ft-30 lh-45 ft-medium text-black">OnePlus 9 Pro 5G <small class="text-secondary ft-15 align-middle">(NEW)</small></h1>
+                                        <div class="d-flex align-items-center justify-content-between flex-wrap pe-4 pe-md-0">
+                                            <div class="p_rating d-flex align-items-center gap-2">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star-half-alt"></i>
+                                                <span class="align-middle">4.5</span>
+                                            </div>
+                                            <div class="p_reviews text-secondary ft-medium">
+                                                <span class="text-navyblue">637</span> Reviews
+                                            </div>
+                                            <div class="p_stock text-secondary ft-medium">
+                                                Stock: <span class="text-pink">67 Remaining !</span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="p_share position-relative">
+                                        <a class="share-btn share-btn-inverse share-btn-more text-black " href="https://www.addtoany.com/share_save?linkurl=https://www.google.com/" title="More share options">
+                                            <span data-feather="share-2" class="" style="width: 30px;height: 30px;"></span>
+                                        </a>
+                                        <div class="p_wishlist mt-4">
+                                            <label for="">
+                                                <input type="checkbox" id="">
+                                                <i class="far fa-heart"></i>
+                                                <i class="fas fa-heart"></i>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="prod_price-details mt-5">
+                                <div class="d-flex align-items-center justify-content-between w-xl-60 w-lg-75">
+                                    <div class="p_price m-0">
+                                        <i class="fas fa-pound-sign"></i> 897.00
+                                    </div>
+                                    <div class="prev_price text-light">
+                                        <s><i class="fas fa-pound-sign"></i> 1097.00</s>
+                                    </div>
+                                    <div class="discounted">
+                                        -25% CashBack
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="lowest_price_details">
+                                <div class="d-flex align-items-center ft-10">
+                                    <span class="text-navyblue ft-medium">Lowest price in the last 45 days </span>
+                                    <i class="fas fa-caret-down ms-2 text-pink"></i>
+                                </div>
+                                <a href="#" class="text-light ft-10"><u>Subscribe to get lowest price alerts</u></a>
+                            </div>
+                            <div class="color_filter my-5">
+                                <p class="p_pt text-secondary">Color: <span class="text-black ft-medium">Green</span></p>
+                                <div class="d-flex align-items-center gap-3">
+                                    <a href="#" class="p_black tool" title="Black">&nbsp;</a>
+                                    <a href="#" class="p_blue tool" title="Blue">&nbsp;</a>
+                                    <a href="#" class="p_pink tool" title="Pink">&nbsp;</a>
+                                    <a href="#" class="p_orange tool" title="Orange">&nbsp;</a>
+                                    <a href="#" class="p_green tool" title="Green">&nbsp;</a>
+                                </div>
+                            </div>
+
+                            <div class="p_varient">
+                                <p class="p_pt text-secondary m-0">Varient: <span class="text-black ft-medium">12GB 256GB</span></p>
+                                <div class="d-flex gap-3 align-items-center varient_filter ft-10">
+                                    <a href="#">12GB 128GB</a>
+                                    <a href="#" class="active">12GB 256GB</a>
+                                    <a href="#">6GB 128GB</a>
+                                </div>
+                            </div>
+
+
+                            <div class="p_version my-5">
+                                <p class="p_pt text-secondary m-0">Varient: <span class="text-black ft-medium">Global</span></p>
+                                <div class="d-flex gap-3 align-items-center version_filter ft-10">
+                                    <a href="#" class="active">Global</a>
+                                    <a href="#">UK</a>
+                                    <a href="#">China</a>
+                                    <a href="#">India</a>
+                                </div>
+                            </div>
+
+                            <div class="p_quantity">
+                                <div class="d-flex align-items-center">
+                                    <p class="m-0 ft-medium">Quantity:</p>
+                                    <div class="wrap ms-4">
+                                        <button type="button" id="sub" class="sub">-</button>
+                                        <input class="count" type="text" id="1" value="1" min="1" max="100" />
+                                        <button type="button" id="add" class="add">+</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="p_stock ft-10 mt-2 mb-3">
+                                <span class="ft-medium">In Stock.</span> Ships in 24 hours
+                            </div>
+
+                            <div class="p_checkpincode">
+                                <div class="d-flex ft-10 align-items-center">
+                                    <i class="fas fa-map-marker-alt text-navyblue ft-15"></i>
+                                    <div><input type="text"> </div>
+                                    <p class="m-0">Check Pinode for Shipping & Delivery.</p>
+                                </div>
+                                <span class="ft-10 mt-1 mb-4 d-block"><b>Delivery in</b> <u class="text-pink ft-medium">3 Days</u> if purchsed before <b>15 September</b> | Shipping <u class="text-pink ft-medium">+£5</u> </span>
+                            </div>
+
+                            <div class="btns mt-5 mb-4">
+                                <button class="btn btn-primary">BUY NOW</button>
+                                <button class="btn btn-default border ms-4 ft-bold">ADD TO CART</button>
+                            </div>
+                            <img src="img/guarantee.png" class="img-fluid" alt="">
+
+                        </div>
+                    </div>
+                    <div class="h-50px "></div>
+
+                    <div class="row pe-lg-5 my-5">
+                        <div class="col-lg-6 pe-lg-5">
+                            <div class="prod_specification">
+                                <h3 class="ft-20 lh-30 ft-medium mb-5 text-black">Product Specification:</h3>
+                                <div class="row ft-500">
+                                    <div class="col-md-6 text-secondary">
+                                        In The Box:
+                                    </div>
+                                    <div class="col-md-6  mb-5 text-black">
+                                        Handset, Adapter (5V/2A), USB Cable, SIM Card Tool, Screen Protect Film, Important Info Booklet with Warranty Card, Quick Guide
+                                    </div>
+                                    <div class="col-md-6 text-secondary">
+                                        Model Number
+                                    </div>
+                                    <div class="col-md-6  mb-5 text-black">
+                                        RMX3261
+                                    </div>
+                                    <div class="col-md-6 text-secondary">
+                                        Model Name
+                                    </div>
+                                    <div class="col-md-6  mb-5 text-black">
+                                        C21Y
+                                    </div>
+                                    <div class="col-md-6 text-secondary">
+                                        SIM Type
+                                    </div>
+                                    <div class="col-md-6  mb-5 text-black">
+                                        Dual Sim
+                                    </div>
+                                    <div class="col-md-6 text-secondary">
+                                        Resolution Type
+                                    </div>
+                                    <div class="col-md-6  mb-5 text-black">
+                                        HD+
+                                    </div>
+                                    <div class="col-md-6 text-secondary">
+                                        Model Number
+                                    </div>
+                                    <div class="col-md-6  mb-5 text-black">
+                                        RMX3261
+                                    </div>
+                                    <div class="col-md-6 text-secondary">
+                                        Model Name
+                                    </div>
+                                    <div class="col-md-6  mb-5 text-black">
+                                        C21Y
+                                    </div>
+                                    <div class="col-md-6 text-secondary">
+                                        SIM Type
+                                    </div>
+                                    <div class="col-md-6  mb-5 text-black">
+                                        Dual Sim
+                                    </div>
+                                    <div class="col-md-6 text-secondary">
+                                        Resolution Type
+                                    </div>
+                                    <div class="col-md-6  mb-5 text-black">
+                                        HD+
+                                    </div>
+                                    <div class="col-md-6  mb-5 text-black">
+                                        RMX3261
+                                    </div>
+                                    <div class="col-md-6 text-secondary">
+                                        Model Name
+                                    </div>
+                                    <div class="col-md-6  mb-5 text-black">
+                                        C21Y
+                                    </div>
+                                    <div class="col-md-6 text-secondary">
+                                        SIM Type
+                                    </div>
+                                    <div class="col-md-6  mb-5 text-black">
+                                        Dual Sim
+                                    </div>
+                                    <div class="col-md-6 text-secondary">
+                                        Resolution Type
+                                    </div>
+                                    <div class="col-md-6  mb-5 text-black">
+                                        HD+
+                                    </div>
+                                    <div class="col-md-6  mb-5 text-black">
+                                        RMX3261
+                                    </div>
+                                    <div class="col-md-6 text-secondary">
+                                        Model Name
+                                    </div>
+                                    <div class="col-md-6  mb-5 text-black">
+                                        C21Y
+                                    </div>
+                                    <div class="col-md-6 text-secondary">
+                                        SIM Type
+                                    </div>
+                                    <div class="col-md-6  mb-5 text-black">
+                                        Dual Sim
+                                    </div>
+                                    <div class="col-md-6 text-secondary">
+                                        Resolution Type
+                                    </div>
+                                    <div class="col-md-6  mb-5 text-black">
+                                        HD+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 pe-lg-5">
+                            <div class="bought_togther  py-5 px-4 border">
+                                <h3 class="ft-20 lh-30 text-decoration-underline text-black text-center ft-medium">Bought Together</h3>
+
+                                <div class="owl-carousel boxed_arrow boxed_arrow_black" id="boughtTogther">
+                                    <div class="item">
+                                        <div class="products_unit">
+                                            <input type="checkbox" checked>
+                                            <div class="image">
+                                                <a href="#"><img src="img/p1.png" class="img-fluid" alt=""></a>
+                                            </div>
+                                            <div class="products_desc">
+                                                <div class="p_name">
+                                                    <a href="#">OnePlus 9 Pro 5G Global Rom 12GB</a>
+                                                </div>
+                                                <div class="p_rating d-flex align-items-center gap-2 my-4">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star-half-alt"></i>
+                                                    <span>(637)</span>
+                                                </div>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="p_price">
+                                                        <i class="fas fa-pound-sign"></i> 8.97
+                                                    </div>
+                                                    <div class="p_offer">
+                                                        5% Cashback
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="products_unit">
+                                            <input type="checkbox" checked>
+                                            <div class="image">
+                                                <a href="#"><img src="img/p2.png" class="img-fluid" alt=""></a>
+                                            </div>
+                                            <div class="products_desc">
+                                                <div class="p_name">
+                                                    <a href="#">OnePlus 9 Pro 5G Global Rom 12GB</a>
+                                                </div>
+                                                <div class="p_rating d-flex align-items-center gap-2 my-4">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star-half-alt"></i>
+                                                    <span>(637)</span>
+                                                </div>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="p_price">
+                                                        <i class="fas fa-pound-sign"></i> 8.97
+                                                    </div>
+                                                    <div class="p_offer">
+                                                        5% Cashback
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="products_unit">
+                                            <input type="checkbox">
+                                            <div class="image">
+                                                <a href="#"><img src="img/p3.png" class="img-fluid" alt=""></a>
+                                            </div>
+                                            <div class="products_desc">
+                                                <div class="p_name">
+                                                    <a href="#">OnePlus 9 Pro 5G Global Rom 12GB</a>
+                                                </div>
+                                                <div class="p_rating d-flex align-items-center gap-2 my-4">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star-half-alt"></i>
+                                                    <span>(637)</span>
+                                                </div>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="p_price">
+                                                        <i class="fas fa-pound-sign"></i> 8.97
+                                                    </div>
+                                                    <div class="p_offer">
+                                                        5% Cashback
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="products_unit">
+                                            <input type="checkbox">
+                                            <div class="image">
+                                                <a href="#"><img src="img/p4.png" class="img-fluid" alt=""></a>
+                                            </div>
+                                            <div class="products_desc">
+                                                <div class="p_name">
+                                                    <a href="#">OnePlus 9 Pro 5G Global Rom 12GB</a>
+                                                </div>
+                                                <div class="p_rating d-flex align-items-center gap-2 my-4">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star-half-alt"></i>
+                                                    <span>(637)</span>
+                                                </div>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="p_price">
+                                                        <i class="fas fa-pound-sign"></i> 8.97
+                                                    </div>
+                                                    <div class="p_offer">
+                                                        5% Cashback
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="products_unit">
+                                            <input type="checkbox">
+                                            <div class="image">
+                                                <a href="#"><img src="img/p1.png" class="img-fluid" alt=""></a>
+                                            </div>
+                                            <div class="products_desc">
+                                                <div class="p_name">
+                                                    <a href="#">OnePlus 9 Pro 5G Global Rom 12GB</a>
+                                                </div>
+                                                <div class="p_rating d-flex align-items-center gap-2 my-4">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star-half-alt"></i>
+                                                    <span>(637)</span>
+                                                </div>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="p_price">
+                                                        <i class="fas fa-pound-sign"></i> 897
+                                                    </div>
+                                                    <div class="p_offer">
+                                                        5% Cashback
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center flex-wrap justify-content-center">
+                                    <div class="addon_prod_count d-flex align-items-center">
+
+                                    </div>
+                                    <div class="addon_cart ms-4">
+                                        <a href="#" class="btn btn-default border ft-medium ft-bold">ADD TO CART</a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <div class="Questions_Asked  p-5 border mt-4">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <h3 class="ft-20 lh-30 text-black ft-medium">Questions Asked:</h3>
+                                    <p class="m-0 ft-10 text-secondary lh-15">(Showing 1-3 of 30)</p>
+                                </div>
+                                <div class="QA_helpful mb-4 mt-3">
+                                    <select name="" id="" class="border-dark">
+                                            <option value="0">Most Helpful</option>
+                                            <option value="1">Battery</option>
+                                            <option value="2">Camera</option>
+                                            <option value="3">Screen</option> 
+                                        </select>
+                                </div>
+
+
+
+                                <div class="question_answer ft-500 ft-10 lh-15 my-5">
+                                    <div class="question_set">
+                                        Q- <span class="text-navyblue">Is this 5G?</span>
+                                    </div>
+                                    <div class="answer_set my-1">
+                                        A- No its not. Does not support 5G. <small>(Written by <b>Apple Inc.</b> on Sep 13 2021)</small>
+                                    </div>
+                                    <div class="remaning_answer_set my-1">
+                                        <div class="answer_set my-1">
+                                            A- No its not. Does not support 5G. <small>(Written by <b>Apple Inc.</b> on Sep 13 2021)</small>
+                                        </div>
+                                        <div class="answer_set my-1">
+                                            A- No its not. Does not support 5G. <small>(Written by <b>Apple Inc.</b> on Sep 13 2021)</small>
+                                        </div>
+                                        <div class="answer_set my-1">
+                                            A- No its not. Does not support 5G. <small>(Written by <b>Apple Inc.</b> on Sep 13 2021)</small>
+                                        </div>
+                                        <div class="answer_set my-1">
+                                            A- No its not. Does not support 5G. <small>(Written by <b>Apple Inc.</b> on Sep 13 2021)</small>
+                                        </div>
+                                        <div class="answer_set my-1">
+                                            A- No its not. Does not support 5G. <small>(Written by <b>Apple Inc.</b> on Sep 13 2021)</small>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex answer_set_btn ft-10 flex-wrap">
+                                        <div class="view_answer_set_btn border radius-5 mx-3 px-4 d-flex align-items-center cursor-pointer">
+                                            <i class="fas fa-caret-down ft-14 me-3"></i> View 5 More Answers
+                                        </div>
+                                        <div class="was_this_helpful border radius-5 mx-3 d-flex align-items-center px-4  my-3">
+                                            <span>Was this helpful?</span>
+                                            <div class="r_likebox d-flex align-items-center ms-2">
+                                                <label class="likebox_radio">
+                                                    <input type="radio" name="helpful1">
+                                                    <i data-feather="thumbs-up" style="width: 12px;"></i>    
+                                                </label>
+                                                <p class="m-0 text-secondary ms-1">2k</p>
+                                            </div>
+                                            <div class="r_likebox d-flex align-items-center ms-3">
+                                                <label class="likebox_radio">
+                                                    <input type="radio" name="helpful1">
+                                                    <i data-feather="thumbs-down" style="width: 12px;"></i>    
+                                                </label>
+                                                <p class="m-0 text-secondary ms-1">135</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+
+
+                                <div class="question_answer ft-500 ft-10 lh-15 my-5">
+                                    <div class="question_set">
+                                        Q- <span class="text-navyblue">Does this have SIRI?</span>
+                                    </div>
+                                    <div class="answer_set my-1">
+                                        A- No it doesn’t have. Supports Alexa. <small>(Written by <b>Amazon</b> on Sep 13 2021)</small>
+                                    </div>
+
+                                    <div class="d-flex answer_set_btn ft-10">
+                                        <div class="was_this_helpful border radius-5 mx-3 d-flex align-items-center px-4 my-3">
+                                            <span>Was this helpful?</span>
+                                            <div class="r_likebox d-flex align-items-center ms-2">
+                                                <label class="likebox_radio">
+                                                    <input type="radio" name="helpful2">
+                                                    <i data-feather="thumbs-up" style="width: 12px;"></i>    
+                                                </label>
+                                                <p class="m-0 text-secondary ms-1">2k</p>
+                                            </div>
+                                            <div class="r_likebox d-flex align-items-center ms-3">
+                                                <label class="likebox_radio">
+                                                    <input type="radio" name="helpful2">
+                                                    <i data-feather="thumbs-down" style="width: 12px;"></i>    
+                                                </label>
+                                                <p class="m-0 text-secondary ms-1">135</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+                                <div class="question_answer ft-500 ft-10 lh-15 my-5">
+                                    <div class="question_set">
+                                        Q- <span class="text-navyblue">Is Iphone more secure than Android?</span>
+                                    </div>
+                                    <div class="answer_set my-1">
+                                        A- No it has less features and paid Apps, Switch to Android. <small>(Written by <b>Amazon</b> on Sep 13 2021)</small>
+                                    </div>
+
+                                    <div class="d-flex answer_set_btn ft-10">
+                                        <div class="was_this_helpful border radius-5 mx-3 d-flex align-items-center px-4 my-3">
+                                            <span>Was this helpful?</span>
+                                            <div class="r_likebox d-flex align-items-center ms-2">
+                                                <label class="likebox_radio">
+                                                    <input type="radio" name="helpful3">
+                                                    <i data-feather="thumbs-up" style="width: 12px;"></i>    
+                                                </label>
+                                                <p class="m-0 text-secondary ms-1">2k</p>
+                                            </div>
+                                            <div class="r_likebox d-flex align-items-center ms-3">
+                                                <label class="likebox_radio">
+                                                    <input type="radio" name="helpful3">
+                                                    <i data-feather="thumbs-down" style="width: 12px;"></i>    
+                                                </label>
+                                                <p class="m-0 text-secondary ms-1">135</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sell_all_quest text-center">
+                                    <a href="#" class="btn btn-default border ft-8 lh-12 text-black-btn   border-dark ft-500 px-5">
+                                        See All Questions <i class="fa fa-caret-down ms-2 ft-12"></i>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="h-50px "></div>
+
+                    <div class="prod_detail_desc shadow p-5">
+                        <h3 class="ft-20 lh-30 text-center pb-5 ft-medium">Product Description:</h3>
+                        <div class="prod_detail_desc_box p-lg-5">
+                            <img src="img/image 10.png" class="img-fluid" alt="">
+                            <img src="img/image 11.png" class="img-fluid" alt="">
+                            <img src="img/image 12.png" class="img-fluid mb-4" alt="">
+                            <img src="img/image 13.png" class="img-fluid mb-5" alt="">
+                        </div>
+                    </div>
+
+
+                    <div class="prod_ratings_reviews border my-5 p-5">
+                        <h3 class="ft-20 lh-30 pb-5 ft-medium">Product Rating & Reviews:</h3>
+                        <div class="row">
+                            <div class="col-lg-11 mx-auto shadow p-5">
+                                <div class="row align-items-center justify-content-center">
+                                    <div class="col-3 col-md-2 col-xl-1">
+                                        <div class="rating_list">
+                                            <div class="d-flex">
+                                                <div class="number_rating ft-medium ft-20">
+                                                    5.0 <i class="fas fa-star text-yellow "></i><br>
+                                                    <p class="ft-8 lh-10 text-light mt-3">637 Ratings & 249 Reviews</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-9 col-md-4 col-xl-3">
+                                        <div class="rating_values  pe-lg-5">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <span class="d-flex align-items-end lh-10">5 <i class="fas fa-star text-yellow ft-10"></i></span>
+                                                <div class="progress w-100">
+                                                    <div class="progress-bar  bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                                <span>600</span>
+                                            </div>
+
+                                            <div class="d-flex align-items-center gap-2">
+                                                <span class="d-flex align-items-end lh-10">4 <i class="fas fa-star text-yellow ft-10"></i></span>
+                                                <div class="progress w-100">
+                                                    <div class="progress-bar  bg-success" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                                <span>20</span>
+                                            </div>
+
+                                            <div class="d-flex align-items-center gap-2">
+                                                <span class="d-flex align-items-end lh-10">3 <i class="fas fa-star text-yellow ft-10"></i></span>
+                                                <div class="progress w-100">
+                                                    <div class="progress-bar  bg-success" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                                <span>10</span>
+                                            </div>
+
+                                            <div class="d-flex align-items-center gap-2">
+                                                <span class="d-flex align-items-end lh-10">3 <i class="fas fa-star text-yellow ft-10"></i></span>
+                                                <div class="progress w-100">
+                                                    <div class="progress-bar  bg-success" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                                <span>5</span>
+                                            </div>
+
+                                            <div class="d-flex align-items-center gap-2">
+                                                <span class="d-flex align-items-end lh-10">1 <i class="fas fa-star text-yellow ft-10"></i></span>
+                                                <div class="progress w-100">
+                                                    <div class="progress-bar  bg-success" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                                <span>2</span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-8 px-lg-5 my-5 my-xl-0">
+                                        <div class="d-flex justify-content-lg-between justify-content-center flex-wrap">
+
+
+                                            <div class="number_rating_progress">
+                                                <div class="svg_cntr"><svg class="ratings_progress" xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 34 34" data-rating="4.5">
+
+                                                    <circle cx="16" cy="16" r="15.9155"
+                                                         class="progress-bar__background" />
+                                                    
+                                                    <circle cx="16" cy="16" r="15.9155"
+                                                         class="progress-bar__progress 
+                                                                js-progress-bar" />
+                                                    </svg>
+                                                </div>
+                                                <p>Camera</p>
+                                            </div>
+                                            <div class="number_rating_progress">
+                                                <div class="svg_cntr"><svg class="ratings_progress" xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 34 34" data-rating="3.5">
+
+                                                    <circle cx="16" cy="16" r="15.9155"
+                                                         class="progress-bar__background" />
+                                                    
+                                                    <circle cx="16" cy="16" r="15.9155"
+                                                         class="progress-bar__progress 
+                                                                js-progress-bar" />
+                                                    </svg>
+                                                </div>
+                                                <p>Battery</p>
+                                            </div>
+                                            <div class="number_rating_progress">
+                                                <div class="svg_cntr"><svg class="ratings_progress" xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 34 34" data-rating="2.5">
+
+                                                    <circle cx="16" cy="16" r="15.9155"
+                                                         class="progress-bar__background" />
+                                                    
+                                                    <circle cx="16" cy="16" r="15.9155"
+                                                         class="progress-bar__progress 
+                                                                js-progress-bar" />
+                                                    </svg>
+                                                </div>
+                                                <p>Display</p>
+                                            </div>
+                                            <div class="number_rating_progress">
+                                                <div class="svg_cntr"><svg class="ratings_progress" xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 34 34" data-rating="4.0">
+
+                                                    <circle cx="16" cy="16" r="15.9155"
+                                                         class="progress-bar__background" />
+                                                    
+                                                    <circle cx="16" cy="16" r="15.9155"
+                                                         class="progress-bar__progress 
+                                                                js-progress-bar" />
+                                                    </svg>
+                                                </div>
+                                                <p>Reasonable</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="rate_product_btn mt-5 text-center">
+                                    <a href="#" class="btn btn-default ft-medium text-black-btn  border shadow ft-20 py-4 px-5">Rate this Product</a>
+                                </div>
+
+
+                            </div>
+
+
+
+
+
+
+                            <div class="col-lg-11 mx-auto pt-5 mt-5 px-lg-0">
+                                <div class="sortby_reviews">
+                                    <select name="" id="" class="shadow">
+                                            <option value="0">Sort By</option>
+                                            <option value="1">Positive</option>
+                                            <option value="2">Negative</option>
+                                            <option value="3">Helpful</option>
+                                            <option value="4">Latest</option>
+                                        </select>
+                                </div>
+                                <div class="users_reviews my-5">
+                                    <div class="users_reviews_list py-5">
+                                        <div class="title d-flex align-items-end">
+                                            <h3 class="ft-20 lh-30 ft-medium m-0">“Worth the money”</h3>
+                                            <p class="ft-10 mb-md-0 ms-4"><b>Laraib Kidwai</b> rated &nbsp;&nbsp; 5.0<i class="fas fa-star text-yellow "></i></p>
+                                        </div>
+                                        <div class="users_reviews_pics d-flex flex-wrap gap-5 my-5">
+                                            <a href="img/daal.jpg" data-lightbox="usersreviewspics1">
+                                                <img src="img/daal.jpg" class="img-fluid" alt="">
+                                            </a>
+                                            <a href="img/daal.png" data-lightbox="usersreviewspics1">
+                                                <img src="img/daal.png" class="img-fluid" alt="">
+                                            </a>
+                                            <a href="img/daal.jpg" data-lightbox="usersreviewspics1">
+                                                <img src="img/daal.jpg" class="img-fluid" alt="">
+                                            </a>
+                                            <a href="img/daal.jpg" data-lightbox="usersreviewspics1">
+                                                <img src="img/daal.jpg" class="img-fluid" alt="">
+                                            </a>
+                                            <a href="img/daal.jpg" data-lightbox="usersreviewspics1">
+                                                <img src="img/daal.jpg" class="img-fluid" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="users_reviews_desc ft-medium text-black">
+                                            Camera, Sound and speaker are very Good.<br>This is my second Oneplus Phone after 6 iPhones.<br><br>I strongly Recommend to go for this one.
+                                        </div>
+                                        <div class="users_reviews_likebox ft-medium text-black d-flex align-items-center mt-5">
+                                            <div class="r_likebox d-flex align-items-center">
+                                                <label class="likebox_radio">
+                                                    <input type="radio" name="likeboxradio">
+                                                    <i data-feather="thumbs-up"></i></label>
+                                                <p class="m-0 text-secondary ms-3">485</p>
+                                            </div>
+                                            <div class="r_likebox d-flex align-items-center ms-5">
+                                                <label class="likebox_radio">
+                                                    <input type="radio" name="likeboxradio">
+                                                    <i data-feather="thumbs-down"></i></label>
+                                                <p class="m-0 text-secondary ms-3">485</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="users_reviews_list py-5">
+                                        <div class="title d-flex align-items-end">
+                                            <h3 class="ft-20 lh-30 ft-medium m-0">“Overall a Good Phone”</h3>
+                                            <p class="ft-10 mb-md-0 ms-4"><b>Tim Cook </b> rated &nbsp;&nbsp; 4.0<i class="fas fa-star text-yellow "></i></p>
+                                        </div>
+                                        <div class="users_reviews_pics d-flex flex-wrap gap-5 my-5">
+                                            <a href="img/daal.jpg" data-lightbox="usersreviewspics2">
+                                                <img src="img/daal.jpg" class="img-fluid" alt="">
+                                            </a>
+                                            <a href="img/daal.png" data-lightbox="usersreviewspics2">
+                                                <img src="img/daal.png" class="img-fluid" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="users_reviews_desc ft-medium text-black">
+                                            Camera of this phone is slightly better than iPhone 14.<br> Would highly recommend it after Apple Products.
+                                        </div>
+                                        <div class="users_reviews_likebox ft-medium text-black d-flex align-items-center mt-5">
+                                            <div class="r_likebox d-flex align-items-center">
+                                                <label class="likebox_radio">
+                                                    <input type="radio" name="likeboxradio">
+                                                    <i data-feather="thumbs-up"></i></label>
+                                                <p class="m-0 text-secondary ms-3">4.2k</p>
+                                            </div>
+                                            <div class="r_likebox d-flex align-items-center ms-5">
+                                                <label class="likebox_radio">
+                                                    <input type="radio" name="likeboxradio">
+                                                    <i data-feather="thumbs-down"></i></label>
+                                                <p class="m-0 text-secondary ms-3">2k</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sell_all_reviews text-center">
+                                    <a href="#" class="btn btn-large btn-default shadow border ft-20 text-black-btn   border-dark ft-medium">
+                                        See All Reviews <i class="fa fa-caret-down"></i>
+                                    </a>
+                                </div>
+
+                            </div>
+
+
+
+                        </div>
+                    </div>
+
+                    <div class="h-50px d-none d-lg-block"></div>
+
+                    <section id="" class="slider_sec shadow-set px-30 mb-4 py-20 pb-4">
+                        <div class="row align-items-center">
+                            <div class="col-lg-3 pb-5 pb-lg-0">
+                                <h3 class="ft-25 text-black m-0">Similar<br> Products for you</h3>
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="owl-carousel boxed_arrow boxed_arrow_black product_slider" id="similarProd">
+                                    <div class="item">
+                                        <div class="products_unit">
+                                            <div class="image">
+                                                <a href="#"><img src="img/p1.png" class="img-fluid" alt=""></a>
+                                            </div>
+                                            <div class="products_desc">
+
+
+                                                <div class="p_price">
+                                                    <i class="fas fa-pound-sign"></i> 897
+                                                </div>
+                                                <div class="p_offer ft-10-important lh-12-important">
+                                                    5% Cashback
+                                                </div>
+
+                                                <div class="p_name mt-2">
+                                                    <a href="#" class="ft-10 text-secondary">OnePlus 9 Pro 5G Global Rom 12GB</a>
+                                                </div>
+                                                <div class="p_rating d-flex align-items-center gap-2">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star-half-alt"></i>
+                                                    <span>(637)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="products_unit">
+                                            <div class="image">
+                                                <a href="#"><img src="img/p2.png" class="img-fluid" alt=""></a>
+                                            </div>
+                                            <div class="products_desc">
+
+
+                                                <div class="p_price">
+                                                    <i class="fas fa-pound-sign"></i> 897
+                                                </div>
+                                                <div class="p_offer ft-10-important lh-12-important">
+                                                    5% Cashback
+                                                </div>
+
+                                                <div class="p_name mt-2">
+                                                    <a href="#" class="ft-10 text-secondary">OnePlus 9 Pro 5G Global Rom 12GB</a>
+                                                </div>
+                                                <div class="p_rating d-flex align-items-center gap-2">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star-half-alt"></i>
+                                                    <span>(637)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="products_unit">
+                                            <div class="image">
+                                                <a href="#"><img src="img/p3.png" class="img-fluid" alt=""></a>
+                                            </div>
+                                            <div class="products_desc">
+
+
+                                                <div class="p_price">
+                                                    <i class="fas fa-pound-sign"></i> 897
+                                                </div>
+                                                <div class="p_offer ft-10-important lh-12-important">
+                                                    5% Cashback
+                                                </div>
+
+                                                <div class="p_name mt-2">
+                                                    <a href="#" class="ft-10 text-secondary">OnePlus 9 Pro 5G Global Rom 12GB</a>
+                                                </div>
+                                                <div class="p_rating d-flex align-items-center gap-2">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star-half-alt"></i>
+                                                    <span>(637)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="products_unit">
+                                            <div class="image">
+                                                <a href="#"><img src="img/p4.png" class="img-fluid" alt=""></a>
+                                            </div>
+                                            <div class="products_desc">
+
+
+                                                <div class="p_price">
+                                                    <i class="fas fa-pound-sign"></i> 897
+                                                </div>
+                                                <div class="p_offer ft-10-important lh-12-important">
+                                                    5% Cashback
+                                                </div>
+
+                                                <div class="p_name mt-2">
+                                                    <a href="#" class="ft-10 text-secondary">OnePlus 9 Pro 5G Global Rom 12GB</a>
+                                                </div>
+                                                <div class="p_rating d-flex align-items-center gap-2">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star-half-alt"></i>
+                                                    <span>(637)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
+                    <div class="h-50px d-none d-lg-block"></div>
+
+                    <section id="" class="slider_sec shadow-set px-30 py-20 pb-4">
+                        <div class="row align-items-center">
+                            <div class="col-lg-3 pb-5 pb-lg-0">
+                                <h3 class="ft-25 text-black m-0">Recently <br>Viewed</h3>
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="owl-carousel boxed_arrow boxed_arrow_black product_slider" id="RecentlyViewed">
+                                    <div class="item">
+                                        <div class="products_unit">
+                                            <div class="image">
+                                                <a href="#"><img src="img/p1.png" class="img-fluid" alt=""></a>
+                                            </div>
+                                            <div class="products_desc">
+
+
+                                                <div class="p_price">
+                                                    <i class="fas fa-pound-sign"></i> 897
+                                                </div>
+                                                <div class="p_offer ft-10-important lh-12-important">
+                                                    5% Cashback
+                                                </div>
+
+                                                <div class="p_name mt-2">
+                                                    <a href="#" class="ft-10 text-secondary">OnePlus 9 Pro 5G Global Rom 12GB</a>
+                                                </div>
+                                                <div class="p_rating d-flex align-items-center gap-2">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star-half-alt"></i>
+                                                    <span>(637)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="products_unit">
+                                            <div class="image">
+                                                <a href="#"><img src="img/p2.png" class="img-fluid" alt=""></a>
+                                            </div>
+                                            <div class="products_desc">
+
+
+                                                <div class="p_price">
+                                                    <i class="fas fa-pound-sign"></i> 897
+                                                </div>
+                                                <div class="p_offer ft-10-important lh-12-important">
+                                                    5% Cashback
+                                                </div>
+
+                                                <div class="p_name mt-2">
+                                                    <a href="#" class="ft-10 text-secondary">OnePlus 9 Pro 5G Global Rom 12GB</a>
+                                                </div>
+                                                <div class="p_rating d-flex align-items-center gap-2">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star-half-alt"></i>
+                                                    <span>(637)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="products_unit">
+                                            <div class="image">
+                                                <a href="#"><img src="img/p3.png" class="img-fluid" alt=""></a>
+                                            </div>
+                                            <div class="products_desc">
+
+
+                                                <div class="p_price">
+                                                    <i class="fas fa-pound-sign"></i> 897
+                                                </div>
+                                                <div class="p_offer ft-10-important lh-12-important">
+                                                    5% Cashback
+                                                </div>
+
+                                                <div class="p_name mt-2">
+                                                    <a href="#" class="ft-10 text-secondary">OnePlus 9 Pro 5G Global Rom 12GB</a>
+                                                </div>
+                                                <div class="p_rating d-flex align-items-center gap-2">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star-half-alt"></i>
+                                                    <span>(637)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="products_unit">
+                                            <div class="image">
+                                                <a href="#"><img src="img/p4.png" class="img-fluid" alt=""></a>
+                                            </div>
+                                            <div class="products_desc">
+
+
+                                                <div class="p_price">
+                                                    <i class="fas fa-pound-sign"></i> 897
+                                                </div>
+                                                <div class="p_offer ft-10-important lh-12-important">
+                                                    5% Cashback
+                                                </div>
+
+                                                <div class="p_name mt-2">
+                                                    <a href="#" class="ft-10 text-secondary">OnePlus 9 Pro 5G Global Rom 12GB</a>
+                                                </div>
+                                                <div class="p_rating d-flex align-items-center gap-2">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star-half-alt"></i>
+                                                    <span>(637)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="h-50px d-none d-lg-block"></div>
+    <div class="h-50px "></div>
+
+    <!-- content area End -->
+
+
+
+    <footer style="background: #F8F8F8;height: 440px;" class="d-flex justify-content-center align-items-center">
+        <span class="ft-35 ft-medium">Footer</span>
+    </footer>
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" integrity="sha512-7x3zila4t2qNycrtZ31HO0NnJr8kg2VI67YLoRSyi9hGhRN66FHYWr7Axa9Y1J9tGYHVBPqIjSE1ogHrJTz51g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+    <script src="css/lightbox/js/lightbox.js" type="text/JavaScript"></script>
+    <script src="js/custom.js" type="text/JavaScript"></script>
+    <script src="js/ie.js" type="text/JavaScript"></script>
+</body>
+
+</html>

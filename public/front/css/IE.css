@@ -1,0 +1,98 @@
+    @media screen and (-ms-high-contrast: active),
+    (-ms-high-contrast: none) {
+        .ie_show {
+            display: block !important;
+        }
+        .row {
+            margin-left: -7.5px;
+            margin-right: -7.5px;
+        }
+        .row>*,
+        .container,
+        .container-fluid,
+        .container-lg,
+        .container-md,
+        .container-sm,
+        .container-xl,
+        .container-xxl {
+            padding-right: 7.5px!important;
+            padding-left: 7.5px !important;
+        }
+        .brands_listing img.img-fluid {
+            width: 100%;
+        }
+        .gap-1>* {
+            margin-left: 1px !important;
+            margin-right: 1px !important;
+        }
+        .gap-2>* {
+            margin-left: 3px !important;
+            margin-right: 3px !important;
+        }
+        .gap-3>* {
+            margin-left: 5px !important;
+            margin-right: 5px !important;
+        }
+        .gap-4>* {
+            margin-left: 6px !important;
+            margin-right: 6px !important;
+        }
+        .gap-5>* {
+            margin-left: 8px !important;
+            margin-right: 8px !important;
+        }
+        .gap-1>*:first-child {
+            margin-left: 0 !important;
+        }
+        .gap-1>*:last-child {
+            margin-right: 0 !important;
+        }
+        .gap-2>*:first-child {
+            margin-left: 0 !important;
+        }
+        .gap-2>*:last-child {
+            margin-right: 0 !important;
+        }
+        .gap-3>*:first-child {
+            margin-left: 0 !important;
+        }
+        .gap-3>*:last-child {
+            margin-right: 0 !important;
+        }
+        .gap-4>*:first-child {
+            margin-left: 0 !important;
+        }
+        .gap-4>*:last-child {
+            margin-right: 0 !important;
+        }
+        .gap-5>*:first-child {
+            margin-left: 0 !important;
+        }
+        .gap-5>*:last-child {
+            margin-right: 0 !important;
+        }
+        .breadcrumb-item+.breadcrumb-item::before {
+            content: ">";
+            font-size: 20px;
+            position: relative;
+            top: 1px;
+        }
+        .right-header {
+            padding-left: 30px !important;
+        }
+        .owl_slideshow {
+            width: 96.5%;
+        }
+        .shadow {
+            border: 1px solid #eee;
+        }
+        .lightbox {
+            position: fixed !important;
+            top: 20px !important;
+        }
+        /*@media all and (min-width:992px)*/
+        .px-lg-5 {
+            padding-right: 3rem !important;
+            padding-left: 3rem !important;
+        }
+    }
