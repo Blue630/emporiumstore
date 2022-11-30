@@ -1354,12 +1354,13 @@ function editaddress(Request $req, $id)
 public function registeration(Request $req)
 {
     $user_type = $req->input('user_type');
+    $last_inserted_user_id = DB::table('buyers')->orderBy('id', 'desc')->first();
     if($user_type==3)
     {
         $buyer = 'BUYER';
-        $random_str = '1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        $shuffle_str = str_shuffle($random_str);
-        $u_id = $buyer.substr($shuffle_str,0,6);
+        // $random_str = '1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        // $shuffle_str = str_shuffle($random_str);
+        // $u_id = $buyer.substr($shuffle_str,0,6);
         $name = $req->input('name'); 
         $is_admin = 2;
         /*$buyer_data = [
@@ -1379,7 +1380,7 @@ public function registeration(Request $req)
             $password = $_REQUEST['password'];
             $newpassword = Hash::make($password);
             $addData=array(
-            'u_id'=>$u_id,
+            'u_id'=>$buyer . $last_inserted_user_id->id,
             'showpassword'=>$password,
             'is_admin'=>$is_admin, 
             'user_type'=>$req->input('user_type'),
@@ -1389,7 +1390,7 @@ public function registeration(Request $req)
             'status'=>1,
             'created_at'=>date('Y-m-d')
             );
-            //$userid=DB:: table('users')->insertGetId($addData);
+            // $userid=DB::table('users')->insertGetId($addData);
             return view('front/buyer-otp',$addData);
             //return back()->with('success','Successfully created account');
         }
@@ -1397,9 +1398,9 @@ public function registeration(Request $req)
     else
     {
         $seller = 'SELLER';
-        $random_str = '1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        $shuffle_str = str_shuffle($random_str);
-        $u_id = $seller.substr($shuffle_str,0,6);
+        // $random_str = '1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        // $shuffle_str = str_shuffle($random_str);
+        // $u_id = $seller.substr($shuffle_str,0,6);
         $is_admin = 3;
         if($req->isMethod('post'))
         {
@@ -1416,7 +1417,7 @@ public function registeration(Request $req)
             $password = $_REQUEST['password'];
             $newpassword = Hash::make($password);
             $addData=array(
-            'u_id'=>$u_id,
+            'u_id'=>$seller . $last_inserted_user_id->id,
             'showpassword'=>$password,
             'is_admin'=>$is_admin, 
             'name'=>$req->input('name'),
@@ -1457,7 +1458,7 @@ function buyerotpverification(Request $req)
     'status'=>1,
     'created_at'=>date('Y-m-d')
     );
-    $userid=DB:: table('users')->insertGetId($addData);
+    $userid=DB::table('users')->insertGetId($addData);
     require '/home/u825973534/domains/emporiumstore.co.uk/public_html/vendor/sb/vendor/autoload.php';
 
     $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', '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');
@@ -1490,28 +1491,16 @@ function sendotp(Request $req)
     $verify_pto = $_REQUEST['verify_pto'];
     $this->from=strtolower($req->input('email'));
     $dataset=array('email'=>strtolower($req->input('email')));
-    
-    $details = [
-        'title' => 'Mail from ItSolutionStuff.com',
-        'body' => 'This is for testing email using smtp'
-    ];
-   
-    \Mail::to('coolshine630@gmail.com')->send(new \App\Mail\SendMail($details));
-   
-    dd("Email is Sent.");
-
-
-    // $res=  Mail::send('front/sendmail/regmail',$data =
-    // [
-    // 'dataset'=>$dataset,
-    // 'otp'=>$verify_pto
-    // ],function($message){
-    //      //return $message;
-    //     $message->from('info@emporiumstore.co.uk','Email Vertification');
-    //     $message->to($this->from,'Email Vertification');
-    //     $message->subject('Email Vertification');
-    //     var_dump($message);
-    // });
+    $res=  Mail::send('front/sendmail/regmail',$data =
+    [
+    'dataset'=>$dataset,
+    'otp'=>$verify_pto
+    ],function($message){
+         //return $message;
+        $message->from('info@emporiumstore.co.uk','Email Vertification');
+        $message->to($this->from,'Email Vertification');
+        $message->subject('Email Vertification');
+    });
 }
 
 function otpverification(Request $req)
