@@ -1,79 +1,80 @@
 @include('front.include.header')
 @yield('header')   
 <?php
-use App\Review;
-use App\OrderDetail;
-use App\LikeDislikeReview;
-if(Auth::check())
-{
-$user_id = auth()->user()->id;
-}
-else{
-    $user_id='';
-}
-$product_id = $productdetail->id;
-$seller_id = $productdetail->user_id;
-$getpincode=DB::table('addresses')->where('user_id',$user_id)->first();
-if(!empty($getpincode))
-{
-$pincode = $getpincode->pincode;
-}
-else
-{
-    $pincode = '';
-}
-$seller_data_email = DB::table('users')->where('id',$seller_id)->first();
-$seller_email = $seller_data_email->email;
-$checkCashback = DB::table('cashbacks')->select('*')->whereRaw('FIND_IN_SET('.$product_id.',product_id)')->first();
-if(!empty($checkCashback))
-{
-$cashback = $checkCashback->cashback;
-}
-else
-{
-$cashback = 0;
-}
-$is_featured = $productdetail->is_featured;
-$product_name = $productdetail->name;
-$category_id = $productdetail->catid;
-$category = DB::table('category')->where('id',$category_id)->first();
-$cat_name = $category->catname;
-$cat_slug = $category->slug;
-$subcategory_id = $productdetail->subcat_id;
-$subcategory = DB::table('sub_category')->where('id',$subcategory_id)->first();
-if(isset($subcategory))
-{
-$subcat_name = $subcategory->name;
-$subcat_slug = $subcategory->slug;
-}
-else
-{
-$subcat_name = '';
-$subcat_slug = '';
-}
-$postal_code = $productdetail->zipcode;
-//die;
-$discount_code_id = $productdetail->discount_code_id;
-$coupon = DB::table('coupons')->where('id',$discount_code_id)->first();
-if(!$coupon)
-{
-$coupon_end_date = '';    
-}
-else{
-$coupon_end_date = $coupon->end_date;
-$coupon_start_date = $coupon->start_date;
-}
-$currentDate = date('Y-m-d');
-if($coupon_end_date>=$currentDate)
-{
-$coupon_code = $coupon->code;
-$coupon_perecent = $coupon->percent;
-}
-else
-{
-$coupon_code = '';
-$coupon_perecent = '';
-}
+    use App\Review;
+    use App\OrderDetail;
+    use App\LikeDislikeReview;
+    if(Auth::check())
+    {
+    $user_id = auth()->user()->id;
+    }
+    else{
+        $user_id='';
+    }
+    $product_id = $productdetail->id;
+    $seller_id = $productdetail->user_id;
+    $getpincode=DB::table('addresses')->where('user_id',$user_id)->first();
+    if(!empty($getpincode))
+    {
+        $pincode = $getpincode->pincode;
+    }
+    else
+    {
+        $pincode = '';
+    }
+    echo "<script>var pincode = '$pincode' </script>";
+    $seller_data_email = DB::table('users')->where('id',$seller_id)->first();
+    $seller_email = $seller_data_email->email;
+    $checkCashback = DB::table('cashbacks')->select('*')->whereRaw('FIND_IN_SET('.$product_id.',product_id)')->first();
+    if(!empty($checkCashback))
+    {
+    $cashback = $checkCashback->cashback;
+    }
+    else
+    {
+    $cashback = 0;
+    }
+    $is_featured = $productdetail->is_featured;
+    $product_name = $productdetail->name;
+    $category_id = $productdetail->catid;
+    $category = DB::table('category')->where('id',$category_id)->first();
+    $cat_name = $category->catname;
+    $cat_slug = $category->slug;
+    $subcategory_id = $productdetail->subcat_id;
+    $subcategory = DB::table('sub_category')->where('id',$subcategory_id)->first();
+    if(isset($subcategory))
+    {
+    $subcat_name = $subcategory->name;
+    $subcat_slug = $subcategory->slug;
+    }
+    else
+    {
+    $subcat_name = '';
+    $subcat_slug = '';
+    }
+    $postal_code = $productdetail->zipcode;
+    //die;
+    $discount_code_id = $productdetail->discount_code_id;
+    $coupon = DB::table('coupons')->where('id',$discount_code_id)->first();
+    if(!$coupon)
+    {
+    $coupon_end_date = '';    
+    }
+    else{
+    $coupon_end_date = $coupon->end_date;
+    $coupon_start_date = $coupon->start_date;
+    }
+    $currentDate = date('Y-m-d');
+    if($coupon_end_date>=$currentDate)
+    {
+    $coupon_code = $coupon->code;
+    $coupon_perecent = $coupon->percent;
+    }
+    else
+    {
+    $coupon_code = '';
+    $coupon_perecent = '';
+    }
 ?>
 <style>
 .addon_prod_count .addon, .addon_prod_count .addon_equalto {
@@ -245,14 +246,14 @@ border:none;
 <div class="prod_price-details mt-5">
 <div class="d-flex align-items-center justify-content-between w-xl-60 w-lg-75">
 <div class="p_price m-0">
-<i class="fas fa-pound-sign"></i> <span id="priceSpan"></span>
+<i class="fas fa-pound-sign"></i> <span id="priceSpan">{{number_format($productdetail->price * (1 - ($productdetail->discount ?? 0) / 100), 2)}}</span>
 </div>
 <?php
 if($productdetail->discount!='')
 {
 ?>
 <div class="prev_price text-light">
-<s><i class="fas fa-pound-sign"></i> {{number_format($productdetail->discount+$productdetail->price, 2)}}</s>
+<s><i class="fas fa-pound-sign"></i>{{number_format($productdetail->price, 2)}}</s>
 </div>
 <?php
 }
@@ -1173,7 +1174,7 @@ url: "{{url('/product-varient-data')}}",
 data:{"product_id":product_id, _token: '{{csrf_token()}}',"optionvalue":optionvalue},
 success: function(data){
 var dataprice = data.toString().split('-'); 
-$("#priceSpan").text(dataprice[0]); 
+// $("#priceSpan").text(dataprice[0]); 
 priceSpan = dataprice[0];
 variantId = dataprice[1];
 //Product Gallery Image Start
@@ -1203,37 +1204,42 @@ $user_id = "";
 }
 @endphp
 function addtocart(){
-var user_id = '{{$user_id}}';
-var quantity = $('.quantity').val();
-var price = priceSpan;
-var variantIds = variantId;
-var cashback = '{{$cashback}}';
-//alert(variantIds);
-//alert(price);
-var product_id = '{{$productdetail->id}}';
-var variantarray = [];
-$('.selectedvariant').attr('title');
-$('.selectedvariant').each(function(){
-variantarray.push($(this).attr('title'));
-});
-//alert(variantarray);
-$.ajax({
-type: "post",
-url: "{{url('/cart/addtoCart')}}",
-data:{"product_id":product_id, _token: '{{csrf_token()}}',"variantarray":variantarray,"quantity":quantity,"price":price,"user_id":user_id,"variantIds":variantIds,"cashback":cashback},
-success: function(data){
-  if(data=='no')
-  {
-    //$('#frontID').text('No Variant For This Product')
-    alert("No Variant for this product");
-    location.reload();
-  }
-  else{
-    window.location.href='{{url("/cart")}}';
-  }
-}
-})
-$("#btnSubmit").attr("disabled", true);
+    if(!pincode) {
+        alert('Please fill your profile informations!');
+        window.location.href = '/update-profile';
+        return;
+    } 
+    var user_id = '{{$user_id}}';
+    var quantity = $('.quantity').val();
+    var price = priceSpan;
+    var variantIds = variantId;
+    var cashback = '{{$cashback}}';
+    //alert(variantIds);
+    //alert(price);
+    var product_id = '{{$productdetail->id}}';
+    var variantarray = [];
+    $('.selectedvariant').attr('title');
+    $('.selectedvariant').each(function(){
+    variantarray.push($(this).attr('title'));
+    });
+    //alert(variantarray);
+    $.ajax({
+    type: "post",
+    url: "{{url('/cart/addtoCart')}}",
+    data:{"product_id":product_id, pincode: pincode, _token: '{{csrf_token()}}',"variantarray":variantarray,"quantity":quantity,"price":price,"user_id":user_id,"variantIds":variantIds,"cashback":cashback},
+    success: function(data){
+      if(data=='no')
+      {
+        //$('#frontID').text('No Variant For This Product')
+        alert("No Variant for this product");
+        location.reload();
+      }
+      else{
+        window.location.href='{{url("/cart")}}';
+      }
+    }
+    })
+    $("#btnSubmit").attr("disabled", true);
 }
 $(".loadmorereview").click(function(){
 

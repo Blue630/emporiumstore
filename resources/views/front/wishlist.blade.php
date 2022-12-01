@@ -8,7 +8,7 @@ if(Auth::check())
 {
 $user_id = auth()->user()->id;
 $wishlist = Wishlist::getWishlistProducts($user_id);  
-$wishlistcount = Wishlist::getWishlistProducts($user_id)->count();
+$wishlistcount = count($wishlist);
 }
 @endphp
  
@@ -60,8 +60,8 @@ $wishlistcount = Wishlist::getWishlistProducts($user_id)->count();
                                                     <div class="checkout_price ft-15 lh-22 ft-medium text-grey mb-3">
                                                         <strike> GBP {{$product->price}}</strike>
                                                     </div>
-                                                    <small class="d-block ft-10 lh-16 ft-medium">Get upto <span class="text-danger">20%</span>  off and additional <span class="text-danger">2% Cashback</span> </small>
-                                                    <p class="ft-12 ft-medium lh-18">Get it for as low as <span class="text-green">£235.2</span></p>
+                                                    <small class="d-block ft-10 lh-16 ft-medium">Get upto <span class="text-danger">{{$product->discount ?? 0}}%</span>  off and additional <span class="text-danger">{{$cashback ?? 0}}% Cashback</span> </small>
+                                                    <p class="ft-12 ft-medium lh-18">Get it for as low as <span class="text-green">£{{number_format($product->price * (1 - ($product->discount ?? 0) / 100), 2)}}</span></p>
 
                                                     <!--<div class="d-flex align-items-center gap-4 justify-content-end flex-wrap">
                                                         <a href="javascript:void(0)" class="btn btn-primary py-0 px-5 ft-10 d-block mt-2">Add to Cart</a>

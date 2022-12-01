@@ -759,84 +759,84 @@ class SellerController extends Controller
                 $imagename=$time.'_'.$req->proimage->getClientOriginalName();
                 $req->proimage->move(public_path('products/'),$imagename);
             }
-            $vcount = count($_REQUEST['var']);
+            // $vcount = count($_REQUEST['var']);
 
-            $var_count = 0;
-            //echo $vcount;die;
-            //echo "<pre>";
-            //print_r($_REQUEST['var']);die;
-            foreach ($_REQUEST['var'] as $key=>$varArr) {
-                $var_count++;
-                $serialize_data = serialize($varArr);
+            // $var_count = 0;
+            // //echo $vcount;die;
+            // //echo "<pre>";
+            // //print_r($_REQUEST['var']);die;
+            // foreach ($_REQUEST['var'] as $key=>$varArr) {
+            //     $var_count++;
+            //     $serialize_data = serialize($varArr);
                 
 
-                $variantone = isset($varArr['variant_id'])?$varArr['variant_id']:"";
-                //check variant id exist or not
+            //     $variantone = isset($varArr['variant_id'])?$varArr['variant_id']:"";
+            //     //check variant id exist or not
 
-                $pd=DB::table('product_detail')->where('product_id',$id)->get();
-                $new_pd = array();
-                foreach ($pd as $pdvalue) {
-                    $new_pd[] = $pdvalue->id;
-                }
-                /*echo "<pre>";
-                print_r($new_pd);
-                echo "</pre>";die;*/
-                //get exisitng variant id in new_pd
+            //     $pd=DB::table('product_detail')->where('product_id',$id)->get();
+            //     $new_pd = array();
+            //     foreach ($pd as $pdvalue) {
+            //         $new_pd[] = $pdvalue->id;
+            //     }
+            //     /*echo "<pre>";
+            //     print_r($new_pd);
+            //     echo "</pre>";die;*/
+            //     //get exisitng variant id in new_pd
 
-                if(in_array($variantone,$new_pd))
-                {
-                    //print_r($req->file('product_image'));die;
-                    $affected = DB::table('product_detail')->where('id', $variantone)->update(['spec_detail' => $serialize_data]);
+            //     if(in_array($variantone,$new_pd))
+            //     {
+            //         //print_r($req->file('product_image'));die;
+            //         $affected = DB::table('product_detail')->where('id', $variantone)->update(['spec_detail' => $serialize_data]);
 
-                    if($req->has('product_image')) {
-                    $time=time();
-                    if(isset($req->file('product_image')[$var_count]))
-                    {
-                    $imageArr = $req->file('product_image')[$var_count];
-                    foreach ($imageArr as $image) {
-                    $name = $time.'_'.$image->getClientOriginalName();
-                    $aa = $image;
-                    $aa->move(public_path('/product_image'), $name);
-                        $data[] = $name;
-                        DB::table('additional')->insert(
-                        array(
-                            'option_id' => $_REQUEST['var'][$var_count]['variant_id'],
-                            'product_id'     =>   $id, 
-                            'product_image'   =>   $name
-                        )
-                        );
-                    }
-                    }
-                    }
-                }
-                else{
-                    DB::table('product_detail')->insert(
-                    array(
-                        'product_id'     =>   $id, 
-                        'spec_detail'   =>   $serialize_data,
-                        'created_at'=>date('Y-m-d H:i:s')
-                )
-                );
-                $variantid = DB::getPdo()->lastInsertId();
-                if($req->has('product_image')) {
-                $time=time();
-                $imageArr = $req->file('product_image')[$vcount];
-                foreach ($imageArr as $image) {
-                $name = $time.'_'.$image->getClientOriginalName();
-                $aa = $image;
-                $aa->move(public_path('/product_image'), $name);
-                    $data[] = $name;
-                    DB::table('additional')->insert(
-                    array(
-                        'option_id' => $variantid,
-                        'product_id'     =>   $id, 
-                        'product_image'   =>   $name
-                    )
-                    );
-                }
-                }
-                }
-            }//die;
+            //         if($req->has('product_image')) {
+            //         $time=time();
+            //         if(isset($req->file('product_image')[$var_count]))
+            //         {
+            //         $imageArr = $req->file('product_image')[$var_count];
+            //         foreach ($imageArr as $image) {
+            //         $name = $time.'_'.$image->getClientOriginalName();
+            //         $aa = $image;
+            //         $aa->move(public_path('/product_image'), $name);
+            //             $data[] = $name;
+            //             DB::table('additional')->insert(
+            //             array(
+            //                 'option_id' => $_REQUEST['var'][$var_count]['variant_id'],
+            //                 'product_id'     =>   $id, 
+            //                 'product_image'   =>   $name
+            //             )
+            //             );
+            //         }
+            //         }
+            //         }
+            //     }
+            //     else{
+            //         DB::table('product_detail')->insert(
+            //         array(
+            //             'product_id'     =>   $id, 
+            //             'spec_detail'   =>   $serialize_data,
+            //             'created_at'=>date('Y-m-d H:i:s')
+            //     )
+            //     );
+            //     $variantid = DB::getPdo()->lastInsertId();
+            //     if($req->has('product_image')) {
+            //     $time=time();
+            //     $imageArr = $req->file('product_image')[$vcount];
+            //     foreach ($imageArr as $image) {
+            //     $name = $time.'_'.$image->getClientOriginalName();
+            //     $aa = $image;
+            //     $aa->move(public_path('/product_image'), $name);
+            //         $data[] = $name;
+            //         DB::table('additional')->insert(
+            //         array(
+            //             'option_id' => $variantid,
+            //             'product_id'     =>   $id, 
+            //             'product_image'   =>   $name
+            //         )
+            //         );
+            //     }
+            //     }
+            //     }
+            // }//die;
             DB::table('products')->where('id',$id)->update($updateData);
             return back()->with('success','Successfully updated product');
         }

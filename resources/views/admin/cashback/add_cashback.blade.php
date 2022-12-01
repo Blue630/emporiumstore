@@ -22,8 +22,8 @@ $(document).ready(function(){
                    var h12 = new Choices('.multi2', {
 					removeItemButton: true,
 					//maxItemCount:5,
-					searchResultLimit:5,
-					renderChoiceLimit:5
+					searchResultLimit:500,
+					renderChoiceLimit:500
 					});
 
                 }
@@ -47,8 +47,8 @@ $(document).ready(function(){
                     var h13 = new Choices('.multi3', {
 					removeItemButton: true,
 					//maxItemCount:5,
-					searchResultLimit:5,
-					renderChoiceLimit:5
+					searchResultLimit:500,
+					renderChoiceLimit:500
 					});
                 }
         }); 
@@ -204,21 +204,21 @@ $('#date-ankur').daterangepicker();
 var h11 = new Choices('.multi1', {
 removeItemButton: true,
 //maxItemCount:5,
-searchResultLimit:5,
-renderChoiceLimit:5
+searchResultLimit:500,
+renderChoiceLimit:500
 })
 var h12 = new Choices('.multi2', {
 removeItemButton: true,
 //maxItemCount:5,
-searchResultLimit:5,
-renderChoiceLimit:5
+searchResultLimit:500,
+renderChoiceLimit:500
 })
 
 var h13 = new Choices('.multi3', {
 removeItemButton: true,
 //maxItemCount:5,
-searchResultLimit:5,
-renderChoiceLimit:5
+searchResultLimit:500,
+renderChoiceLimit:500
 })
 });
 </script>

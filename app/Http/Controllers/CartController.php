@@ -110,21 +110,20 @@ class CartController extends Controller
         //die;
         $product_cashback = $_REQUEST['cashback'];
         $product_id = $_REQUEST['product_id'];
-        $sellerid = DB::table('products')->where(array('id'=>$product_id,'status'=>1))->first();
-        $seller_id = $sellerid->user_id;
-        $postal_id = $sellerid->zipcode;
-        //$checkPostalCost = DB::table('postal_code')->select('*')->whereRaw('FIND_IN_SET('.$seller_id.',seller_id)')->first();
-        //DB::enableQueryLog(); // Enable query log
-        $checkPostalCost = DB::table('postal_code')->select('*')->WhereRaw("FIND_IN_SET('$seller_id',seller_id) and id='$postal_id'")->first();
-        // dd(DB::getQueryLog()); // Show results of log
-        // die;
-        if(!empty($checkPostalCost))
-        {
-            $delivery_charges = $checkPostalCost->cost;
-        }
-        else
-        {
-            $delivery_charges = 0;
+        $zipcode = $_REQUEST['pincode'];
+        $prdData = DB::table('products')
+                        ->select('user_id')
+                        ->where('id', $product_id)
+                        ->first();
+        $postalcode=DB::table('postal_code')->select('*')->where('zipcode',$zipcode)->where('seller_id',$prdData->user_id)->first();
+        $delivery_charges = 0;
+        if(!empty($postalcode)) {
+            $checkPinCode = DB::table('products')
+                ->select('id')
+                ->whereRaw('FIND_IN_SET('.$postalcode->id.',zipcode)')
+                ->where('id', $product_id)
+                ->get();
+            $delivery_charges = $postalcode->cost;
         }
         $variantIds = $_REQUEST['variantIds'];
         $token = $_REQUEST['_token'];

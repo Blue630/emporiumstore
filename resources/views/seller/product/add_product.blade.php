@@ -144,7 +144,7 @@ $(document).ready(function(){
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">£</span>
                                 </div>
-                                <input type="number" min="0.1" step="0.1" id="price" name="price" class="form-control" placeholder="Price" required>
+                                <input type="number" min="0.1" step="0.01" id="price" name="price" class="form-control" placeholder="Price" required>
                             </div>
                         </div>
                     </div>
