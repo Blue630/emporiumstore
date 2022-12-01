@@ -41,13 +41,13 @@ class GoogleLoginController extends Controller
                     $user_type = $userlog->user_type;
                     if($user_type==3)
                     {
-                        Auth::login($userlog);
+                        Auth::login($finduser);
                         //session()->put('logged_user',$userlog);
                         return redirect('/');
                     }
                     else
                     {
-                        Auth::login($userlog);
+                        Auth::login($finduser);
                         //session()->put('logged_user',$userlog);
                         return redirect('/welcome-seller');
                     }
