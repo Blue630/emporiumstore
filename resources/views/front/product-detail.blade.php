@@ -103,8 +103,8 @@ white-space: nowrap;
 <div id="loadmsgpromo" class="alert alert-primary alert_hideo"></div>
 <div class="row">
 <div class="col-lg-5 col-xl-6">
-<div class="product_main_image" id="galleryvariant">
-<!--<div class="big_image position-relative">
+{{-- <div class="product_main_image" id="galleryvariant"> --}}
+<div class="big_image position-relative">
 <?php
 $a = 0;
 $additional1=DB::table('additional')->where('product_id',$product_id)->first();
@@ -114,21 +114,24 @@ if(!empty($additional1))
 <img style="height:555px;object-fit: contain" src="{{ asset('public/product_image/'.$additional1->product_image) }}" class="w-100" alt="" data-id="img<?php echo $a;?>"><?php } ?>
 <i data-feather="zoom-in"></i>
 </div>
+<div class="h-50px "></div>
 <div class="small_images row row-cols-lg-6 row-col-3 gx-2">
-<?php
-$b = 0;
-$additional2=DB::table('additional')->where('product_id',$product_id)->get();
-foreach ($additional2 as $alladditional2) {
-$b++;
-?>
-<div class="col">
-<div class="smallimage_list" data-id="img<?php echo $b;?>" data-src="{{ asset('public/product_image/'.$alladditional2->product_image) }}">
-<img style="height:93px;" src="{{ asset('public/product_image/'.$alladditional2->product_image) }}" class="img-fluid" alt="">
-</div>
-</div>
-<?php
-}
-?>
+    <div class="owl-carousel boxed_arrow boxed_arrow_black" id="small-images-carousel">
+        <?php
+            $b = 0;
+            $additional2=DB::table('additional')->where('product_id',$product_id)->get();
+            foreach ($additional2 as $alladditional2) {
+            $b++;
+        ?>
+            <div class="items cols">
+                <div class="smallimage_list" data-id="img<?php echo $b;?>" data-src="{{ asset('public/product_image/'.$alladditional2->product_image) }}">
+                    <img style="height:93px;" src="{{ asset('public/product_image/'.$alladditional2->product_image) }}" class="img-fluid" alt="">
+                </div>
+            </div>
+        <?php
+            }
+        ?>
+    </div>
 </div>
 <div class="lightbox_gallery">
 <?php
@@ -141,7 +144,7 @@ $c++;
 <?php
 }
 ?>
-</div>-->
+{{-- </div>--> --}}
 </div>
 </div>
 <div class="col-lg-7 col-xl-6 ps-lg-5">
@@ -205,6 +208,11 @@ border: none;
 }
 .fa{
 color:red;
+}
+.owl-carousel .owl-item img {
+    height: 90px;
+    width: auto;
+    margin: auto;
 }
 </style>
 <button title="Add to Wish List" data-toggle="tooltip" type="button" class="btn-wishlist" href="javascript:void(0);" onClick="addwishlist('<?php echo $productdetail->id; ?>');">
@@ -576,49 +584,49 @@ else
 <div class="bought_togther  py-5 px-4 border">
 <h3 class="ft-20 lh-30 text-decoration-underline text-black text-center ft-medium">Bought Together</h3>
 <div class="owl-carousel boxed_arrow boxed_arrow_black" id="boughtTogther">
-<?php
-$counttogetherproduct = count($boughttogetherproduct);
-if($counttogetherproduct>1)
-{
-foreach ($boughttogetherproduct as $boughttogetherproductvalue) 
-{
-?>
-<div class="item">
-<div class="products_unit">
-<input class="cbCheck" type="checkbox"  id="product<?php echo $boughttogetherproductvalue->id;?>" name="product<?php echo $boughttogetherproductvalue->id;?>" value="<?php echo $boughttogetherproductvalue->id;?>">
-<div class="image">
-<a href="{{url('product-detail/'.$boughttogetherproductvalue->slug)}}"><img style="height: 87px;" src="{{ asset('public/products/'.$boughttogetherproductvalue->image) }}" class="img-fluid" alt="{{$boughttogetherproductvalue->slug}}"></a>
-</div>
-<div class="products_desc">
-<div class="p_name">
-<a href="{{url('product-detail/'.$boughttogetherproductvalue->slug)}}">{{$boughttogetherproductvalue->name}}</a>
-</div>
-<div class="p_rating d-flex align-items-center gap-2">
-@php
-$boughtrating_data = Review::getRatingAverage($boughttogetherproductvalue->id);
-@endphp
-<div class="ratingofprod">
-<div class="ratinga2">
-<div class="ratinga" data-value="{{$boughtrating_data['rating']}}"></div>
-</div>
-</div> 
-<span>({{$boughtrating_data['reviews']}})</span>
-</div>
-<div class="d-flex align-items-center">
-<div class="p_price">
-<i class="fas fa-pound-sign"></i> {{$boughttogetherproductvalue->price}}
-</div>
-<div class="p_offer">
-{{$boughttogetherproductvalue->cashback}}% Cashback
-</div>
-</div>
-</div>
-</div>
-</div>
-<?php
-}
-}
-?>
+    <?php
+    $counttogetherproduct = count($boughttogetherproduct);
+    if($counttogetherproduct>1)
+    {
+    foreach ($boughttogetherproduct as $boughttogetherproductvalue) 
+    {
+    ?>
+    <div class="item">
+        <div class="products_unit">
+            <input class="cbCheck" type="checkbox"  id="product<?php echo $boughttogetherproductvalue->id;?>" name="product<?php echo $boughttogetherproductvalue->id;?>" value="<?php echo $boughttogetherproductvalue->id;?>">
+            <div class="image">
+            <a href="{{url('product-detail/'.$boughttogetherproductvalue->slug)}}"><img style="height: 87px;" src="{{ asset('public/products/'.$boughttogetherproductvalue->image) }}" class="img-fluid" alt="{{$boughttogetherproductvalue->slug}}"></a>
+            </div>
+            <div class="products_desc">
+                <div class="p_name">
+                <a href="{{url('product-detail/'.$boughttogetherproductvalue->slug)}}">{{$boughttogetherproductvalue->name}}</a>
+                </div>
+                <div class="p_rating d-flex align-items-center gap-2">
+                @php
+                $boughtrating_data = Review::getRatingAverage($boughttogetherproductvalue->id);
+                @endphp
+                <div class="ratingofprod">
+                    <div class="ratinga2">
+                    <div class="ratinga" data-value="{{$boughtrating_data['rating']}}"></div>
+                    </div>
+                </div> 
+                <span>({{$boughtrating_data['reviews']}})</span>
+                </div>
+                <div class="d-flex align-items-center">
+                    <div class="p_price">
+                    <i class="fas fa-pound-sign"></i> {{$boughttogetherproductvalue->price}}
+                    </div>
+                    <div class="p_offer">
+                    {{$boughttogetherproductvalue->cashback}}% Cashback
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php
+            }
+        }
+    ?>
 </div>
 <div class="d-flex align-items-center flex-wrap justify-content-center">
 <div class="addon_prod_count d-flex align-items-center"></div>

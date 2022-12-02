@@ -164,6 +164,29 @@ jQuery(function($) {
         }
     });
 
+    
+    $('#small-images-carousel').owlCarousel({
+        margin: 25,
+        loop: false,
+        nav: true,
+        dots: false,
+        navText: ['<i class="gg-chevron-left"></i>', '<i class="gg-chevron-right"></i>'],
+        responsive: {
+            0: {
+                items: 2,
+            },
+            575: {
+                items: 3,
+            },
+            768: {
+                items: 4,
+            },
+            1200: {
+                items: 5,
+            }
+        }
+    });
+
     $('#ratepurchase').owlCarousel({
         margin: 0,
         loop: false,

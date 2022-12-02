@@ -95,7 +95,7 @@ if($cartcount>0)
                                     if($addressdata!='')
                                     {
                                     //\DB::enableQueryLog(); // Enable query log
-                                    $postCodeData = DB::table('postal_code')->select('cost')->where(array('seller_id'=>$products->user_id,'zipcode'=>$addressdata->pincode))->first();
+                                    $postCodeData=DB::table('postal_code')->select('*')->where('zipcode', 'like', explode(' ', $addressdata->pincode)[0] . '%')->where('seller_id',$products->user_id)->first();
                                     //dd(\DB::getQueryLog());die;
                                     if(empty($postCodeData))
                                     {
