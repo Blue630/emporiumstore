@@ -90,8 +90,8 @@ public function products()
         }
         $category = DB::table('category')->get();
         $subcategory = DB::table('sub_category')->get();
-        //$products = DB::table('products')->where(array('status'=>1))->orderBy('price',$orderby)->paginate(12);
-        $products = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'users.status'=>1))->orderBy('products.price',$orderby)->paginate(12);
+        //$products = DB::table('products')->where(array('status'=>1))->orderBy('price',$orderby)->paginate(52);
+        $products = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'users.status'=>1))->orderBy('products.price',$orderby)->paginate(52);
     }
     elseif(isset($_REQUEST['sortbyorder']) && $_REQUEST['sortbyorder']!="" && $_REQUEST['sortby']=="")
     {
@@ -106,8 +106,8 @@ public function products()
         }
         $category = DB::table('category')->get();
         $subcategory = DB::table('sub_category')->get();
-        //$products = DB::table('products')->where(array('status'=>1))->orderBy('id',$orderby)->paginate(12);
-        $products = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'users.status'=>1))->orderBy('products.id',$orderby)->paginate(12);
+        //$products = DB::table('products')->where(array('status'=>1))->orderBy('id',$orderby)->paginate(52);
+        $products = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'users.status'=>1))->orderBy('products.id',$orderby)->paginate(52);
     }
     elseif(!empty($_GET))
     {
@@ -137,16 +137,16 @@ public function products()
         $newproductid = explode(',',$newproduct_id);
         $category = DB::table('category')->get();
         $subcategory = DB::table('sub_category')->get();
-        //$products = DB::table('products')->where(array('status'=>1))->whereIn('id', $newproductid)->orderBy('id','desc')->paginate(12);
-        $products = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'users.status'=>1))->whereIn('products.id', $newproductid)->orderBy('products.id','desc')->paginate(12);
+        //$products = DB::table('products')->where(array('status'=>1))->whereIn('id', $newproductid)->orderBy('id','desc')->paginate(52);
+        $products = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'users.status'=>1))->whereIn('products.id', $newproductid)->orderBy('products.id','desc')->paginate(52);
     }
     }
     else
     {
         $category = DB::table('category')->get();
         $subcategory = DB::table('sub_category')->get();
-        //$products = DB::table('products')->where(array('status'=>1))->orderBy('id','desc')->paginate(12);
-        $products = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'users.status'=>1))->orderBy('products.id','desc')->paginate(12);
+        //$products = DB::table('products')->where(array('status'=>1))->orderBy('id','desc')->paginate(52);
+        $products = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'users.status'=>1))->orderBy('products.id','desc')->paginate(52);
     }
     return view('/front/products',['products'=>$products,'category'=>$category,'subcategory'=>$subcategory]);
 }
@@ -193,7 +193,7 @@ public function suggestedproducts()
         ->where('most_viewed_product.status', 1)
         ->where('users.status', 1)
         ->where('most_viewed_product.user_id', $user_id)
-        ->orderBy('most_viewed_product.id',$orderby)->paginate(12);
+        ->orderBy('most_viewed_product.id',$orderby)->paginate(52);
         }
     }
     elseif(isset($_REQUEST['sortbyorder']) && $_REQUEST['sortbyorder']!="")
@@ -232,7 +232,7 @@ public function suggestedproducts()
         ->where('most_viewed_product.status', 1)
         ->where('users.status', 1)
         ->where('most_viewed_product.user_id', $user_id)
-        ->orderBy('most_viewed_product.id',$orderby)->paginate(12);
+        ->orderBy('most_viewed_product.id',$orderby)->paginate(52);
         }
     }
     elseif(!empty($_GET))
@@ -286,7 +286,7 @@ public function suggestedproducts()
         ->where('most_viewed_product.status', 1)
         ->where('users.status', 1)
         ->where('most_viewed_product.user_id', $user_id)->whereIn('product_id', $newproductid)
-        ->orderBy('most_viewed_product.counter','desc')->paginate(12);
+        ->orderBy('most_viewed_product.counter','desc')->paginate(52);
         }
     }
     }
@@ -309,7 +309,7 @@ public function suggestedproducts()
         ->where('most_viewed_product.status', 1)
         ->where('users.status', 1)
         ->where('most_viewed_product.user_id', $user_id)
-        ->orderBy('most_viewed_product.counter','desc')->paginate(12);
+        ->orderBy('most_viewed_product.counter','desc')->paginate(52);
         }
     }
     return view('/front/suggested-products',['mostViewedProducts'=>$mostViewedProducts,'category'=>$category,'subcategory'=>$subcategory]);
@@ -324,7 +324,7 @@ public function suggestedproducts()
 public function categories(Request $req)
 {
     //$categories = DB::table('category')->get();
-    $categories = DB::table('category')->where(array('status'=>1))->orderBy('id','desc')->paginate(12);
+    $categories = DB::table('category')->where(array('status'=>1))->orderBy('id','desc')->paginate(52);
     return view('/front/categories',['categories'=>$categories]);
 }
 
@@ -343,8 +343,8 @@ public function seasonalproducts()
         }
         $category = DB::table('category')->get();
         $subcategory = DB::table('sub_category')->get();
-        //$seasonalproducts = DB::table('products')->where(array('status'=>1,'season'=>1))->orderBy('price',$orderby)->paginate(12);
-        $seasonalproducts = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'products.season'=>1,'users.status'=>1))->orderBy('products.price',$orderby)->paginate(12);
+        //$seasonalproducts = DB::table('products')->where(array('status'=>1,'season'=>1))->orderBy('price',$orderby)->paginate(52);
+        $seasonalproducts = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'products.season'=>1,'users.status'=>1))->orderBy('products.price',$orderby)->paginate(52);
 
     }
     elseif(isset($_REQUEST['sortbyorder']) && $_REQUEST['sortbyorder']!="" && $_REQUEST['sortby']=="")
@@ -360,8 +360,8 @@ public function seasonalproducts()
         }
         $category = DB::table('category')->get();
         $subcategory = DB::table('sub_category')->get();
-        //$seasonalproducts = DB::table('products')->where(array('status'=>1,'season'=>1))->orderBy('id',$orderby)->paginate(12);
-        $seasonalproducts = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'products.season'=>1,'users.status'=>1))->orderBy('products.id',$orderby)->paginate(12);
+        //$seasonalproducts = DB::table('products')->where(array('status'=>1,'season'=>1))->orderBy('id',$orderby)->paginate(52);
+        $seasonalproducts = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'products.season'=>1,'users.status'=>1))->orderBy('products.id',$orderby)->paginate(52);
     }
     elseif(!empty($_GET))
     {
@@ -391,16 +391,16 @@ public function seasonalproducts()
         $newproductid = explode(',',$newproduct_id);
         $category = DB::table('category')->get();
         $subcategory = DB::table('sub_category')->get();
-        //$seasonalproducts = DB::table('products')->where(array('status'=>1,'season'=>1))->whereIn('id', $newproductid)->orderBy('id','desc')->paginate(12);
-        $seasonalproducts = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'products.season'=>1,'users.status'=>1))->whereIn('products.id', $newproductid)->orderBy('products.id','desc')->paginate(12);
+        //$seasonalproducts = DB::table('products')->where(array('status'=>1,'season'=>1))->whereIn('id', $newproductid)->orderBy('id','desc')->paginate(52);
+        $seasonalproducts = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'products.season'=>1,'users.status'=>1))->whereIn('products.id', $newproductid)->orderBy('products.id','desc')->paginate(52);
     }
     }
     else
     {
         $category = DB::table('category')->get();
         $subcategory = DB::table('sub_category')->get();
-        //$seasonalproducts = DB::table('products')->where(array('status'=>1,'season'=>1))->orderBy('id','desc')->paginate(12);
-        $seasonalproducts = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'products.season'=>1,'users.status'=>1))->orderBy('products.id','desc')->paginate(12);   
+        //$seasonalproducts = DB::table('products')->where(array('status'=>1,'season'=>1))->orderBy('id','desc')->paginate(52);
+        $seasonalproducts = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'products.season'=>1,'users.status'=>1))->orderBy('products.id','desc')->paginate(52);   
     }
     return view('/front/seasonal-products',['seasonalproducts'=>$seasonalproducts,'category'=>$category,'subcategory'=>$subcategory]);
 }
@@ -420,8 +420,8 @@ public function todaydeal()
         }
         $category = DB::table('category')->get();
         $subcategory = DB::table('sub_category')->get();
-        //$todaydealproducts = DB::table('products')->where(array('status'=>1,'todaydeal'=>1))->orderBy('price',$orderby)->paginate(12);
-        $todaydealproducts = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'products.todaydeal'=>1,'users.status'=>1))->orderBy('products.price',$orderby)->paginate(12);
+        //$todaydealproducts = DB::table('products')->where(array('status'=>1,'todaydeal'=>1))->orderBy('price',$orderby)->paginate(52);
+        $todaydealproducts = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'products.todaydeal'=>1,'users.status'=>1))->orderBy('products.price',$orderby)->paginate(52);
     }
     elseif(isset($_REQUEST['sortbyorder']) && $_REQUEST['sortbyorder']!="" && $_REQUEST['sortby']=="")
     {
@@ -436,8 +436,8 @@ public function todaydeal()
         }
         $category = DB::table('category')->get();
         $subcategory = DB::table('sub_category')->get();
-        //$todaydealproducts = DB::table('products')->where(array('status'=>1,'todaydeal'=>1))->orderBy('id',$orderby)->paginate(12);
-        $todaydealproducts = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'products.todaydeal'=>1,'users.status'=>1))->orderBy('products.id',$orderby)->paginate(12);
+        //$todaydealproducts = DB::table('products')->where(array('status'=>1,'todaydeal'=>1))->orderBy('id',$orderby)->paginate(52);
+        $todaydealproducts = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'products.todaydeal'=>1,'users.status'=>1))->orderBy('products.id',$orderby)->paginate(52);
     }
     elseif(!empty($_GET))
     {
@@ -467,16 +467,16 @@ public function todaydeal()
         $newproductid = explode(',',$newproduct_id);
         $category = DB::table('category')->get();
         $subcategory = DB::table('sub_category')->get();
-        //$todaydealproducts = DB::table('products')->where(array('status'=>1,'todaydeal'=>1))->whereIn('id', $newproductid)->orderBy('id','desc')->paginate(12);
-        $todaydealproducts = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'products.todaydeal'=>1,'users.status'=>1))->whereIn('products.id', $newproductid)->orderBy('products.id','desc')->paginate(12);
+        //$todaydealproducts = DB::table('products')->where(array('status'=>1,'todaydeal'=>1))->whereIn('id', $newproductid)->orderBy('id','desc')->paginate(52);
+        $todaydealproducts = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'products.todaydeal'=>1,'users.status'=>1))->whereIn('products.id', $newproductid)->orderBy('products.id','desc')->paginate(52);
     }
     }
     else
     {
         $category = DB::table('category')->get();
         $subcategory = DB::table('sub_category')->get();
-        //$todaydealproducts = DB::table('products')->where(array('status'=>1,'todaydeal'=>1))->orderBy('id','desc')->paginate(12);
-        $todaydealproducts = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'products.todaydeal'=>1,'users.status'=>1))->orderBy('products.id','desc')->paginate(12);
+        //$todaydealproducts = DB::table('products')->where(array('status'=>1,'todaydeal'=>1))->orderBy('id','desc')->paginate(52);
+        $todaydealproducts = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'products.todaydeal'=>1,'users.status'=>1))->orderBy('products.id','desc')->paginate(52);
     }
     return view('/front/today-deal',['todaydealproducts'=>$todaydealproducts,'category'=>$category,'subcategory'=>$subcategory]);
 }
@@ -499,8 +499,8 @@ public function trending()
         }
         $category = DB::table('category')->get();
         $subcategory = DB::table('sub_category')->get();
-        //$trendingproducts = DB::table('products')->where(array('status'=>1,'trending'=>1))->orderBy('price',$orderby)->paginate(12);
-        $trendingproducts = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'products.trending'=>1,'users.status'=>1))->orderBy('products.price',$orderby)->paginate(12);
+        //$trendingproducts = DB::table('products')->where(array('status'=>1,'trending'=>1))->orderBy('price',$orderby)->paginate(52);
+        $trendingproducts = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'products.trending'=>1,'users.status'=>1))->orderBy('products.price',$orderby)->paginate(52);
     }
     elseif(isset($_REQUEST['sortbyorder']) && $_REQUEST['sortbyorder']!="" && $_REQUEST['sortby']=="")
     {
@@ -515,8 +515,8 @@ public function trending()
         }
         $category = DB::table('category')->get();
         $subcategory = DB::table('sub_category')->get();
-        //$trendingproducts = DB::table('products')->where(array('status'=>1,'trending'=>1))->orderBy('id',$orderby)->paginate(12);
-        $trendingproducts = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'products.trending'=>1,'users.status'=>1))->orderBy('products.id',$orderby)->paginate(12);
+        //$trendingproducts = DB::table('products')->where(array('status'=>1,'trending'=>1))->orderBy('id',$orderby)->paginate(52);
+        $trendingproducts = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'products.trending'=>1,'users.status'=>1))->orderBy('products.id',$orderby)->paginate(52);
     }
     elseif(!empty($_GET))
     {
@@ -546,16 +546,16 @@ public function trending()
         $newproductid = explode(',',$newproduct_id);
         $category = DB::table('category')->get();
         $subcategory = DB::table('sub_category')->get();
-        //$trendingproducts = DB::table('products')->where(array('status'=>1,'trending'=>1))->whereIn('id', $newproductid)->orderBy('id','desc')->paginate(12);
-        $trendingproducts = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'products.trending'=>1,'users.status'=>1))->whereIn('products.id', $newproductid)->orderBy('products.id','desc')->paginate(12);
+        //$trendingproducts = DB::table('products')->where(array('status'=>1,'trending'=>1))->whereIn('id', $newproductid)->orderBy('id','desc')->paginate(52);
+        $trendingproducts = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'products.trending'=>1,'users.status'=>1))->whereIn('products.id', $newproductid)->orderBy('products.id','desc')->paginate(52);
     }
     }
     else
     {
         $category = DB::table('category')->get();
         $subcategory = DB::table('sub_category')->get();
-        //$trendingproducts = DB::table('products')->where(array('status'=>1,'trending'=>1))->orderBy('id','desc')->paginate(12);
-        $trendingproducts = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'products.trending'=>1,'users.status'=>1))->orderBy('products.id','desc')->paginate(12);
+        //$trendingproducts = DB::table('products')->where(array('status'=>1,'trending'=>1))->orderBy('id','desc')->paginate(52);
+        $trendingproducts = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'products.trending'=>1,'users.status'=>1))->orderBy('products.id','desc')->paginate(52);
     }
     return view('/front/trending',['trendingproducts'=>$trendingproducts,'category'=>$category,'subcategory'=>$subcategory]);
 }
@@ -582,8 +582,8 @@ public function justlaunched()
         }
         $category = DB::table('category')->get();
         $subcategory = DB::table('sub_category')->get();
-        //$justlaunchedproducts = DB::table('products')->where(array('status'=>1))->orderBy('price',$orderby)->paginate(12);
-        $justlaunchedproducts = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'users.status'=>1))->orderBy('products.price',$orderby)->paginate(12);
+        //$justlaunchedproducts = DB::table('products')->where(array('status'=>1))->orderBy('price',$orderby)->paginate(52);
+        $justlaunchedproducts = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'users.status'=>1))->orderBy('products.price',$orderby)->paginate(52);
     }
     elseif(isset($_REQUEST['sortbyorder']) && $_REQUEST['sortbyorder']!="" && $_REQUEST['sortby']=="")
     {
@@ -598,8 +598,8 @@ public function justlaunched()
         }
         $category = DB::table('category')->get();
         $subcategory = DB::table('sub_category')->get();
-        //$justlaunchedproducts = DB::table('products')->where(array('status'=>1))->orderBy('id',$orderby)->paginate(12);
-        $justlaunchedproducts = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'users.status'=>1))->orderBy('products.id',$orderby)->paginate(12);
+        //$justlaunchedproducts = DB::table('products')->where(array('status'=>1))->orderBy('id',$orderby)->paginate(52);
+        $justlaunchedproducts = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'users.status'=>1))->orderBy('products.id',$orderby)->paginate(52);
     }
     elseif(!empty($_GET))
     {
@@ -629,16 +629,16 @@ public function justlaunched()
         $newproductid = explode(',',$newproduct_id);
         $category = DB::table('category')->get();
         $subcategory = DB::table('sub_category')->get();
-        //$justlaunchedproducts = DB::table('products')->where(array('status'=>1))->whereIn('id', $newproductid)->orderBy('id','desc')->paginate(12);
-        $justlaunchedproducts = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'users.status'=>1))->whereIn('products.id', $newproductid)->orderBy('products.id','desc')->paginate(12);
+        //$justlaunchedproducts = DB::table('products')->where(array('status'=>1))->whereIn('id', $newproductid)->orderBy('id','desc')->paginate(52);
+        $justlaunchedproducts = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'users.status'=>1))->whereIn('products.id', $newproductid)->orderBy('products.id','desc')->paginate(52);
     }
     }
     else
     {
         $category = DB::table('category')->get();
         $subcategory = DB::table('sub_category')->get();
-        //$justlaunchedproducts = DB::table('products')->where(array('status'=>1))->orderBy('id','desc')->paginate(12);
-        $justlaunchedproducts = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'users.status'=>1))->orderBy('products.id','desc')->paginate(12);
+        //$justlaunchedproducts = DB::table('products')->where(array('status'=>1))->orderBy('id','desc')->paginate(52);
+        $justlaunchedproducts = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'users.status'=>1))->orderBy('products.id','desc')->paginate(52);
     }
     return view('/front/just-launched',['justlaunchedproducts'=>$justlaunchedproducts,'category'=>$category,'subcategory'=>$subcategory]);
 }
@@ -658,8 +658,8 @@ public function weeklydeals(Request $req)
         }
         $category = DB::table('category')->get();
         $subcategory = DB::table('sub_category')->get();
-        //$weeklydealsproduct = DB::table('products')->where(array('status'=>1,'weeklydeal'=>1))->orderBy('price',$orderby)->paginate(12);
-        $weeklydealsproduct = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'products.weeklydeal'=>1,'users.status'=>1))->orderBy('products.price',$orderby)->paginate(12);
+        //$weeklydealsproduct = DB::table('products')->where(array('status'=>1,'weeklydeal'=>1))->orderBy('price',$orderby)->paginate(52);
+        $weeklydealsproduct = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'products.weeklydeal'=>1,'users.status'=>1))->orderBy('products.price',$orderby)->paginate(52);
     }
     elseif(isset($_REQUEST['sortbyorder']) && $_REQUEST['sortbyorder']!="" && $_REQUEST['sortby']=="")
     {
@@ -674,8 +674,8 @@ public function weeklydeals(Request $req)
         }
         $category = DB::table('category')->get();
         $subcategory = DB::table('sub_category')->get();
-        //$weeklydealsproduct = DB::table('products')->where(array('status'=>1,'weeklydeal'=>1))->orderBy('id',$orderby)->paginate(12);
-        $weeklydealsproduct = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'products.weeklydeal'=>1,'users.status'=>1))->orderBy('products.id',$orderby)->paginate(12);
+        //$weeklydealsproduct = DB::table('products')->where(array('status'=>1,'weeklydeal'=>1))->orderBy('id',$orderby)->paginate(52);
+        $weeklydealsproduct = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'products.weeklydeal'=>1,'users.status'=>1))->orderBy('products.id',$orderby)->paginate(52);
     }
     elseif(!empty($_GET))
     {
@@ -705,16 +705,16 @@ public function weeklydeals(Request $req)
         $newproductid = explode(',',$newproduct_id);
         $category = DB::table('category')->get();
         $subcategory = DB::table('sub_category')->get();
-        //$weeklydealsproduct = DB::table('products')->where(array('status'=>1,'weeklydeal'=>1))->whereIn('id', $newproductid)->orderBy('id','desc')->paginate(12);
-        $weeklydealsproduct = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'products.weeklydeal'=>1,'users.status'=>1))->whereIn('products.id', $newproductid)->orderBy('products.id','desc')->paginate(12);
+        //$weeklydealsproduct = DB::table('products')->where(array('status'=>1,'weeklydeal'=>1))->whereIn('id', $newproductid)->orderBy('id','desc')->paginate(52);
+        $weeklydealsproduct = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'products.weeklydeal'=>1,'users.status'=>1))->whereIn('products.id', $newproductid)->orderBy('products.id','desc')->paginate(52);
     }
     }
     else
     {
         $category = DB::table('category')->get();
         $subcategory = DB::table('sub_category')->get();
-        //$weeklydealsproduct = DB::table('products')->where(array('status'=>1,'weeklydeal'=>1))->orderBy('id','desc')->paginate(12);
-        $weeklydealsproduct = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'products.weeklydeal'=>1,'users.status'=>1))->orderBy('products.id','desc')->paginate(12);
+        //$weeklydealsproduct = DB::table('products')->where(array('status'=>1,'weeklydeal'=>1))->orderBy('id','desc')->paginate(52);
+        $weeklydealsproduct = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'products.weeklydeal'=>1,'users.status'=>1))->orderBy('products.id','desc')->paginate(52);
     }
     return view('/front/weekly-deals',['weeklydealsproduct'=>$weeklydealsproduct,'category'=>$category,'subcategory'=>$subcategory]);
 }
@@ -734,8 +734,8 @@ public function monthlydeals(Request $req)
         }
         $category = DB::table('category')->get();
         $subcategory = DB::table('sub_category')->get();
-        //$monthlydealsproduct = DB::table('products')->where(array('status'=>1,'monthlydeal'=>1))->orderBy('price',$orderby)->paginate(12);
-        $monthlydealsproduct = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'products.monthlydeal'=>1,'users.status'=>1))->orderBy('products.price',$orderby)->paginate(12);
+        //$monthlydealsproduct = DB::table('products')->where(array('status'=>1,'monthlydeal'=>1))->orderBy('price',$orderby)->paginate(52);
+        $monthlydealsproduct = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'products.monthlydeal'=>1,'users.status'=>1))->orderBy('products.price',$orderby)->paginate(52);
     }
     elseif(isset($_REQUEST['sortbyorder']) && $_REQUEST['sortbyorder']!="" && $_REQUEST['sortby']=="")
     {
@@ -750,8 +750,8 @@ public function monthlydeals(Request $req)
         }
         $category = DB::table('category')->get();
         $subcategory = DB::table('sub_category')->get();
-        //$monthlydealsproduct = DB::table('products')->where(array('status'=>1,'monthlydeal'=>1))->orderBy('id',$orderby)->paginate(12);
-        $monthlydealsproduct = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'products.monthlydeal'=>1,'users.status'=>1))->orderBy('products.id',$orderby)->paginate(12);
+        //$monthlydealsproduct = DB::table('products')->where(array('status'=>1,'monthlydeal'=>1))->orderBy('id',$orderby)->paginate(52);
+        $monthlydealsproduct = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'products.monthlydeal'=>1,'users.status'=>1))->orderBy('products.id',$orderby)->paginate(52);
     }
     elseif(!empty($_GET))
     {
@@ -781,16 +781,16 @@ public function monthlydeals(Request $req)
         $newproductid = explode(',',$newproduct_id);
         $category = DB::table('category')->get();
         $subcategory = DB::table('sub_category')->get();
-        //$monthlydealsproduct = DB::table('products')->where(array('status'=>1,'monthlydeal'=>1))->whereIn('id', $newproductid)->orderBy('id','desc')->paginate(12);
-        $monthlydealsproduct = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'products.monthlydeal'=>1,'users.status'=>1))->whereIn('products.id', $newproductid)->orderBy('products.id','desc')->paginate(12);
+        //$monthlydealsproduct = DB::table('products')->where(array('status'=>1,'monthlydeal'=>1))->whereIn('id', $newproductid)->orderBy('id','desc')->paginate(52);
+        $monthlydealsproduct = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'products.monthlydeal'=>1,'users.status'=>1))->whereIn('products.id', $newproductid)->orderBy('products.id','desc')->paginate(52);
     }
     }
     else
     {
         $category = DB::table('category')->get();
         $subcategory = DB::table('sub_category')->get();
-        //$monthlydealsproduct = DB::table('products')->where(array('status'=>1,'monthlydeal'=>1))->orderBy('id','desc')->paginate(12);
-        $monthlydealsproduct = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'products.monthlydeal'=>1,'users.status'=>1))->whereIn('products.id', $newproductid)->orderBy('products.id','desc')->paginate(12);
+        //$monthlydealsproduct = DB::table('products')->where(array('status'=>1,'monthlydeal'=>1))->orderBy('id','desc')->paginate(52);
+        $monthlydealsproduct = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'products.monthlydeal'=>1,'users.status'=>1))->whereIn('products.id', $newproductid)->orderBy('products.id','desc')->paginate(52);
     }
     return view('/front/deal-of-the-month',['monthlydealsproduct'=>$monthlydealsproduct,'category'=>$category,'subcategory'=>$subcategory]);
 }
@@ -813,8 +813,8 @@ public function bestsellerproduct($slug)
         }
         $category = DB::table('category')->get();
         $subcategory = DB::table('sub_category')->get();
-        //$bestsellerproduct = DB::table('products')->where(array('user_id'=>$seller_id,'status'=>1))->orderBy('price',$orderby)->paginate(12);
-        $bestsellerproduct = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.user_id'=>$seller_id,'products.status'=>1,'users.status'=>1))->orderBy('products.price',$orderby)->paginate(12);
+        //$bestsellerproduct = DB::table('products')->where(array('user_id'=>$seller_id,'status'=>1))->orderBy('price',$orderby)->paginate(52);
+        $bestsellerproduct = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.user_id'=>$seller_id,'products.status'=>1,'users.status'=>1))->orderBy('products.price',$orderby)->paginate(52);
     }
     elseif(isset($_REQUEST['sortbyorder']) && $_REQUEST['sortbyorder']!="" && $_REQUEST['sortby']=="")
     {
@@ -829,8 +829,8 @@ public function bestsellerproduct($slug)
         }
         $category = DB::table('category')->get();
         $subcategory = DB::table('sub_category')->get();
-        //$bestsellerproduct = DB::table('products')->where(array('user_id'=>$seller_id,'status'=>1))->orderBy('id',$orderby)->paginate(12);
-        $bestsellerproduct = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.user_id'=>$seller_id,'products.status'=>1,'users.status'=>1))->orderBy('products.id',$orderby)->paginate(12);
+        //$bestsellerproduct = DB::table('products')->where(array('user_id'=>$seller_id,'status'=>1))->orderBy('id',$orderby)->paginate(52);
+        $bestsellerproduct = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.user_id'=>$seller_id,'products.status'=>1,'users.status'=>1))->orderBy('products.id',$orderby)->paginate(52);
     }
     elseif(!empty($_GET))
     {
@@ -860,16 +860,16 @@ public function bestsellerproduct($slug)
         $newproductid = explode(',',$newproduct_id);
         $category = DB::table('category')->get();
         $subcategory = DB::table('sub_category')->get();
-        //$bestsellerproduct = DB::table('products')->where(array('user_id'=>$seller_id,'status'=>1))->whereIn('id', $newproductid)->orderBy('id','desc')->paginate(12);
-        $bestsellerproduct = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.user_id'=>$seller_id,'products.status'=>1,'users.status'=>1))->whereIn('products.id', $newproductid)->orderBy('products.id','desc')->paginate(12);
+        //$bestsellerproduct = DB::table('products')->where(array('user_id'=>$seller_id,'status'=>1))->whereIn('id', $newproductid)->orderBy('id','desc')->paginate(52);
+        $bestsellerproduct = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.user_id'=>$seller_id,'products.status'=>1,'users.status'=>1))->whereIn('products.id', $newproductid)->orderBy('products.id','desc')->paginate(52);
     }
     }
     else
     {
         $category = DB::table('category')->get();
         $subcategory = DB::table('sub_category')->get();
-        //$bestsellerproduct = DB::table('products')->where(array('user_id'=>$seller_id,'status'=>1))->orderBy('id','desc')->paginate(12);
-        $bestsellerproduct = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.user_id'=>$seller_id,'products.status'=>1,'users.status'=>1))->orderBy('products.id','desc')->paginate(12);
+        //$bestsellerproduct = DB::table('products')->where(array('user_id'=>$seller_id,'status'=>1))->orderBy('id','desc')->paginate(52);
+        $bestsellerproduct = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.user_id'=>$seller_id,'products.status'=>1,'users.status'=>1))->orderBy('products.id','desc')->paginate(52);
     }
     return view('/front/best-seller-product',['bestsellerproduct'=>$bestsellerproduct,'category'=>$category,'subcategory'=>$subcategory]);
 }
@@ -932,7 +932,7 @@ public function seller_login()
 {
     if(Auth::check())
     {
-    $user_id = auth()->user()->id; var_dump($user_id); die;
+    $user_id = auth()->user()->id;
     return view('/front/welcome-seller');
     }
     else
@@ -1873,9 +1873,9 @@ function categoryproduct($slug)
             $orderby = "desc";
         }
         $category = DB::table('category')->where('slug',$slug)->first();        
-        //$categoryproduct = DB::table('products')->where(array('catid'=>$category->id,'status'=>1))->orderBy('price',$orderby)->paginate(12);
+        //$categoryproduct = DB::table('products')->where(array('catid'=>$category->id,'status'=>1))->orderBy('price',$orderby)->paginate(52);
 
-        $categoryproduct = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'products.catid'=>$category->id,'users.status'=>1))->orderBy('products.price',$orderby)->paginate(12);
+        $categoryproduct = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'products.catid'=>$category->id,'users.status'=>1))->orderBy('products.price',$orderby)->paginate(52);
 
         $cate = DB::table('category')->orderBy('id','desc')->get();
         $subcategory = DB::table('sub_category')->where('cat_id',$category->id)->orderBy('id','desc')->get();
@@ -1893,9 +1893,9 @@ function categoryproduct($slug)
         }
         $category = DB::table('category')->where('slug',$slug)->first();
         
-        //$categoryproduct = DB::table('products')->where(array('catid'=>$category->id,'status'=>1))->orderBy('id',$orderby)->paginate(12);
+        //$categoryproduct = DB::table('products')->where(array('catid'=>$category->id,'status'=>1))->orderBy('id',$orderby)->paginate(52);
 
-        $categoryproduct = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'products.catid'=>$category->id,'users.status'=>1))->orderBy('products.id',$orderby)->paginate(12);
+        $categoryproduct = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'products.catid'=>$category->id,'users.status'=>1))->orderBy('products.id',$orderby)->paginate(52);
 
         $cate = DB::table('category')->orderBy('id','desc')->get();
         $subcategory = DB::table('sub_category')->where('cat_id',$category->id)->orderBy('id','desc')->get();
@@ -1930,9 +1930,9 @@ function categoryproduct($slug)
         //echo $addsubqry .= " AND catid=$category->id AND id IN ($newproduct_id)";
         //echo "select * from products where status=1 $addsubqry";
         $newproductid = explode(',',$newproduct_id);
-        //$categoryproduct = DB::table('products')->where(array('status'=>1,'catid'=>$category->id))->whereIn('id', $newproductid)->orderBy('id','desc')->paginate(12);
+        //$categoryproduct = DB::table('products')->where(array('status'=>1,'catid'=>$category->id))->whereIn('id', $newproductid)->orderBy('id','desc')->paginate(52);
         
-        $categoryproduct = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'products.catid'=>$category->id,'users.status'=>1))->whereIn('products.id', $newproductid)->orderBy('products.id','desc')->paginate(12);
+        $categoryproduct = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.status'=>1,'products.catid'=>$category->id,'users.status'=>1))->whereIn('products.id', $newproductid)->orderBy('products.id','desc')->paginate(52);
 
         $cate = DB::table('category')->orderBy('id','desc')->get();
         $subcategory = DB::table('sub_category')->where('cat_id',$category->id)->orderBy('id','desc')->get();
@@ -1941,7 +1941,7 @@ function categoryproduct($slug)
     else
     {
         $category = DB::table('category')->where('slug',$slug)->first();
-        $categoryproduct = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.catid'=>$category->id,'products.status'=>1,'users.status'=>1))->orderBy('products.id','desc')->paginate(12);
+        $categoryproduct = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.catid'=>$category->id,'products.status'=>1,'users.status'=>1))->orderBy('products.id','desc')->paginate(52);
         $cate = DB::table('category')->orderBy('id','desc')->get();
         $subcategory = DB::table('sub_category')->where('cat_id',$category->id)->orderBy('id','desc')->get();
     }
@@ -1964,8 +1964,8 @@ function subcategoryproduct($slug)
         $subcategories = DB::table('sub_category')->where('slug',$slug)->first();
         $cat_id = $subcategories->cat_id;
         $category = DB::table('category')->where('id',$cat_id)->first();
-        //$subcategoryproduct = DB::table('products')->where(array('catid'=>$cat_id,'subcat_id'=>$subcategories->id,'status'=>1))->orderBy('price',$orderby)->paginate(12);
-        $subcategoryproduct = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.catid'=>$cat_id,'products.subcat_id'=>$subcategories->id,'products.status'=>1,'users.status'=>1))->orderBy('products.price',$orderby)->paginate(12);
+        //$subcategoryproduct = DB::table('products')->where(array('catid'=>$cat_id,'subcat_id'=>$subcategories->id,'status'=>1))->orderBy('price',$orderby)->paginate(52);
+        $subcategoryproduct = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.catid'=>$cat_id,'products.subcat_id'=>$subcategories->id,'products.status'=>1,'users.status'=>1))->orderBy('products.price',$orderby)->paginate(52);
         $subcate = DB::table('sub_category')->orderBy('id','desc')->get();
         $subcategory = DB::table('sub_category')->where('cat_id',$cat_id)->orderBy('id','desc')->get();
     }
@@ -1983,8 +1983,8 @@ function subcategoryproduct($slug)
         $subcategories = DB::table('sub_category')->where('slug',$slug)->first();
         $cat_id = $subcategories->cat_id;
         $category = DB::table('category')->where('id',$cat_id)->first();
-        //$subcategoryproduct = DB::table('products')->where(array('catid'=>$cat_id,'subcat_id'=>$subcategories->id,'status'=>1))->orderBy('id',$orderby)->paginate(12);
-        $subcategoryproduct = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.catid'=>$cat_id,'products.subcat_id'=>$subcategories->id,'products.status'=>1,'users.status'=>1))->orderBy('products.id',$orderby)->paginate(12);
+        //$subcategoryproduct = DB::table('products')->where(array('catid'=>$cat_id,'subcat_id'=>$subcategories->id,'status'=>1))->orderBy('id',$orderby)->paginate(52);
+        $subcategoryproduct = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.catid'=>$cat_id,'products.subcat_id'=>$subcategories->id,'products.status'=>1,'users.status'=>1))->orderBy('products.id',$orderby)->paginate(52);
         $subcate = DB::table('sub_category')->orderBy('id','desc')->get();
         $subcategory = DB::table('sub_category')->where('cat_id',$cat_id)->orderBy('id','desc')->get();
     }
@@ -2019,8 +2019,8 @@ function subcategoryproduct($slug)
         //echo $addsubqry .= " AND catid=$category->id AND id IN ($newproduct_id)";
         //echo "select * from products where status=1 $addsubqry";
         $newproductid = explode(',',$newproduct_id);
-        //$subcategoryproduct = DB::table('products')->where(array('catid'=>$cat_id,'subcat_id'=>$subcategories->id,'status'=>1))->whereIn('id', $newproductid)->orderBy('id','desc')->paginate(12);
-        $subcategoryproduct = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.catid'=>$cat_id,'products.subcat_id'=>$subcategories->id,'products.status'=>1,'users.status'=>1))->whereIn('products.id', $newproductid)->orderBy('products.id','desc')->paginate(12);
+        //$subcategoryproduct = DB::table('products')->where(array('catid'=>$cat_id,'subcat_id'=>$subcategories->id,'status'=>1))->whereIn('id', $newproductid)->orderBy('id','desc')->paginate(52);
+        $subcategoryproduct = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.catid'=>$cat_id,'products.subcat_id'=>$subcategories->id,'products.status'=>1,'users.status'=>1))->whereIn('products.id', $newproductid)->orderBy('products.id','desc')->paginate(52);
         $subcate = DB::table('sub_category')->orderBy('id','desc')->get();
         $subcategory = DB::table('sub_category')->where('cat_id',$cat_id)->orderBy('id','desc')->get();
         }
@@ -2030,9 +2030,9 @@ function subcategoryproduct($slug)
         $subcategories = DB::table('sub_category')->where('slug',$slug)->first();
         $cat_id = $subcategories->cat_id;
         $category = DB::table('category')->where('id',$cat_id)->first();
-        //$subcategoryproduct = DB::table('products')->where(array('catid'=>$cat_id,'subcat_id'=>$subcategories->id,'status'=>1))->orderBy('id','desc')->paginate(12);
+        //$subcategoryproduct = DB::table('products')->where(array('catid'=>$cat_id,'subcat_id'=>$subcategories->id,'status'=>1))->orderBy('id','desc')->paginate(52);
         //DB::enableQueryLog();
-        $subcategoryproduct = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.catid'=>$cat_id,'products.subcat_id'=>$subcategories->id,'products.status'=>1,'users.status'=>1))->orderBy('products.id','desc')->paginate(12);
+        $subcategoryproduct = DB::table('products')->select('products.*')->join('users','users.id','=','products.user_id')->where(array('products.catid'=>$cat_id,'products.subcat_id'=>$subcategories->id,'products.status'=>1,'users.status'=>1))->orderBy('products.id','desc')->paginate(52);
         //dd(DB::getQueryLog());
         $subcate = DB::table('sub_category')->orderBy('id','desc')->get();
         $subcategory = DB::table('sub_category')->where('cat_id',$cat_id)->orderBy('id','desc')->get();
@@ -2108,7 +2108,7 @@ function search(Request $req)
 {
     // return $req->all();
     $searchdata=$req->searchdata;
-    $product = DB::table('products')->where('status',1)->where('name','LIKE', "%{$searchdata}%")->orderBy('id','desc')->paginate(12);
+    $product = DB::table('products')->where('status',1)->where('name','LIKE', "%{$searchdata}%")->orderBy('id','desc')->paginate(52);
     return view('front/search',['product'=>$product,'searchdata'=>$searchdata]);
 }
 public function checkPinCode(Request $req)
@@ -2225,7 +2225,7 @@ public function auction(Request $req)
         }
         $category = DB::table('category')->get();
         $subcategory = DB::table('sub_category')->get();
-        $auctionsproducts = DB::table('auctions')->select('*', 'auctions.id as aid')->join('products', 'auctions.product_id', '=', 'products.id')->where(array('auctions.status'=>1))->where('auctions.auction_time','>=',$date_time)->whereNull('auctions.bidding_id')->orderBy('products.price',$orderby)->paginate(12);
+        $auctionsproducts = DB::table('auctions')->select('*', 'auctions.id as aid')->join('products', 'auctions.product_id', '=', 'products.id')->where(array('auctions.status'=>1))->where('auctions.auction_time','>=',$date_time)->whereNull('auctions.bidding_id')->orderBy('products.price',$orderby)->paginate(52);
     }
     elseif(isset($_REQUEST['sortbyorder']) && $_REQUEST['sortbyorder']!="" && $_REQUEST['sortby']=="")
     {
@@ -2240,7 +2240,7 @@ public function auction(Request $req)
         }
         $category = DB::table('category')->get();
         $subcategory = DB::table('sub_category')->get();
-        $auctionsproducts = DB::table('auctions')->select('*', 'auctions.id as aid')->join('products', 'auctions.product_id', '=', 'products.id')->where(array('auctions.status'=>1))->where('auctions.auction_time','>=',$date_time)->whereNull('auctions.bidding_id')->orderBy('auctions.id',$orderby)->paginate(12);
+        $auctionsproducts = DB::table('auctions')->select('*', 'auctions.id as aid')->join('products', 'auctions.product_id', '=', 'products.id')->where(array('auctions.status'=>1))->where('auctions.auction_time','>=',$date_time)->whereNull('auctions.bidding_id')->orderBy('auctions.id',$orderby)->paginate(52);
     }
     elseif(!empty($_GET))
     {
@@ -2269,14 +2269,14 @@ public function auction(Request $req)
         $newproductid = explode(',',$newproduct_id);
         $category = DB::table('category')->get();
         $subcategory = DB::table('sub_category')->get();
-        $auctionsproducts = DB::table('auctions')->select('*', 'auctions.id as aid')->join('products', 'auctions.product_id', '=', 'products.id')->where(array('auctions.status'=>1))->where('auctions.auction_time','>=',$date_time)->whereIn('products.id', $newproductid)->whereNull('auctions.bidding_id')->orderBy('auctions.id','desc')->paginate(12);
+        $auctionsproducts = DB::table('auctions')->select('*', 'auctions.id as aid')->join('products', 'auctions.product_id', '=', 'products.id')->where(array('auctions.status'=>1))->where('auctions.auction_time','>=',$date_time)->whereIn('products.id', $newproductid)->whereNull('auctions.bidding_id')->orderBy('auctions.id','desc')->paginate(52);
     }
     }
     else
     {
         $category = DB::table('category')->get();
         $subcategory = DB::table('sub_category')->get();
-        $auctionsproducts = DB::table('auctions')->select('*', 'auctions.id as aid')->join('products', 'auctions.product_id', '=', 'products.id')->where(array('auctions.status'=>1))->where('auctions.auction_time','>=',$date_time)->whereNull('auctions.bidding_id')->orderBy('auctions.id','desc')->paginate(12);
+        $auctionsproducts = DB::table('auctions')->select('*', 'auctions.id as aid')->join('products', 'auctions.product_id', '=', 'products.id')->where(array('auctions.status'=>1))->where('auctions.auction_time','>=',$date_time)->whereNull('auctions.bidding_id')->orderBy('auctions.id','desc')->paginate(52);
     }
     return view('/front/auction-listing',['auctionsproducts'=>$auctionsproducts,'category'=>$category,'subcategory'=>$subcategory]);
 }

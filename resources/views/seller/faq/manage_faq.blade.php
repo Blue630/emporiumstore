@@ -5,6 +5,9 @@
 .content-header .breadcrumb {
 margin-left: 20px;
 }
+table thead th, table tbody td {
+    overflow-wrap: anywhere;
+}
 </style>
 <div class="content-wrapper">
 <!-- Content Header (Page header) -->

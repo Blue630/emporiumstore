@@ -535,7 +535,7 @@ class SellerController extends Controller
                     <label for="<?php echo $value->name;?>" class="col-4 font-weight-normal mb-4">
                         <?php echo $value->name;?></label>
                     <div class="col-8">                        
-                        <select name="var[1][<?php echo $value->slug;?>]" data-attr="<?php echo $value->slug;?>" class="form-control" required>
+                        <select name="var[1][<?php echo $value->slug;?>]" data-attr="<?php echo $value->slug;?>" class="form-control">
                             <option value="">--Select <?php echo $value->name;?>--</option>
                             <?php
                             foreach($optiondata as $optionvalue)

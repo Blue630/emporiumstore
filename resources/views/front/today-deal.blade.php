@@ -12,39 +12,48 @@ use App\Review;
 <div class="close_aside_toggle cusror-pointers float-end d-lg-none my-4">
 <i data-feather="x-circle"></i>
 </div>
-<div class="w-100 clearfix"></div>
-<div class="related_cat d-none d-lg-block text-black">
-<h3 class="ft-20 lh-30 text-black">Related Categories</h3>
-<div class="parent_submenu text-black">
+<div id="filters">
+    <form name="sortbyfrm" id="sortbyfrm" method="get" class="sidebar-form">
+        <div class="search-container">
+            <div class="d-flex justify-content-center align-items-center">
+                <input id="search-side-bar" type="text" placeholder="Search.." name="search">
+                <button id="search-side-bar-btn"><i style="color:#0b0b45 !important"
+                        class="fa fa-search"></i></button>
+            </div>
+        </div>
+        <div class="accordion" id="accordion_prod">
+            <div
+                class="accordion-item border-0 OperatingSystem_filter checkbox_filter related_cat d-none d-lg-block text-black">
+                <h3 class="ft-20 lh-30 text-black accordion-header" id="heading-related-categories">
+                    <button class="accordion-button collapsed ft-20 lh-30 ft-500" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-related-categories"
+                        aria-expanded="false" aria-controls="collapse-related-categories">
+                        Related Categories
+                        <i data-feather="minus"></i>
+                        <i data-feather="plus"></i>
+                    </button>
+                </h3>
+                <div id="collapse-related-categories"
+                    class="accordion-collapse collapse parent_submenu text-black">
 
-<ul class="list-unstyled ft-15 lh-22 text-secondary">
-<?php
+                    <ul class="list-unstyled ft-15 lh-22 text-secondary">
+                        <?php
 $subcategorycount = count($subcategory);
 if($subcategorycount>0)
 {
 foreach ($subcategory as $subcategory_value) 
 {
-$sub_id = $subcategory_value->id;
-$cat_id = $subcategory_value->cat_id;
-// $category = DB::table('category')->where('id',$cat_id)->get();
-// foreach($category as $cat)
-// {
-// $cat_name = $cat->catname;
 ?>
-<li><a href="{{url('subcategory/'.$subcategory_value->slug)}}" class="ft-bold active">{{$subcategory_value->name}}</a></li>
-<?php
-/*}*/
+                        <li><a href="{{ url('subcategory/' . $subcategory_value->slug) }}"
+                                class="ft-bold active">{{ $subcategory_value->name }}</a></li>
+                        <?php
 }
 }
 ?>
-</ul>
-</div>
-</div>
-
-<div id="filters">
-<form name="sortbyfrm" id="sortbyfrm" method="get">
-<div class="accordion" id="accordion_prod">
-<?php
+                    </ul>
+                </div>
+            </div>
+            <?php
 $a = 0;
 $specifications = DB::table('specifications')->get();
 /*$specdata = DB::table('specifications')
@@ -297,5 +306,62 @@ else
 </div>
 </div>
 <div class="h-50px "></div>
+<style>
+#collapse-related-categories {
+    height: 50vh;
+    overflow-y: auto;
+}
+
+.sidebar-form .search-container {
+    float: right;
+}
+
+.search-container {
+    width: 100%;
+    display: block;
+}
+
+.sidebar-form input[type=text] {
+    transition: all 0.5s;
+    padding: 6px;
+    margin-top: 8px;
+    margin-left: 15px;
+    font-size: 17px;
+    border: 1px dashed transparent;
+}
+
+.sidebar-form input[type=text]:hover {
+    border: 1px dashed #0b0b45;
+}
+
+.sidebar-form .search-container button {
+    float: none;
+    padding: 6px 10px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
+
+.sidebar-form .search-container button:hover {
+    background: #ccc;
+}
+
+.unvisible {
+    display: none !important;
+}
+</style>
+<script>
+    document.getElementById('search-side-bar').oninput = function(e) {
+        var accordionElements = document.querySelectorAll('#sortbyfrm .accordion-item')
+        for (let element of accordionElements) {
+            if (element.querySelector('.accordion-button').innerText.toLowerCase().includes(e.target.value.toLowerCase()))
+                element.classList.remove('unvisible');
+            else element.classList.add('unvisible');
+        }
+    }
+</script>
 @include('front.include.footer')
 @yield('footer')
