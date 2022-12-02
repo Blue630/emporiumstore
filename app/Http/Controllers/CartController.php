@@ -115,7 +115,7 @@ class CartController extends Controller
                         ->select('user_id')
                         ->where('id', $product_id)
                         ->first();
-        $postalcode=DB::table('postal_code')->select('*')->where('zipcode',$zipcode)->where('seller_id',$prdData->user_id)->first();
+        $postalcode=DB::table('postal_code')->select('*')->where('zipcode', 'like', explode(' ', $zipcode)[0] . '%')->where('seller_id',$prdData->user_id)->first();
         $delivery_charges = 0;
         if(!empty($postalcode)) {
             $checkPinCode = DB::table('products')
