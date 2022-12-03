@@ -1122,29 +1122,29 @@ $(this).val(min);
 });
 $(document).on('click', '.add, .sub', function() {
 var qty = $(this).closest('.p_quantity').find(".count");
-var currentVal = parseFloat($qty.val());
+var currentVal = parseFloat(qty.val());
 //alert(currentVal);
-var max = parseFloat($qty.attr('max'));
-var min = parseFloat($qty.attr('min'));
-var step = $qty.attr('step');
+var max = parseFloat(qty.attr('max'));
+var min = parseFloat(qty.attr('min'));
+var step = qty.attr('step');
 if (!currentVal || currentVal == "" || currentVal == "NaN") currentVal = 0;
 if (max == "" || max == "NaN") max = '';
 if (min == "" || min == "NaN") min = 0;
 if (step == 'any' || step == "" || step == undefined || parseFloat(step) == "NaN") step = 1;
 if ($(this).is('.add')) {
 if (max && (max == currentVal || currentVal > max)) {
-$qty.val(max);
+qty.val(max);
 } else {
-$qty.val(currentVal + parseFloat(step));
+qty.val(currentVal + parseFloat(step));
 }
 } else {
 if (min && (min == currentVal || currentVal < min)) {
-$qty.val(min);
+qty.val(min);
 } else if (currentVal > 0) {
-$qty.val(currentVal - parseFloat(step));
+qty.val(currentVal - parseFloat(step));
 }
 }
-$qty.trigger('change');
+qty.trigger('change');
 });
 //
 // My JS
