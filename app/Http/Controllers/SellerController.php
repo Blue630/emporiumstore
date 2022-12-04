@@ -541,7 +541,7 @@ class SellerController extends Controller
                             foreach($optiondata as $optionvalue)
                             {
                             ?>
-                            <option value="<?php echo $optionvalue->name;?>"><?php echo $optionvalue->name;?></option>
+                            <option value="<?php echo $optionvalue->name;?>" selected><?php echo $optionvalue->name;?></option>
                             <?php
                             }
                             ?>
