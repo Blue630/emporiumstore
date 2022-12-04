@@ -153,6 +153,21 @@ $checked ="";
 </div>
 </div>
 </div>
+
+<span class="labels" style="margin-left: 50px">Count: </span>
+<div class="border radius-5">
+    <div class="d-flex sortby_filter_listing">
+    <div class="price_sorting">
+        <select name="paginationCount" id="pagination-count" style="border: none;" onchange="javascript:document.getElementById('filterbyfrm').submit();">
+            <!--<option value="">Sort By Price</option>-->
+            <option value="50" <?php if(isset($_REQUEST['paginationCount']) && $_REQUEST['paginationCount'] == "50") { echo "SELECTED"; } ?> >50</option>
+            <option value="75" <?php if(isset($_REQUEST['paginationCount']) && $_REQUEST['paginationCount'] == "75") { echo "SELECTED"; } ?> >75</option>
+            <option value="100" <?php if(isset($_REQUEST['paginationCount']) && $_REQUEST['paginationCount'] == "100") { echo "SELECTED"; } ?> >100</option>
+        </select>
+    </div>
+    </div>
+</div>
+
 </div>
 <div class="d-none d-md-flex gap-3 view_filter my-4 ms-auto">
 <div class="border p-2 list_filter cursor-pointer">
