@@ -1,5 +1,13 @@
 @include('front.include.header')
 @yield('header')   
+<style>
+#small-images-carousel.carousel-class .owl-item:after {
+    display: none;
+}
+.owl-carousel .owl-item img {
+    width: auto;    
+}
+</style>
 <?php
     use App\Review;
     use App\OrderDetail;
@@ -239,12 +247,6 @@ else
 {
 ?>
 <style>
-.owl-carousel .owl-item img {
-    width: auto;    
-}
-#small-images-carousel.carousel-class .owl-item:after {
-    display: none;
-}
 button.btn-wishlist{
 background-color:#fff;
 border:none;
