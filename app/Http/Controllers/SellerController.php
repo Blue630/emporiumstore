@@ -338,7 +338,7 @@ class SellerController extends Controller
             DB::table('products')->insert($addData);
             //dd(DB::getQueryLog()); // Show results of log
             $id = DB::getPdo()->lastInsertId();
-
+            if (!array_key_exists('var', $_REQUEST)) return;
             $variantcount = 0;
             foreach ($_REQUEST['var'] as $varArr) {
                 $variantcount++;
