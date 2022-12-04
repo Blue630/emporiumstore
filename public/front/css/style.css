@@ -1474,7 +1474,7 @@ div#filters [aria-expanded="false"] .feather-minus {
     align-items: center;
 }
 
-#boughtTogther .products_unit .image {
+.carousel-class .products_unit .image {
     height: auto;
 }
 
@@ -1878,20 +1878,20 @@ li.page-item {
     letter-spacing: 5px;
 }
 
-#boughtTogther {
+.carousel-class {
     padding-left: 30px;
     padding-right: 30px;
 }
 
-body #boughtTogther .owl-prev {
+body .carousel-class .owl-prev {
     left: -5px !important;
 }
 
-body #boughtTogther .owl-next {
+body .carousel-class .owl-next {
     right: -5px !important;
 }
 
-body #boughtTogther .products_unit {
+body .carousel-class .products_unit {
     box-shadow: 0px 0px 5px 0px #ccc;
     border: 1px solid #eee;
     padding: 2px;
@@ -1899,7 +1899,7 @@ body #boughtTogther .products_unit {
     position: relative;
 }
 
-body #boughtTogther .products_unit>[type="checkbox"] {
+body .carousel-class .products_unit>[type="checkbox"] {
     position: absolute;
     right: 5px;
     top: 5px;
@@ -1907,42 +1907,42 @@ body #boughtTogther .products_unit>[type="checkbox"] {
     height: 18px;
 }
 
-#boughtTogther .products_desc {
+.carousel-class .products_desc {
     font-size: 8px;
     line-height: 12px;
     color: #000;
     font-weight: 500;
 }
 
-#boughtTogther .products_desc a {
+.carousel-class .products_desc a {
     color: inherit;
 }
 
-#boughtTogther .p_rating span {
+.carousel-class .p_rating span {
     font-size: 7px;
 }
 
-#boughtTogther .p_price {
+.carousel-class .p_price {
     font-size: 9px;
     margin: 0;
     margin-right: 5px;
     line-height: 10px;
 }
 
-#boughtTogther .p_offer {
+.carousel-class .p_offer {
     font-size: 6px;
     line-height: 10px;
 }
 
-#boughtTogther .products_desc {
+.carousel-class .products_desc {
     margin: 5px 0;
 }
 
-#boughtTogther .owl-item {
+.carousel-class .owl-item {
     position: relative;
 }
 
-#boughtTogther .owl-item:after {
+.carousel-class .owl-item:after {
     content: "+";
     position: absolute;
     right: -22px;

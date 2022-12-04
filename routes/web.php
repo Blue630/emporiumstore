@@ -157,12 +157,12 @@ Route::post('/admin/sendportingcode','AdminController@sendportingcode');
 Route::group(['prefix'=>'admin','middleware'=> ['auth','is_admin']], function ()
 {
 $val=1;
-if(request()->segment('1')=='home' && $val==1)
-{
-// echo "<script>alert('test');</script>";
-//echo auth()->user()->is_admin;
-echo "<script>document.location.href='admin/home'</script>";
-}
+// if(request()->segment('1')=='home' && $val==1)
+// {
+// // echo "<script>alert('test');</script>";
+// //echo auth()->user()->is_admin;
+// echo "<script>document.location.href='admin/home'</script>";
+// }
 Route::get('/home','HomeController@adminHome');
 Route::get('/logout','LoginController@logout');
 

@@ -116,7 +116,7 @@ if(!empty($additional1))
 </div>
 <div class="h-50px "></div>
 <div class="small_images row row-cols-lg-6 row-col-3 gx-2">
-    <div class="owl-carousel boxed_arrow boxed_arrow_black" id="small-images-carousel">
+    <div class="owl-carousel boxed_arrow boxed_arrow_black carousel-class" id="small-images-carousel">
         <?php
             $b = 0;
             $additional2=DB::table('additional')->where('product_id',$product_id)->get();
@@ -239,6 +239,12 @@ else
 {
 ?>
 <style>
+.owl-carousel .owl-item img {
+    width: auto;    
+}
+#small-images-carousel.carousel-class .owl-item:after {
+    display: none;
+}
 button.btn-wishlist{
 background-color:#fff;
 border:none;
@@ -583,7 +589,7 @@ else
 <div class="col-lg-6 pe-lg-5">
 <div class="bought_togther  py-5 px-4 border">
 <h3 class="ft-20 lh-30 text-decoration-underline text-black text-center ft-medium">Bought Together</h3>
-<div class="owl-carousel boxed_arrow boxed_arrow_black" id="boughtTogther">
+<div class="owl-carousel boxed_arrow boxed_arrow_black carousel-class" id="boughtTogther">
     <?php
     $counttogetherproduct = count($boughttogetherproduct);
     if($counttogetherproduct>1)
