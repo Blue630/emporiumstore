@@ -2158,7 +2158,8 @@ public function checkPinCode(Request $req)
                       ->select('user_id')
                       ->where('id', $product_id)
                       ->first();
-    $postalcode=DB::table('postal_code')->select('*')->where('zipcode', 'like', explode(' ', $zipcode)[0] . '%')->where('seller_id',$prdData->user_id)->first();
+    // $postalcode=DB::table('postal_code')->select('*')->where('zipcode', 'like', explode(' ', $zipcode)[0] . '%')->where('seller_id',$prdData->user_id)->first();
+    $postalcode=DB::table('postal_code')->select('*')->where('zipcode', 'like', explode(' ', $zipcode)[0] . '%')->first();
     //$postalcodecount = count($postalcode);
     if(!empty($postalcode))
     {
@@ -2234,7 +2235,8 @@ function updateOldPassword(Request $req)
     }
     else
     {
-    $encryptedpassword = md5($req->password);
+    // $encryptedpassword = md5($req->password);
+    $encryptedpassword = Hash::make($password);
     
     $data = [
         "password"=>$encryptedpassword,
