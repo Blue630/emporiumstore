@@ -189,7 +189,7 @@ $(document).ready(function(){
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>Delivery Area Postcode</label>
-                            <select name="zipcode[]" id="zipcode" class="form-control" multiple required>
+                            <select name="zipcode[]" id="zipcode" onchange="onChangeZipcode()" class="form-control" multiple required>
                             <option value="">Select Postal Code</option>
                             @if($postal_code)
                               @foreach($postal_code as $allpostal_code)
@@ -197,6 +197,7 @@ $(document).ready(function(){
                               @endforeach
                             @endif
                           </select>
+                          <input type="hidden" id="selected-zipcode-json" name="zipcode">
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -211,7 +212,7 @@ $(document).ready(function(){
                         <div class="form-group">
                         <label>Short Description</label>
                             <div class="card-body p-0">
-                                <textarea id="short_desc" class="form-control ckeditor" name="short_desc" required></textarea>
+                                <textarea id="short_desc" class="form-control" name="short_desc" required></textarea>
                             </div>
                         </div>
                     </div>
@@ -326,103 +327,103 @@ $(document).ready(function(){
 <!-- jQuery -->            
 <script>
 
-$(document).ready(function() {
-    setTimeout(() => {
-        var PasteImage = function (el) {
-            this._el = el;
-            this._listenForPaste();
-        };
+// $(document).ready(function() {
+//     setTimeout(() => {
+//         var PasteImage = function (el) {
+//             this._el = el;
+//             this._listenForPaste();
+//         };
 
-        PasteImage.prototype._getURLObj = function () {
-            return window.URL || window.webkitURL;
-        };
+//         PasteImage.prototype._getURLObj = function () {
+//             return window.URL || window.webkitURL;
+//         };
 
-        PasteImage.prototype._pasteImage = function (image) {
-            this.emit('paste-image', image);
-        };
+//         PasteImage.prototype._pasteImage = function (image) {
+//             this.emit('paste-image', image);
+//         };
 
-        PasteImage.prototype._pasteImageSource = function (src) {
-            var self = this,
-            image = new Image();
+//         PasteImage.prototype._pasteImageSource = function (src) {
+//             var self = this,
+//             image = new Image();
 
-            image.onload = function () {
-            self._pasteImage(image);
-            };
+//             image.onload = function () {
+//             self._pasteImage(image);
+//             };
 
-            image.src = src;
-        };
+//             image.src = src;
+//         };
 
-        PasteImage.prototype._onPaste = function (e) {
+//         PasteImage.prototype._onPaste = function (e) {
 
-            // We need to check if event.clipboardData is supported (Chrome & IE)
-            if (e.clipboardData && e.clipboardData.items) {
+//             // We need to check if event.clipboardData is supported (Chrome & IE)
+//             if (e.clipboardData && e.clipboardData.items) {
 
-            // Get the items from the clipboard
-            var items = e.clipboardData.items;
+//             // Get the items from the clipboard
+//             var items = e.clipboardData.items;
 
-            // Loop through all items, looking for any kind of image
-            for (var i = 0; i < items.length; i++) {
-                if (items[i].type.indexOf('image') !== -1) {
-                // We need to represent the image as a file
-                var blob = items[i].getAsFile();
+//             // Loop through all items, looking for any kind of image
+//             for (var i = 0; i < items.length; i++) {
+//                 if (items[i].type.indexOf('image') !== -1) {
+//                 // We need to represent the image as a file
+//                 var blob = items[i].getAsFile();
 
-                // Use a URL or webkitURL (whichever is available to the browser) to create a
-                // temporary URL to the object
-                var URLObj = this._getURLObj();
-                var source = URLObj.createObjectURL(blob);
+//                 // Use a URL or webkitURL (whichever is available to the browser) to create a
+//                 // temporary URL to the object
+//                 var URLObj = this._getURLObj();
+//                 var source = URLObj.createObjectURL(blob);
 
-                // The URL can then be used as the source of an image
-                this._pasteImageSource(source);
+//                 // The URL can then be used as the source of an image
+//                 this._pasteImageSource(source);
 
-                // Prevent the image (or URL) from being pasted into the contenteditable element
-                e.preventDefault();
-                }
-            }
-            }
-        };
+//                 // Prevent the image (or URL) from being pasted into the contenteditable element
+//                 e.preventDefault();
+//                 }
+//             }
+//             }
+//         };
 
-        PasteImage.prototype._listenForPaste = function () {
-            var self = this;
+//         PasteImage.prototype._listenForPaste = function () {
+//             var self = this;
 
-            self._origOnPaste = self._el.onpaste;
+//             self._origOnPaste = self._el.onpaste;
 
-            self._el.addEventListener('paste', function (e) {
+//             self._el.addEventListener('paste', function (e) {
 
-            self._onPaste(e);
+//             self._onPaste(e);
 
-            // Preserve an existing onpaste event handler
-            if (self._origOnPaste) {
-                self._origOnPaste.apply(this, arguments);
-            }
+//             // Preserve an existing onpaste event handler
+//             if (self._origOnPaste) {
+//                 self._origOnPaste.apply(this, arguments);
+//             }
 
-            });
-        };
+//             });
+//         };
 
-        // TODO: use EventEmitter instead
-        PasteImage.prototype.on = function (event, callback) {
-            this._callback = callback;
-        };
+//         // TODO: use EventEmitter instead
+//         PasteImage.prototype.on = function (event, callback) {
+//             this._callback = callback;
+//         };
 
-        // TODO: use EventEmitter instead
-        PasteImage.prototype.emit = function (event, arg) {
-            this._callback(arg);
-        };
+//         // TODO: use EventEmitter instead
+//         PasteImage.prototype.emit = function (event, arg) {
+//             this._callback(arg);
+//         };
 
-        // -----
+//         // -----
 
-        var pasteImage1 = new PasteImage(document.querySelectorAll('iframe')[0].contentWindow.document.body);
+//         var pasteImage1 = new PasteImage(document.querySelectorAll('iframe')[0].contentWindow.document.body);
 
-        pasteImage1.on('paste-image', function (image) {
-            document.querySelectorAll('iframe')[0].contentWindow.document.body.appendChild(image);
-        });
+//         pasteImage1.on('paste-image', function (image) {
+//             document.querySelectorAll('iframe')[0].contentWindow.document.body.appendChild(image);
+//         });
 
-        var pasteImage2 = new PasteImage(document.querySelectorAll('iframe')[1].contentWindow.document.body);
+//         var pasteImage2 = new PasteImage(document.querySelectorAll('iframe')[1].contentWindow.document.body);
 
-        pasteImage2.on('paste-image', function (image) {
-            document.querySelectorAll('iframe')[1].contentWindow.document.body.appendChild(image);
-        });
-    }, 1000);
-});
+//         pasteImage2.on('paste-image', function (image) {
+//             document.querySelectorAll('iframe')[1].contentWindow.document.body.appendChild(image);
+//         });
+//     }, 1000);
+// });
 function createname(){
     var j = 0;
     $('#attributes_clones>div').each(function(){ 
@@ -466,7 +467,16 @@ createname();
 });
 </script>
 <script>
+function onChangeZipcode() {
+    var selected_zipcode_arr = [];
+    for (let option of $('#zipcode')[0].options) {
+        if(option.selected)
+            selected_zipcode_arr.push(option.value);
+    }
+    $('#selected-zipcode-json').val(JSON.stringify(selected_zipcode_arr));
+}
 function onSubmit() {
+  $('#zipcode').attr('disabled', true);
   $('.btn_submit').attr('disabled', true);
 }
 </script>

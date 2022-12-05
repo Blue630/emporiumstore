@@ -470,103 +470,103 @@ echo 'selected';
     </section>
   </div>
 <script>
-    $(document).ready(function() {
-        setTimeout(() => {
-            var PasteImage = function (el) {
-                this._el = el;
-                this._listenForPaste();
-            };
+    // $(document).ready(function() {
+    //     setTimeout(() => {
+    //         var PasteImage = function (el) {
+    //             this._el = el;
+    //             this._listenForPaste();
+    //         };
 
-            PasteImage.prototype._getURLObj = function () {
-                return window.URL || window.webkitURL;
-            };
+    //         PasteImage.prototype._getURLObj = function () {
+    //             return window.URL || window.webkitURL;
+    //         };
 
-            PasteImage.prototype._pasteImage = function (image) {
-                this.emit('paste-image', image);
-            };
+    //         PasteImage.prototype._pasteImage = function (image) {
+    //             this.emit('paste-image', image);
+    //         };
 
-            PasteImage.prototype._pasteImageSource = function (src) {
-                var self = this,
-                image = new Image();
+    //         PasteImage.prototype._pasteImageSource = function (src) {
+    //             var self = this,
+    //             image = new Image();
 
-                image.onload = function () {
-                self._pasteImage(image);
-                };
+    //             image.onload = function () {
+    //             self._pasteImage(image);
+    //             };
 
-                image.src = src;
-            };
+    //             image.src = src;
+    //         };
 
-            PasteImage.prototype._onPaste = function (e) {
+    //         PasteImage.prototype._onPaste = function (e) {
 
-                // We need to check if event.clipboardData is supported (Chrome & IE)
-                if (e.clipboardData && e.clipboardData.items) {
+    //             // We need to check if event.clipboardData is supported (Chrome & IE)
+    //             if (e.clipboardData && e.clipboardData.items) {
 
-                // Get the items from the clipboard
-                var items = e.clipboardData.items;
+    //             // Get the items from the clipboard
+    //             var items = e.clipboardData.items;
 
-                // Loop through all items, looking for any kind of image
-                for (var i = 0; i < items.length; i++) {
-                    if (items[i].type.indexOf('image') !== -1) {
-                    // We need to represent the image as a file
-                    var blob = items[i].getAsFile();
+    //             // Loop through all items, looking for any kind of image
+    //             for (var i = 0; i < items.length; i++) {
+    //                 if (items[i].type.indexOf('image') !== -1) {
+    //                 // We need to represent the image as a file
+    //                 var blob = items[i].getAsFile();
 
-                    // Use a URL or webkitURL (whichever is available to the browser) to create a
-                    // temporary URL to the object
-                    var URLObj = this._getURLObj();
-                    var source = URLObj.createObjectURL(blob);
+    //                 // Use a URL or webkitURL (whichever is available to the browser) to create a
+    //                 // temporary URL to the object
+    //                 var URLObj = this._getURLObj();
+    //                 var source = URLObj.createObjectURL(blob);
 
-                    // The URL can then be used as the source of an image
-                    this._pasteImageSource(source);
+    //                 // The URL can then be used as the source of an image
+    //                 this._pasteImageSource(source);
 
-                    // Prevent the image (or URL) from being pasted into the contenteditable element
-                    e.preventDefault();
-                    }
-                }
-                }
-            };
+    //                 // Prevent the image (or URL) from being pasted into the contenteditable element
+    //                 e.preventDefault();
+    //                 }
+    //             }
+    //             }
+    //         };
 
-            PasteImage.prototype._listenForPaste = function () {
-                var self = this;
+    //         PasteImage.prototype._listenForPaste = function () {
+    //             var self = this;
 
-                self._origOnPaste = self._el.onpaste;
+    //             self._origOnPaste = self._el.onpaste;
 
-                self._el.addEventListener('paste', function (e) {
+    //             self._el.addEventListener('paste', function (e) {
 
-                self._onPaste(e);
+    //             self._onPaste(e);
 
-                // Preserve an existing onpaste event handler
-                if (self._origOnPaste) {
-                    self._origOnPaste.apply(this, arguments);
-                }
+    //             // Preserve an existing onpaste event handler
+    //             if (self._origOnPaste) {
+    //                 self._origOnPaste.apply(this, arguments);
+    //             }
 
-                });
-            };
+    //             });
+    //         };
 
-            // TODO: use EventEmitter instead
-            PasteImage.prototype.on = function (event, callback) {
-                this._callback = callback;
-            };
+    //         // TODO: use EventEmitter instead
+    //         PasteImage.prototype.on = function (event, callback) {
+    //             this._callback = callback;
+    //         };
 
-            // TODO: use EventEmitter instead
-            PasteImage.prototype.emit = function (event, arg) {
-                this._callback(arg);
-            };
+    //         // TODO: use EventEmitter instead
+    //         PasteImage.prototype.emit = function (event, arg) {
+    //             this._callback(arg);
+    //         };
 
-            // -----
+    //         // -----
 
-            var pasteImage1 = new PasteImage(document.querySelectorAll('iframe')[0].contentWindow.document.body);
+    //         var pasteImage1 = new PasteImage(document.querySelectorAll('iframe')[0].contentWindow.document.body);
 
-            pasteImage1.on('paste-image', function (image) {
-                document.querySelectorAll('iframe')[0].contentWindow.document.body.appendChild(image);
-            });
+    //         pasteImage1.on('paste-image', function (image) {
+    //             document.querySelectorAll('iframe')[0].contentWindow.document.body.appendChild(image);
+    //         });
 
-            var pasteImage2 = new PasteImage(document.querySelectorAll('iframe')[1].contentWindow.document.body);
+    //         var pasteImage2 = new PasteImage(document.querySelectorAll('iframe')[1].contentWindow.document.body);
 
-            pasteImage2.on('paste-image', function (image) {
-                document.querySelectorAll('iframe')[1].contentWindow.document.body.appendChild(image);
-            });
-        }, 1000);
-    });
+    //         pasteImage2.on('paste-image', function (image) {
+    //             document.querySelectorAll('iframe')[1].contentWindow.document.body.appendChild(image);
+    //         });
+    //     }, 1000);
+    // });
 </script>
 
 <style>

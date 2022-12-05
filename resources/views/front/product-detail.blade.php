@@ -262,14 +262,14 @@ border:none;
 <div class="prod_price-details mt-5">
 <div class="d-flex align-items-center justify-content-between w-xl-60 w-lg-75">
 <div class="p_price m-0">
-<i class="fas fa-pound-sign"></i> <span id="priceSpan">{{number_format($productdetail->price * (1 - ($productdetail->discount ?? 0) / 100), 2)}}</span>
+<i class="fas fa-pound-sign"></i> <span id="priceSpan">{{number_format($productdetail->price, 2)}}</span>
 </div>
 <?php
 if($productdetail->discount!='')
 {
 ?>
 <div class="prev_price text-light">
-<s><i class="fas fa-pound-sign"></i>{{number_format($productdetail->price, 2)}}</s>
+<s><i class="fas fa-pound-sign"></i>{{number_format($productdetail->price / (1 - ($productdetail->discount ?? 0) / 100), 2)}}</s>
 </div>
 <?php
 }
