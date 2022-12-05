@@ -64,7 +64,7 @@ if(Auth::check())
 <div class="d-flex justify-content-around align-items-center px-lg-5">
     <a href="redirect/google" style="font-size: 6rem;"><span class="iconify" data-icon="flat-color-icons:google"></span><i class="fab fa-google text-black ie_show" style="color: #4285F4;"></i></a>
     <!-- <a href="#" style="font-size: 7rem;color: #000;"><span class="iconify" data-icon="jam:apple-circle"></span><i class="fab fa-apple text-black ie_show" style="color: #000000;"></i></a> -->
-    <a href="redirect/facebook" style="font-size: 6rem;"><span class="iconify" data-icon="logos:facebook"></span><i class="fab fa-facebook text-black ie_show" style="color: #395185;"></i></a>
+    {{-- <a href="redirect/facebook" style="font-size: 6rem;"><span class="iconify" data-icon="logos:facebook"></span><i class="fab fa-facebook text-black ie_show" style="color: #395185;"></i></a> --}}
     <a href="redirect/twitter" style="font-size: 6rem;"><span class="iconify" data-icon="logos:twitter"></span><i class="fab fa-twitter text-black ie_show" style="color: #55ACEE;"></i></a>
 </div>
 </form>
@@ -127,7 +127,7 @@ if($errors->first('email')!="")
 <h4 class="ft-20 lh-30 ft-medium my-4 text-black text-center">REGISTER USING</h4>
 <div class="d-flex justify-content-around align-items-center px-lg-5">
     <a href="#" style="font-size: 6rem;"><span class="iconify" data-icon="flat-color-icons:google"></span><i class="fab fa-google text-black ie_show" style="color: #4285F4;"></i></a>
-    <a href="#" style="font-size: 6rem;"><span class="iconify" data-icon="logos:facebook"></span><i class="fab fa-facebook text-black ie_show" style="color: #395185;"></i></a>
+    {{-- <a href="#" style="font-size: 6rem;"><span class="iconify" data-icon="logos:facebook"></span><i class="fab fa-facebook text-black ie_show" style="color: #395185;"></i></a> --}}
     <a href="#" style="font-size: 6rem;"><span class="iconify" data-icon="logos:twitter"></span><i class="fab fa-twitter text-black ie_show" style="color: #55ACEE;"></i></a>
 </div>
 </form>
